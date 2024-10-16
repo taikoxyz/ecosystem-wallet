@@ -1,4 +1,7 @@
 import { Client } from "@openfort/ecosystem-js/client";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 class EcosystemWallet extends Client {
     constructor({ clientId, redirectUri, logoutRedirectUri }: { clientId: string, redirectUri: string, logoutRedirectUri: string }) {
@@ -6,16 +9,16 @@ class EcosystemWallet extends Client {
             redirectUri: redirectUri,
             logoutRedirectUri: logoutRedirectUri,
             baseConfig: {
-                ecosystemWalletDomain: process.env.REACT_APP_ECOSYSTEM_WALLET_DOMAIN!,
+                ecosystemWalletDomain: process.env.ECOSYSTEM_WALLET_DOMAIN!,
                 publishableKey: clientId,
-                ecosystemPublishableKey: process.env.REACT_APP_ECOSYSTEM_PUBLISHABLE_KEY!,
+                ecosystemPublishableKey: process.env.ECOSYSTEM_PUBLISHABLE_KEY!,
             },
             appearance: {
                 // @ts-ignore
-                icon: process.env.REACT_APP_APPEARANCE_ICON!,
-                logo: process.env.REACT_APP_APPEARANCE_LOGO!,
-                name: process.env.REACT_APP_APPEARANCE_NAME!,
-                reverseDomainNameSystem: process.env.REACT_APP_APPEARANCE_REVERSE_DOMAIN_NAME_SYSTEM!
+                icon: process.env.APPEARANCE_ICON!,
+                logo: process.env.APPEARANCE_LOGO!,
+                name: process.env.APPEARANCE_NAME!,
+                reverseDomainNameSystem: process.env.APPEARANCE_REVERSE_DOMAIN_NAME_SYSTEM!
             }
         });
 

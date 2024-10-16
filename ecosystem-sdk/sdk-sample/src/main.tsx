@@ -13,8 +13,8 @@ const CLIENT_ID = process.env.REACT_APP_CLIENT_ID!;
 
 export const ecosystemWalletInstance = new EcosystemWallet({
   clientId: CLIENT_ID,
-  redirectUri: "http://localhost:5174/redirect",
-  logoutRedirectUri: "http://localhost:5174/logout",
+  redirectUri: "http://localhost:5173/redirect",
+  logoutRedirectUri: "http://localhost:5173/logout",
 });
 
 const router = createBrowserRouter([
