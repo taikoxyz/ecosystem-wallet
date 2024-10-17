@@ -24,8 +24,7 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@openfort/ecosystem-js": "^0.0",
-    "dotenv": "^16.4.5"
+    "@openfort/ecosystem-js": "latest"
   },
   "files": [
     "dist"

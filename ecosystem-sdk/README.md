@@ -27,20 +27,21 @@ The `sdk-sample` directory contains example projects and code snippets that demo
 
 #### SDK
 
-```.env
-ECOSYSTEM_WALLET_DOMAIN=
-ECOSYSTEM_PUBLISHABLE_KEY=
-APPEARANCE_NAME=
-APPEARANCE_REVERSE_DOMAIN_NAME_SYSTEM=
-APPEARANCE_ICON=
-APPEARANCE_LOGO=
+Go to [index.ts](./sdk/src/index.ts) and set the following environment variables:
+```
+ecosystemWalletDomain:
+ecosystemPublishableKey:
+icon:
+logo:
+name:
+reverseDomainNameSystem:
 ```
 
 #### SDK Sample
 
 ```.env
-REACT_APP_POLICY_ID=
-REACT_APP_CLIENT_ID=
+NEXT_PUBLIC_POLICY_ID=
+NEXT_PUBLIC_CLIENT_ID=
 ```
 
 ### Installation
@@ -58,3 +59,26 @@ yarn install
 cd sdk-sample
 yarn install
 ```
+
+### Usage
+
+To test out the Ecosystem SDK, run the following commands to link the SDK to the SDK Sample:
+
+#### SDK
+
+```bash
+cd sdk
+yarn build
+yarn link
+```
+
+#### SDK Sample
+
+```bash
+cd sdk-sample
+yarn link @ecosystem/sdk
+yarn dev
+```
+
+The SDK sample includes samples with `wagmi`, `ethers`, directly with `EIP-1193` and `rainbowKit`. You can find the code snippets in the [app directory](./sdk-sample/app/).
+The [RainbowKit sample](./sdk-sample/app/connect-with-rainbow/) includes samples with `eth_sendTransaction`, `personal_signature` and more.

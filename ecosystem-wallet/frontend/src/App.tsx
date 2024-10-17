@@ -58,7 +58,6 @@ const ProtectedRoute = ({ component, ...args }: any) => {
 
 
 function App() {
-
   const nav = useNavigate()
 
   return (
@@ -80,8 +79,7 @@ function App() {
         <Route path='/sign/wallet-send-calls' element={<ProtectedRoute component={WalletSendCalls} />} />
         <Route path='/sign/eth-request-accounts' element={<ProtectedRoute component={EthRequestAccounts} />} />
         <Route path='/settings' element={<ProtectedRoute component={Settings} />} />
-        <Route path='/sign/loading' element={<Loading />} />
-        <Route path='/caca' element={<div className='flex p-2 m-2 rounded border-green-600 border-2'><p className='text-green-600'>Home</p></div>} />
+        <Route path='/sign/loading' element={<ProtectedRoute component={Loading} />} />
         {/* This should be replaced with <UnsupportedMethod /> on production */}
         <Route path='*' element={<UnsupportedMethod />} />
       </Routes>

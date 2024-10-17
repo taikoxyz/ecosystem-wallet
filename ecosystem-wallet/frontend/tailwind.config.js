@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}", "./../sdk/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}", "./node_modules/@openfort/ecosystem-js/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },

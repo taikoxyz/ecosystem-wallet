@@ -1820,7 +1820,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openfort/ecosystem-js@^0.0":
+"@openfort/ecosystem-js@latest":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.2.tgz#4f8189348ba348400130f96b9d9870569cbb1f68"
   integrity sha512-9cEUmQ5K+S/HcnyJjT8mQhkIUDUHndlJ4I/3nW9A2QVAeqK5L2tATQtpw0Fpaenh9pBPKH3e2ZPsyVBeZHEgjg==
