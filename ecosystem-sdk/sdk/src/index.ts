@@ -6,7 +6,7 @@ class EcosystemWallet extends Client {
             redirectUri: redirectUri,
             logoutRedirectUri: logoutRedirectUri,
             baseConfig: {
-                ecosystemWalletDomain: 'https://id.samples.openfort.xyz',
+                ecosystemWalletDomain: 'https://id.sample.openfort.xyz',
                 publishableKey: clientId,
                 ecosystemPublishableKey: 'pk_test_8e982c92-f7a3-59dd-8e7f-accb19aaf4ef',
             },
