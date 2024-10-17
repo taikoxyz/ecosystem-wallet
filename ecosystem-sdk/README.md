@@ -62,7 +62,7 @@ yarn install
 
 ### Usage
 
-To test out the Ecosystem SDK, run the following commands to link the SDK to the SDK Sample:
+If you want to test out your Ecosystem SDK, you can remove the @rapidfire/id from [package.json](./sdk-sample/package.json), run the following commands to link the SDK to the SDK Sample:
 
 #### SDK
 
