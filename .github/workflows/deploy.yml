@@ -1,0 +1,88 @@
+name: Build and Push Docker image
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Set up SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.SSH_HOST }}
+
+      - name: Set up Git
+        run: git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+
+      - name: Login to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Google Cloud Docker registry
+        run: gcloud auth configure-docker europe-west1-docker.pkg.dev
+
+      - name: Build and push frontend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: europe-west1-docker.pkg.dev/openfort/dockers/sample-ecosystem-backend:${{ github.event.release.tag_name }}
+          file: ./ecosystem-wallet/backend/Dockerfile
+          context: ./ecosystem-wallet/backend
+          build-args: |
+            "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Build and push backend Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: europe-west1-docker.pkg.dev/openfort/dockers/sample-ecosystem-frontend:${{ github.event.release.tag_name }}
+          file: ./ecosystem-wallet/frontend/Dockerfile
+          context: ./ecosystem-wallet/frontend
+          build-args: |
+            "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
+
+
+      - name: Set up yq
+        uses: chrisdickinson/setup-yq@latest
+        with:
+          version: 4.30.8
+
+      - name: Clone Infra Repository
+        run: |
+          git clone git@github.com:openfort-xyz/kube-prod.git
+
+      - name: Update frontend version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.sample_ecosystem_frontend.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+
+      - name: Update backend version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.sample_ecosystem_backend.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+
+      - name: Update Infra Repository
+        run: |
+          cd kube-prod
+          git config --global user.email "cd@openfort.xyz"
+          git config --global user.name "CD"
+          git add .
+          git commit -m "Update ecosystem sample version to ${{ github.event.release.tag_name }}"
+          git push
+
+      - name: Logout of Docker CLI
+        run: docker logout europe-west1-docker.pkg.dev
