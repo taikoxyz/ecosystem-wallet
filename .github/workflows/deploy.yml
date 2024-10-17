@@ -35,7 +35,7 @@ jobs:
       - name: Configure Google Cloud Docker registry
         run: gcloud auth configure-docker europe-west1-docker.pkg.dev
 
-      - name: Build and push frontend Docker image
+      - name: Build and push backend Docker image
         uses: docker/build-push-action@v2
         with:
           push: true
@@ -45,13 +45,23 @@ jobs:
           build-args: |
             "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
 
-      - name: Build and push backend Docker image
+      - name: Build and push frontend Docker image
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: europe-west1-docker.pkg.dev/openfort/dockers/sample-ecosystem-frontend:${{ github.event.release.tag_name }}
           file: ./ecosystem-wallet/frontend/Dockerfile
           context: ./ecosystem-wallet/frontend
+          build-args: |
+            "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Build and push sdk Docker image
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: europe-west1-docker.pkg.dev/openfort/dockers/sample-ecosystem-sdk:${{ github.event.release.tag_name }}
+          file: ./ecosystem-sdk/sdk-sample/Dockerfile
+          context: ./ecosystem-sdk/sdk-sample
           build-args: |
             "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
 
@@ -74,6 +84,11 @@ jobs:
         uses: mikefarah/yq@master
         with:
           cmd: yq -i '.sample_ecosystem_backend.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+
+      - name: Update SDK sample version
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq -i '.sample_ecosystem_sdk.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
 
       - name: Update Infra Repository
         run: |
