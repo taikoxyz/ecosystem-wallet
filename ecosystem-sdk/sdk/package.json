@@ -1,5 +1,5 @@
 {
-  "name": "@ecosystem/id",
+  "name": "@rapidfire/id",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -27,7 +27,8 @@
     "@openfort/ecosystem-js": "latest"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "packageManager": "yarn@1.22.17"
 }

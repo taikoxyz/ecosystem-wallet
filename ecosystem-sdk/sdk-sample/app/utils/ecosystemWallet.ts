@@ -1,4 +1,4 @@
-import EcosystemWallet from '@ecosystem/id';
+import EcosystemWallet from '@rapidfire/id';
 
 // create the Ecosystem instance and export it so it can be used in the examples
 export const ecosystemWalletInstance = new EcosystemWallet({

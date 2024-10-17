@@ -32,7 +32,7 @@ import Loading from './Loading';
  * @returns session ID
  */
 async function getShieldSession(accessToken:string):Promise<string> {
-  const response = await fetch('http://localhost:3001/api/protected-create-encryption-session', {
+  const response = await fetch(process.env.REACT_APP_BACKEND_URL!, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
