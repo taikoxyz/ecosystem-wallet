@@ -10,14 +10,17 @@ import { abi } from './abi';
 import { bscTestnet } from 'wagmi/chains';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { encodeFunctionData } from 'viem';
+import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
+import { useState } from 'react';
 
 export function Account() {
-  const { isConnected, connector } = useAccount();
+  const { connector } = useAccount();
   const { data: hash, writeContract, isPending, error } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
   const { signTypedData, data: typedSignature, isPending: isSigning, error: errorTypedSignature } = useSignTypedData();
   const { signMessage, data: personalSignature, isPending: personalIsSigning, error: errorPersonalSignature } = useSignMessage();
-
+  const { disconnect } = useDisconnect();
+  const [loading, setLoadingState] = useState<boolean>(false);
   const handleExampleTx = () => {
     writeContract({
       abi,
@@ -71,6 +74,18 @@ export function Account() {
     console.log(`address: ${address}`);
   };
 
+  const ecosystemWalletLogout = async () => {
+    setLoadingState(true);
+    try {
+      disconnect();
+      // await ecosystemWalletInstance.logout();
+    } catch (error) {
+      console.error('Logout failed:', error);
+    } finally {
+      setLoadingState(false);
+    }
+  };
+
   return (
     <div className="p-4 max-w-2xl mx-auto">
         <div className="mt-4 space-y-6">
@@ -109,6 +124,11 @@ export function Account() {
             title="wallet_sendCalls"
             handleAction={handleSendCalls}
             buttonText="Example Batched"
+          />
+          <ActionSection
+            title="disconnect"
+            handleAction={ecosystemWalletLogout}
+            buttonText="Disconnect"
           />
         </div>
     </div>
@@ -158,10 +178,22 @@ function SignatureSection({ title, signature, error, isPending, handleAction, bu
   return (
     <div className="bg-white shadow rounded-lg p-4">
       <h2 className="text-lg font-semibold mb-2">{title}</h2>
-      {signature && <p className="text-sm text-gray-600 mb-2">Signature: {signature}</p>}
-      {error && <p className="text-sm text-red-600 mb-2">Error: {(error as BaseError).shortMessage || error.message}</p>}
+      {signature && (
+        <div className="mb-2">
+          <p className="text-sm text-gray-600 font-semibold">Signature:</p>
+          <p className="text-xs text-gray-600 break-all">{signature}</p>
+        </div>
+      )}
+      {error && (
+        <div className="mb-2">
+          <p className="text-sm text-red-600 font-semibold">Error:</p>
+          <p className="text-xs text-red-600 break-words">
+            {(error as BaseError).shortMessage || error.message}
+          </p>
+        </div>
+      )}
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50 w-full sm:w-auto"
         disabled={isPending}
         onClick={handleAction}
       >
@@ -170,6 +202,7 @@ function SignatureSection({ title, signature, error, isPending, handleAction, bu
     </div>
   );
 }
+
 
 interface ActionSectionProps {
   title: string;
