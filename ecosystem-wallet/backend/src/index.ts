@@ -9,7 +9,7 @@ dotenv.config();
 const PORT = process.env.PORT ?? 3000;
 
 
-if (!process.env.OPENFORT_SECRET_KEY) {
+if (!process.env.OPENFORT_SECRET_KEY || !process.env.SHIELD_PUBLIC_KEY || !process.env.SHIELD_SECRET_KEY || !process.env.ENCRYPTION_SHARE) {
     throw new Error(
         `Unable to load the .env file. Please copy .env.example to .env and fill in the required environment variables.`
     );

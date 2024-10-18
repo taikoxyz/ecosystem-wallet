@@ -36,7 +36,7 @@ async function getShieldSession(accessToken:string):Promise<string> {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`
+      'Authorization': `${accessToken}`
     }
   });
 
