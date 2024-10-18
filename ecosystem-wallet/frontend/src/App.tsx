@@ -36,7 +36,7 @@ async function getShieldSession(accessToken:string):Promise<string> {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `${accessToken}`
+      'Authorization': `Bearer ${accessToken}`
     }
   });
 
@@ -59,10 +59,6 @@ const ProtectedRoute = ({ component, ...args }: any) => {
 
 function App() {
   const nav = useNavigate()
-  console.log('REACT_APP_OPENFORT_PUBLIC_KEY', process.env.REACT_APP_OPENFORT_PUBLIC_KEY)
-  console.log('REACT_APP_SHIELD_PUBLIC_KEY', process.env.REACT_APP_SHIELD_PUBLIC_KEY)
-  console.log('REACT_APP_BACKEND_URL', process.env.REACT_APP_BACKEND_URL)
-  console.log('REACT_APP_APP_NAME', process.env.REACT_APP_APP_NAME)
 
   return (
     <FortProvider 
