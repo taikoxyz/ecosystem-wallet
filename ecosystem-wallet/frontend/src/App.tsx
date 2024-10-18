@@ -80,6 +80,7 @@ function App() {
         <Route path='/sign/eth-request-accounts' element={<ProtectedRoute component={EthRequestAccounts} />} />
         <Route path='/settings' element={<ProtectedRoute component={Settings} />} />
         <Route path='/sign/loading' element={<ProtectedRoute component={Loading} />} />
+        <Route path='/' element={<Loading />} />
         {/* This should be replaced with <UnsupportedMethod /> on production */}
         <Route path='*' element={<UnsupportedMethod />} />
       </Routes>
