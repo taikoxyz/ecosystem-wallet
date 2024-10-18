@@ -19,13 +19,25 @@ const openfort = new Openfort(process.env.OPENFORT_SECRET_KEY);
 // Use the cors middleware to disable CORS
 app.use(cors());
 
-app.get("/", (req, res) => {
-    res.send("Service is running");
+app.get("/api/healthz", (req, res) => {
+    res.send("OK");
 });
 
 app.post("/api/protected-create-encryption-session", async (req, res) => {
-    const session = await openfort.registerRecoverySession(process.env.SHIELD_PUBLIC_KEY!, process.env.SHIELD_SECRET_KEY!, process.env.ENCRYPTION_SHARE!)
-    res.json({ session });
+    try {
+        const accessToken = req.headers.authorization?.split(' ')[1];
+        if (!accessToken) {
+            return res.status(401).send({
+                error: 'You must be signed in to view the protected content on this page.',
+            });
+        }
+        await openfort.iam.verifyAuthToken(req.headers.authorization!);
+        const session = await openfort.registerRecoverySession(process.env.SHIELD_PUBLIC_KEY!, process.env.SHIELD_SECRET_KEY!, process.env.ENCRYPTION_SHARE!)
+        res.json({ session });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 
