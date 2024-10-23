@@ -1,14 +1,15 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "dependencies": {
-    "@rapidfire/id": "^0.0.3",
+    "@rainbow-me/rainbowkit": "^2.0.7",
+    "@rapidfire/id": "^0.0.4",
     "@tanstack/react-query": "^5.51.11",
+    "connectkit": "^1.8.2",
     "ethers": "^5.7.2",
     "next": "14.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@rainbow-me/rainbowkit": "^2.0.7",
     "wagmi": "^2.11.3"
   },
   "devDependencies": {
