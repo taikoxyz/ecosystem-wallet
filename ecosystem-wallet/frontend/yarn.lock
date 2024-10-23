@@ -1820,12 +1820,12 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openfort/ecosystem-js@latest":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.2.tgz#4f8189348ba348400130f96b9d9870569cbb1f68"
-  integrity sha512-9cEUmQ5K+S/HcnyJjT8mQhkIUDUHndlJ4I/3nW9A2QVAeqK5L2tATQtpw0Fpaenh9pBPKH3e2ZPsyVBeZHEgjg==
+"@openfort/ecosystem-js@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.4.tgz#65c4ee0312a79bab117919105f3cb3342fe41f84"
+  integrity sha512-OB7MW8yPY4ujRg0+G972YU/l9rRujpOP4Tw9Ggkxs1IArKk6b+rpYBQREFbqFA7Qyl79fnxOddAV0+VnG3r5pQ==
   dependencies:
-    "@openfort/openfort-js" "0.8.8"
+    "@openfort/openfort-js" "0.8.11"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     axios "^1.6.7"
     clsx "^2.1.1"
@@ -1833,15 +1833,15 @@
     es-cookie "~1.3.2"
     jwt-decode "^3.1.2"
     lucide-react "^0.414.0"
-    oidc-client-ts "2.2.1"
+    oidc-client-ts "3.1.0"
     styled-components "^6.1.13"
     uuid "^8.3.2"
     viem "^2.21.26"
 
-"@openfort/openfort-js@0.8.8":
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.8.tgz#660bf05f9e888e59b2460467f9a101b60aa26703"
-  integrity sha512-Km7Q/uRanMz6JzfU9t4eRd5PSZQnttYYbPKJk0exoBK3T3ejELtGrIms4Lddp1eLJy1sjoFnNpmm6gCNWp8+xA==
+"@openfort/openfort-js@0.8.11":
+  version "0.8.11"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.11.tgz#df117e4a9e852030ec83601cceb489c0c548269a"
+  integrity sha512-tF/5CUdHQrTmgyKsiu+2oUgaHISTuMRoeifnapIJrpSn1PJYXJQySsbcXKrjK2mOx82k5JajkekZHBsoKXwYDw==
   dependencies:
     "@ethersproject/abstract-signer" "^5.7.0"
     "@ethersproject/bytes" "^5.7.0"
@@ -4551,7 +4551,7 @@ crypto-browserify@^3.12.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-crypto-js@^4.1.1, crypto-js@^4.2.0:
+crypto-js@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.2.0.tgz#4d931639ecdfd12ff80e8186dba6af2c2e856631"
   integrity sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==
@@ -7512,6 +7512,11 @@ jwt-decode@^3.1.2:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
   integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
+jwt-decode@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-4.0.0.tgz#2270352425fd413785b2faf11f6e755c5151bd4b"
+  integrity sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==
+
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
@@ -8079,13 +8084,12 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
-oidc-client-ts@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/oidc-client-ts/-/oidc-client-ts-2.2.1.tgz#aa397119db54952acd08efe04bac4eff9a9169db"
-  integrity sha512-g/W+DsUVeHZ8A7xUSTeK4bI6BNs9ROtMiiOOo+0M6IiTHxueJ757GD8e/8nPBL+k/o6bkfM5mWg4cZcSI8Iosw==
+oidc-client-ts@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/oidc-client-ts/-/oidc-client-ts-3.1.0.tgz#28d3254951a1c64cc9780042c61492a71b2240dd"
+  integrity sha512-IDopEXjiwjkmJLYZo6BTlvwOtnlSniWZkKZoXforC/oLZHC9wkIxd25Kwtmo5yKFMMVcsp3JY6bhcNJqdYk8+g==
   dependencies:
-    crypto-js "^4.1.1"
-    jwt-decode "^3.1.2"
+    jwt-decode "^4.0.0"
 
 on-finished@2.4.1:
   version "2.4.1"

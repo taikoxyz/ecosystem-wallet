@@ -32,6 +32,12 @@ export default function Home() {
         >
           Connect with Rainbow
         </Link>
+        <Link 
+          href="/connect-with-connectkit"
+          className="block w-64 p-4 text-center bg-white text-blue-600 rounded-lg shadow-md hover:bg-blue-50 transition duration-300"
+        >
+          Connect with ConnectKit
+        </Link>
       </div>
     </div>
   );

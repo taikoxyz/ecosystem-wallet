@@ -10,7 +10,6 @@ export default function ConnectWithEIP1193() {
   const [loading, setLoadingState] = useState<boolean>(false);
 
   const ecosystemWalletProvider = ecosystemWalletInstance.getEthereumProvider({
-    // @ts-ignore
     chain: bscTestnet,
     policyId: process.env.NEXT_PUBLIC_POLICY_ID,
   });

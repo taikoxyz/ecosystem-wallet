@@ -66,6 +66,7 @@ function App() {
       defaultChain={polygonAmoy}
       onRedirectCallback={(appState?: AppState) => nav((appState && appState.returnTo) || window.location.pathname)} 
       publishableKey={process.env.REACT_APP_OPENFORT_PUBLIC_KEY!}
+      ecosystemId={process.env.REACT_APP_OPENFORT_ECOSYSTEM_ID!}
       shieldConfig={{
         shieldPublishableKey: process.env.REACT_APP_SHIELD_PUBLIC_KEY!,
         getShieldSession: getShieldSession 

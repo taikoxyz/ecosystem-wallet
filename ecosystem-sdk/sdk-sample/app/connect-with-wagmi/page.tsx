@@ -12,7 +12,6 @@ const queryClient = new QueryClient();
 
 export default function ConnectWithWagmi() {
   ecosystemWalletInstance.getEthereumProvider({
-    // @ts-ignore
     chain: bscTestnet,
     policyId: process.env.NEXT_PUBLIC_POLICY_ID,
   });
