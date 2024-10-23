@@ -1,6 +1,6 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "dependencies": {
     "@rainbow-me/rainbowkit": "^2.0.7",
     "@rapidfire/id": "^0.0.14",
