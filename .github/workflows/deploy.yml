@@ -74,22 +74,22 @@ jobs:
 
       - name: Clone Infra Repository
         run: |
-          git clone git@github.com:openfort-xyz/kube-prod.git
+          git clone git@github.com:openfort-xyz/kube.git
 
       - name: Update frontend version
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.sample_ecosystem_frontend.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+          cmd: yq -i '.sample_ecosystem_frontend.tag = "${{ github.event.release.tag_name }}"' kube/values.yaml
 
       - name: Update backend version
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.sample_ecosystem_backend.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+          cmd: yq -i '.sample_ecosystem_backend.tag = "${{ github.event.release.tag_name }}"' kube/values.yaml
 
       - name: Update SDK sample version
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i '.sample_ecosystem_sdk.tag = "${{ github.event.release.tag_name }}"' kube-prod/overrides.yaml
+          cmd: yq -i '.sample_ecosystem_sdk.tag = "${{ github.event.release.tag_name }}"' kube/values.yaml
 
       - name: Update Infra Repository
         run: |
