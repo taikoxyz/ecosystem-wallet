@@ -64,8 +64,6 @@ jobs:
           context: ./ecosystem-sdk/sdk-sample
           build-args: |
             "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
-            "NEXT_PUBLIC_CLIENT_ID=${{ secrets.NEXT_PUBLIC_CLIENT_ID }}"
-            "NEXT_PUBLIC_POLICY_ID=${{ secrets.NEXT_PUBLIC_POLICY_ID }}"
 
       - name: Set up yq
         uses: chrisdickinson/setup-yq@latest
