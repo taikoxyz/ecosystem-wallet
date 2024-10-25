@@ -93,7 +93,7 @@ jobs:
 
       - name: Update Infra Repository
         run: |
-          cd kube-prod
+          cd kube
           git config --global user.email "cd@openfort.xyz"
           git config --global user.name "CD"
           git add .
