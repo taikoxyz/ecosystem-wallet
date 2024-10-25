@@ -6,7 +6,7 @@ import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
 import { config } from './config';
 import { ConnectWallet } from './connect';
 import Link from 'next/link';
-import { bscTestnet } from 'wagmi/chains';
+import { polygonAmoy } from 'wagmi/chains';
 import { ConnectKitProvider } from 'connectkit';
 
 const queryClient = new QueryClient();
@@ -14,7 +14,7 @@ const queryClient = new QueryClient();
 export default function ConnectWithWagmi() {
   ecosystemWalletInstance.getEthereumProvider({
     
-    chain: bscTestnet,
+    chain: polygonAmoy,
     policyId: process.env.NEXT_PUBLIC_POLICY_ID,
   });
 

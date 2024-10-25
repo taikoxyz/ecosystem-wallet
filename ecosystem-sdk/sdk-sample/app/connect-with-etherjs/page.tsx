@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { ethers } from 'ethers';
 import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
-import { bscTestnet } from 'wagmi/chains';
+import { polygonAmoy } from 'wagmi/chains';
 import Link from 'next/link';
 
 export default function ConnectWithEtherJS() {
@@ -11,7 +11,7 @@ export default function ConnectWithEtherJS() {
   const [loading, setLoadingState] = useState<boolean>(false);
 
   const ecosystemWalletProvider = ecosystemWalletInstance.getEthereumProvider({
-    chain: bscTestnet,
+    chain: polygonAmoy,
     policyId: process.env.NEXT_PUBLIC_POLICY_ID,
   });
 

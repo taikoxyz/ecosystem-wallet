@@ -7,7 +7,7 @@ import {
   useWriteContract,
 } from 'wagmi';
 import { abi } from './abi';
-import { bscTestnet } from 'wagmi/chains';
+import { polygonAmoy } from 'wagmi/chains';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { encodeFunctionData } from 'viem';
 import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
@@ -24,16 +24,16 @@ export function Account() {
   const handleExampleTx = () => {
     writeContract({
       abi,
-      address: '0x6b4582165Ef6e79489769ea62f8287C515e44FB6',
+      address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
       functionName: 'mint',
-      args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B', new Date().getTime()],
+      args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'],
     });
   };
 
   const handleTypedMessage = () => {
     signTypedData({
       domain: {
-        chainId: bscTestnet.id,
+        chainId: polygonAmoy.id,
         name: 'Ether Mail',
         verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
         version: '1',
@@ -66,8 +66,8 @@ export function Account() {
     const address = await (provider as any).request({
       method: 'wallet_sendCalls',
       calls: [
-        { to: "0x6b4582165Ef6e79489769ea62f8287C515e44FB6", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B', new Date().getTime()] }) },
-        { to: "0x6b4582165Ef6e79489769ea62f8287C515e44FB6", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B', new Date().getTime()] }) }
+        { to: "0x6B175474E89094C44Da98b954EedeAC495271d0F", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'] }) },
+        { to: "0x6B175474E89094C44Da98b954EedeAC495271d0F", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'] }) }
       ]
     });
     console.log(`address: ${address}`);

@@ -8,13 +8,13 @@ import { ConnectWallet } from './connect';
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import Link from 'next/link';
-import { bscTestnet } from 'wagmi/chains';
+import { polygonAmoy } from 'wagmi/chains';
 
 const queryClient = new QueryClient();
 
 export default function ConnectWithWagmi() {
   ecosystemWalletInstance.getEthereumProvider({
-    chain: bscTestnet,
+    chain: polygonAmoy,
     policyId: process.env.NEXT_PUBLIC_POLICY_ID,
   });
 
