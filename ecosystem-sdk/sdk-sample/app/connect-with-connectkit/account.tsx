@@ -56,8 +56,8 @@ export function Account() {
     const provider = await connector?.getProvider()
     const privateKey = generatePrivateKey();
     const account = privateKeyToAccount(privateKey);
-    const hash = await (provider as any).request({ method: 'wallet_grantPermissions', address: account.address, expiry: 60 * 60 * 1000 });
-    console.log(`hash: ${hash}`);
+    const sessionKeyAddress = await (provider as any).request({ method: 'wallet_grantPermissions', address: account.address, expiry: 60 * 60 * 1000 });
+    console.log(`sessionKeyAddress: ${sessionKeyAddress}`);
   };
 
   const handleSendCalls = async () => {

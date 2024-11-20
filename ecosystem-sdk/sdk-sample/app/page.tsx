@@ -8,7 +8,7 @@ export default function Home() {
         Ecosystem Connect Examples
       </h1>
       <div className="space-y-4">
-        <Link 
+        {/* <Link 
           href="/connect-with-eip1193"
           className="block w-64 p-4 text-center bg-white text-blue-600 rounded-lg shadow-md hover:bg-blue-50 transition duration-300"
         >
@@ -31,7 +31,7 @@ export default function Home() {
           className="block w-64 p-4 text-center bg-white text-blue-600 rounded-lg shadow-md hover:bg-blue-50 transition duration-300"
         >
           Connect with Rainbow
-        </Link>
+        </Link> */}
         <Link 
           href="/connect-with-connectkit"
           className="block w-64 p-4 text-center bg-white text-blue-600 rounded-lg shadow-md hover:bg-blue-50 transition duration-300"
