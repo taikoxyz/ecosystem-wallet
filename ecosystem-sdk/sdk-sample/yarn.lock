@@ -1040,10 +1040,10 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@openfort/ecosystem-js@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.8.tgz#986f3015581c201148b6b385ca501e76d590d92b"
-  integrity sha512-tj4lZlf8C3WfspRBxYy4GgETX8kBD5t7mW2y524l5ccb5cH3xqKulxdjViNdin7oZ8Ja4Csi447m/QJJn1KXLA==
+"@openfort/ecosystem-js@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.9.tgz#98a8fa3d9f49de7e94cb93a753236f2a36006615"
+  integrity sha512-O5qtisQnIyWJr+TCXRfPlzO2gB7EXhFlXgJmMG8urjWVLJKxLwuDPrVjukUzR76yGQmG3iOruYnBBX8VVXryDw==
   dependencies:
     "@openfort/openfort-js" "0.8.11"
     "@stdlib/number-float64-base-normalize" "0.0.8"
@@ -1203,12 +1203,12 @@
     react-remove-scroll "2.6.0"
     ua-parser-js "^1.0.37"
 
-"@rapidfire/id@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.25.tgz#14743f2fe559ffc516011606ab2ec52f473b922d"
-  integrity sha512-fdA5Ao/P67z/e0xOgVDDiJEpex0CDzhQjs+r/86BmP6Eg6gsMR4tCrs2no1QmQDA53jRAdkvi3RViscPOyOYrA==
+"@rapidfire/id@^0.0.27":
+  version "0.0.27"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.27.tgz#5d4903b0be2aa3723f19046c3ff54625eda4e650"
+  integrity sha512-eSqHT51vVt2UuJw9vGa1Hqdzz7rzDorr/U95Aathi1/hqfqJDtNZavaVgfEzf44s/MvM7JBWmmQYs6dQOeTR7Q==
   dependencies:
-    "@openfort/ecosystem-js" "^0.0.8"
+    "@openfort/ecosystem-js" "^0.0.9"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
