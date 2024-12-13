@@ -1,33 +1,18 @@
 import { useAccount, useDisconnect, useEnsName } from 'wagmi';
-import { useState } from 'react';
-import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
 
 export function Account() {
   const { address } = useAccount();
   const { disconnect } = useDisconnect();
   const { data: ensName } = useEnsName({ address });
-  const [loading, setLoadingState] = useState<boolean>(false);
-
-  const ecosystemWalletLogout = async () => {
-    setLoadingState(true);
-    try {
-      disconnect();
-      await ecosystemWalletInstance.logout();
-    } catch (error) {
-      console.error('Logout failed:', error);
-    } finally {
-      setLoadingState(false);
-    }
-  };
 
   return (
     <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto">
       <button
-        onClick={ecosystemWalletLogout}
-        disabled={loading}
+        onClick={() => disconnect()}
+        type='button'
         className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mb-6 disabled:opacity-50 transition duration-300"
       >
-        {loading ? 'Logging out...' : 'Ecosystem Logout'}
+        {'Ecosystem Logout'}
       </button>
 
       <table className="w-full">

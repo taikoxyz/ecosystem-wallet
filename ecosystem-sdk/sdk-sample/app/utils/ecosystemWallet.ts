@@ -1,10 +1,7 @@
-import EcosystemWallet from '@rapidfire/id';
+import EcosystemWallet from '@openfort/ecosystem-client-sdk-sample-app';
 
-// create the Ecosystem instance and export it so it can be used in the examples
-const domain = typeof window !== 'undefined' ? window.location.origin : process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3004";
-console.log('domain', domain)
 export const ecosystemWalletInstance = new EcosystemWallet({
-  clientId: process.env.NEXT_PUBLIC_CLIENT_ID!,
-  redirectUri: `${domain}/redirect`,
-  logoutRedirectUri: `${domain}/logout`,
+    appChainIds: [80002],
+    appLogoUrl: 'https://a.rgbimg.com/users/b/ba/barunpatro/600/mf6B5Gq.jpg',
+    appName: 'Example App',
 });
