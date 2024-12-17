@@ -1,26 +1,29 @@
 import {
   BaseError,
-  useAccount, useDisconnect, useEnsName,
+  useAccount, useDisconnect,
   useSignMessage,
   useSignTypedData,
   useWaitForTransactionReceipt,
   useWriteContract,
 } from 'wagmi';
-import { abi } from './abi';
+import { abi } from '../utils/abi';
 import { polygonAmoy } from 'wagmi/chains';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
-import { encodeFunctionData } from 'viem';
-import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
-import { useState } from 'react';
+import {  createWalletClient, custom, parseAbi } from 'viem';
+import { useShowCallsStatus, useWriteContracts } from 'wagmi/experimental';
+import { erc7715Actions } from 'viem/experimental';
 
 export function Account() {
   const { connector } = useAccount();
   const { data: hash, writeContract, isPending, error } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
+  const { data:bundleIdentifier, isPending: callsPending, error: callsError, writeContracts } = useWriteContracts()
+  const { showCallsStatus, isPending: bundlePending, error: bundleError, isSuccess, status} = useShowCallsStatus()
+
   const { signTypedData, data: typedSignature, isPending: isSigning, error: errorTypedSignature } = useSignTypedData();
   const { signMessage, data: personalSignature, isPending: personalIsSigning, error: errorPersonalSignature } = useSignMessage();
   const { disconnect } = useDisconnect();
-  const [loading, setLoadingState] = useState<boolean>(false);
+
   const handleExampleTx = () => {
     writeContract({
       abi,
@@ -54,36 +57,64 @@ export function Account() {
 
   const handleGrantPermissions = async () => {
     const provider = await connector?.getProvider()
-    const privateKey = generatePrivateKey();
-    const account = privateKeyToAccount(privateKey);
-    const sessionKeyAddress = await (provider as any).request({ method: 'wallet_grantPermissions', address: account.address, expiry: 60 * 60 * 1000 });
-    console.log(`sessionKeyAddress: ${sessionKeyAddress}`);
-  };
 
-  const handleSendCalls = async () => {
-    const provider = await connector?.getProvider();
-    
-    const address = await (provider as any).request({
-      method: 'wallet_sendCalls',
-      calls: [
-        { to: "0x6B175474E89094C44Da98b954EedeAC495271d0F", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'] }) },
-        { to: "0x6B175474E89094C44Da98b954EedeAC495271d0F", data: encodeFunctionData({ abi, functionName: 'mint', args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'] }) }
-      ]
+    const sessionKey = generatePrivateKey();
+    const accountSession = privateKeyToAccount(sessionKey).address;
+
+    const walletClient = createWalletClient({
+      chain: polygonAmoy, 
+      // @ts-ignore
+      transport: custom(provider),
+    }).extend(erc7715Actions()) 
+    await walletClient.grantPermissions({
+      signer:{
+        type: "account",
+        data:{
+          id: accountSession
+        }
+      },
+      expiry: 60 * 60 * 24,
+      permissions: [
+        {
+          type: 'contract-call',
+          data: {
+            address: '0x2522f4fc9af2e1954a3d13f7a5b2683a00a4543a',
+            calls: []
+          },
+          policies: []
+        }
+      ],
     });
-    console.log(`address: ${address}`);
+
+    console.log(`sessionKeyAddress: ${accountSession}`);
   };
 
-  const ecosystemWalletLogout = async () => {
-    setLoadingState(true);
-    try {
-      disconnect();
-      await ecosystemWalletInstance.logout();
-    } catch (error) {
-      console.error('Logout failed:', error);
-    } finally {
-      setLoadingState(false);
-    }
+  const handleSendCalls = () => {
+    writeContracts({
+      contracts: [
+        {
+          address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+          abi: parseAbi(['function mint(address) returns (bool)']),
+          functionName: 'mint',
+          args: [
+            '0xd2135CfB216b74109775236E36d4b433F1DF507B'
+          ],
+        },
+        {
+          address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+          abi: parseAbi(['function mint(address) returns (bool)']),
+          functionName: 'mint',
+          args: [
+            '0xd2135CfB216b74109775236E36d4b433F1DF507B',
+          ],
+        },
+      ],
+    })
   };
+
+  const handleShowCallsStatus = () => {
+    showCallsStatus({ id: bundleIdentifier as string });
+  }
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
@@ -119,14 +150,29 @@ export function Account() {
             handleAction={handleGrantPermissions}
             buttonText="Example Session"
           />
-          <ActionSection
+          <TransactionSection
             title="wallet_sendCalls"
+            hash={bundleIdentifier ? `0x${bundleIdentifier}` : undefined}
+            isConfirmed={false}
+            error={callsError}
+            isPending={callsPending}
+            isConfirming={false}
             handleAction={handleSendCalls}
             buttonText="Example Batched"
           />
+          <TransactionSection
+            title="wallet_showCallsStatus"
+            hash={undefined}
+            isConfirmed={isSuccess}
+            error={bundleError}
+            isPending={bundlePending}
+            isConfirming={bundleIdentifier ? status !== 'success':false}
+            handleAction={handleShowCallsStatus}
+            buttonText="Example Show Calls Status"
+          />
           <ActionSection
             title="disconnect"
-            handleAction={ecosystemWalletLogout}
+            handleAction={disconnect}
             buttonText="Disconnect"
           />
         </div>

@@ -6,12 +6,10 @@ import {
   useWaitForTransactionReceipt,
   useWriteContract,
 } from 'wagmi';
-import { abi } from './abi';
+import { abi } from '../utils/abi';
 import { polygonAmoy } from 'wagmi/chains';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import { encodeFunctionData } from 'viem';
-import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
-import { useState } from 'react';
 
 export function Account() {
   const { connector } = useAccount();
@@ -20,7 +18,6 @@ export function Account() {
   const { signTypedData, data: typedSignature, isPending: isSigning, error: errorTypedSignature } = useSignTypedData();
   const { signMessage, data: personalSignature, isPending: personalIsSigning, error: errorPersonalSignature } = useSignMessage();
   const { disconnect } = useDisconnect();
-  const [loading, setLoadingState] = useState<boolean>(false);
   const handleExampleTx = () => {
     writeContract({
       abi,
@@ -74,18 +71,6 @@ export function Account() {
     console.log(`address: ${address}`);
   };
 
-  const ecosystemWalletLogout = async () => {
-    setLoadingState(true);
-    try {
-      disconnect();
-      await ecosystemWalletInstance.logout();
-    } catch (error) {
-      console.error('Logout failed:', error);
-    } finally {
-      setLoadingState(false);
-    }
-  };
-
   return (
     <div className="p-4 max-w-2xl mx-auto">
         <div className="mt-4 space-y-6">
@@ -127,7 +112,7 @@ export function Account() {
           />
           <ActionSection
             title="disconnect"
-            handleAction={ecosystemWalletLogout}
+            handleAction={disconnect}
             buttonText="Disconnect"
           />
         </div>
