@@ -1,8 +1,12 @@
-# Ecosystem Project
+# Ecosystem SDK Sample
 
-This project consists of two main components: the Ecosystem SDK and the Ecosystem Wallet.
+This is a demo NextJS app that uses the ecosystem SDK to connect to the Rapid Fire ecosystem
+
+To try the demo, go to https://rapidfire.sample.openfort.xyz/ and login with ConnectKit.
 
 ## Project Structure
+
+This project consists of two main components: the Ecosystem SDK and the Ecosystem Wallet.
 
 ```
 ecosystem-project/
