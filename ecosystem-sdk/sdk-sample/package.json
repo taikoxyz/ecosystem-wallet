@@ -1,6 +1,6 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "dependencies": {
     "@coinbase/wallet-sdk": "^4.2.4",
     "@rainbow-me/rainbowkit": "^2.0.7",

@@ -9,10 +9,10 @@ import {
   PersonalSign, 
   withAuthenticationRequired,
   Settings,
-  UnsupportedMethod
+  UnsupportedMethod,
+  WalletShowCalls
 } from '@openfort/ecosystem-js/react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { polygonAmoy } from 'viem/chains';
 import Loading from './Loading';
 
 
@@ -63,7 +63,8 @@ function App() {
   return (
     <FortProvider 
       appName={process.env.REACT_APP_APP_NAME}
-      defaultChain={polygonAmoy}
+      supportedChains={[80002]}
+      logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
       onRedirectCallback={(appState?: AppState) => nav((appState && appState.returnTo) || window.location.pathname)} 
       publishableKey={process.env.REACT_APP_OPENFORT_PUBLIC_KEY!}
       ecosystemId={process.env.REACT_APP_OPENFORT_ECOSYSTEM_ID!}
@@ -76,12 +77,12 @@ function App() {
         <Route path='/sign/personal-sign' element={<ProtectedRoute component={PersonalSign} />} />
         <Route path='/sign/eth-sign-typed-data-v-4' element={<ProtectedRoute component={EthSignTypedDataV4} />} />
         <Route path='/sign/eth-send-transaction' element={<ProtectedRoute component={EthSendTransaction} />} />
+        <Route path='/sign/wallet-show-calls' element={<ProtectedRoute component={WalletShowCalls} />} />
         <Route path='/sign/wallet-grant-permissions' element={<ProtectedRoute component={WalletGrantPermissions} />} />
         <Route path='/sign/wallet-send-calls' element={<ProtectedRoute component={WalletSendCalls} />} />
         <Route path='/sign/eth-request-accounts' element={<ProtectedRoute component={EthRequestAccounts} />} />
         <Route path='/settings' element={<ProtectedRoute component={Settings} />} />
-        <Route path='/sign/loading' element={<ProtectedRoute component={Loading} />} />
-        <Route path='/' element={<Loading />} />
+        <Route path='/' element={<ProtectedRoute component={Loading} />} />
         {/* This should be replaced with <UnsupportedMethod /> on production */}
         <Route path='*' element={<UnsupportedMethod />} />
       </Routes>
