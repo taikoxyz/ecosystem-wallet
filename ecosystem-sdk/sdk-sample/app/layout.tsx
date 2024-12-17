@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import AppWrapper from './utils/wrapper';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Ecosystem Wallet Connect Examples',
-  description: 'Examples of how to connect wallets to Ecosystem Wallet with NextJS',
+  title: 'Rapid Fire Demo',
+  description: 'A demo of Rapid Fire wallet integration',
 };
 
 export default function RootLayout({
@@ -16,12 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AppWrapper>
-        {children}
-        </AppWrapper>
-      </body>
+    <html lang="en" className="dark">
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }

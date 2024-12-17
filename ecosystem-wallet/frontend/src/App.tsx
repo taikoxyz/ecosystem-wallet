@@ -10,7 +10,8 @@ import {
   withAuthenticationRequired,
   Settings,
   UnsupportedMethod,
-  WalletShowCalls
+  WalletShowCalls,
+  darkFortTheme
 } from '@openfort/ecosystem-js/react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Loading from './Loading';
@@ -64,6 +65,7 @@ function App() {
     <FortProvider 
       appName={process.env.REACT_APP_APP_NAME}
       supportedChains={[80002]}
+      appearance={darkFortTheme}
       logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
       onRedirectCallback={(appState?: AppState) => nav((appState && appState.returnTo) || window.location.pathname)} 
       publishableKey={process.env.REACT_APP_OPENFORT_PUBLIC_KEY!}

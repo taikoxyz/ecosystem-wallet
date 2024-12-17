@@ -3,7 +3,7 @@
 import { WagmiProvider } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
-import { config } from './config';
+import { config } from '../utils/config';
 import { ConnectWallet } from './connect';
 import Link from 'next/link';
 import { ConnectKitProvider } from 'connectkit';

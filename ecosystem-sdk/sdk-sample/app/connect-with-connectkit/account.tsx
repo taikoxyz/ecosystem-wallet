@@ -12,6 +12,7 @@ import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 import {  createWalletClient, custom, parseAbi } from 'viem';
 import { useShowCallsStatus, useWriteContracts } from 'wagmi/experimental';
 import { erc7715Actions } from 'viem/experimental';
+import { useCallback, useState } from 'react';
 
 export function Account() {
   const { connector } = useAccount();
@@ -23,7 +24,12 @@ export function Account() {
   const { signTypedData, data: typedSignature, isPending: isSigning, error: errorTypedSignature } = useSignTypedData();
   const { signMessage, data: personalSignature, isPending: personalIsSigning, error: errorPersonalSignature } = useSignMessage();
   const { disconnect } = useDisconnect();
-
+  const handleDisconnectWallet = useCallback(async() => {
+    disconnect();
+    const provider = await connector?.getProvider();
+    (provider as any).disconnect(); // this is needed because wagmi isn't calling the providers disconnect method
+    location.reload();
+  }, [disconnect]);
   const handleExampleTx = () => {
     writeContract({
       abi,
@@ -63,8 +69,7 @@ export function Account() {
 
     const walletClient = createWalletClient({
       chain: polygonAmoy, 
-      // @ts-ignore
-      transport: custom(provider),
+      transport: custom(provider as any),
     }).extend(erc7715Actions()) 
     await walletClient.grantPermissions({
       signer:{
@@ -160,19 +165,20 @@ export function Account() {
             handleAction={handleSendCalls}
             buttonText="Example Batched"
           />
-          <TransactionSection
+           <InputTransactionSection
             title="wallet_showCallsStatus"
-            hash={undefined}
-            isConfirmed={isSuccess}
+            isConfirming={isConfirming}
+            isConfirmed={isConfirmed}
             error={bundleError}
             isPending={bundlePending}
-            isConfirming={bundleIdentifier ? status !== 'success':false}
             handleAction={handleShowCallsStatus}
-            buttonText="Example Show Calls Status"
+            buttonText="Show Calls"
+            inputLabel="Enter transaction id"
+            placeholder="tin_..."
           />
           <ActionSection
             title="disconnect"
-            handleAction={disconnect}
+            handleAction={handleDisconnectWallet}
             buttonText="Disconnect"
           />
         </div>
@@ -280,3 +286,69 @@ const types = {
     {name: 'wallet', type: 'address'},
   ],
 };
+
+interface InputTransactionSectionProps {
+  title: string;
+  isConfirming: boolean;
+  isConfirmed: boolean;
+  error: Error | null;
+  isPending: boolean;
+  handleAction: (inputValue: string) => void;
+  buttonText: string;
+  inputLabel: string;
+  placeholder: string;
+}
+
+function InputTransactionSection({ 
+  title, 
+  isConfirming, 
+  isConfirmed, 
+  error, 
+  isPending, 
+  handleAction, 
+  buttonText,
+  inputLabel,
+  placeholder 
+}: InputTransactionSectionProps) {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      handleAction(inputValue.trim());
+    }
+  };
+
+  return (
+    <div className="bg-white shadow rounded-lg p-4">
+      <h2 className="text-lg font-semibold mb-2">{title}</h2>
+      {isConfirming && <p className="text-sm text-blue-600 mb-2">Waiting for confirmation...</p>}
+      {isConfirmed && <p className="text-sm text-green-600 mb-2">Transaction confirmed.</p>}
+      {error && <p className="text-sm text-red-600 mb-2">Error: {(error as BaseError).shortMessage || error.message}</p>}
+      
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="input-field" className="block text-sm font-medium text-gray-700 mb-1">
+            {inputLabel}
+          </label>
+          <input
+            id="input-field"
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder={placeholder}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            disabled={isPending}
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed w-full"
+          disabled={isPending || !inputValue.trim()}
+        >
+          {isPending ? 'Confirming...' : buttonText}
+        </button>
+      </form>
+    </div>
+  );
+}
