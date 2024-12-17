@@ -6,15 +6,17 @@ import { ecosystemWalletInstance } from '../utils/ecosystemWallet';
 import { config } from './config';
 import { ConnectWallet } from './connect';
 import Link from 'next/link';
-import { polygonAmoy } from 'wagmi/chains';
+import { useEffect } from 'react';
+
 
 const queryClient = new QueryClient();
 
 export default function ConnectWithWagmi() {
-  ecosystemWalletInstance.getEthereumProvider({
-    chain: polygonAmoy,
-    policyId: process.env.NEXT_PUBLIC_POLICY_ID,
-  });
+  useEffect(() => {
+    ecosystemWalletInstance.getEthereumProvider({
+      policy: process.env.NEXT_PUBLIC_POLICY_ID,
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 flex flex-col items-center justify-center p-6">
