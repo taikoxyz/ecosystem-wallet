@@ -793,10 +793,10 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@openfort/ecosystem-js@^0.0.11":
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.11.tgz#703ec32c6874b90aac9171a9c50c17c960c13c2b"
-  integrity sha512-xiknT0BCoX2cSv2XH4Tzd16IF5abynEonDkZay0+DxUg76GyXJMTKz88C19RiJdsYnunm4xfjM7QimVPqiifXw==
+"@openfort/ecosystem-js@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.13.tgz#7f6302b26db29c73df29f7f102506f2eca4962a6"
+  integrity sha512-jTezX1gTPybsycdVEpX9RNZtm36bLUYFtq8WQoMcx//d6W6DFCpEGFS1O+VPQJhQdb7ZqBw03GN8x01xyv65Wg==
   dependencies:
     "@openfort/openfort-js" "0.8.13"
     "@stdlib/number-float64-base-normalize" "0.0.8"
@@ -1533,12 +1533,12 @@
   resolved "https://registry.yarnpkg.com/@radix-ui/rect/-/rect-1.1.0.tgz#f817d1d3265ac5415dadc67edab30ae196696438"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.29":
-  version "0.0.29"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.29.tgz#de89a569f2f98f642cedc1f54bcbfb40d4fd1139"
-  integrity sha512-Z0gVpHbVnyLYeg1ZH6h5MqkelpWCBG4ovOeJB2Zy7D10nxpCh0/TyDgiq1ObKkmP5Dzv8NHxlzu+AS3RsPCJyg==
+"@rapidfire/id@^0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.33.tgz#81b73933acb86951de3e8ed6f673876da1c7b1fb"
+  integrity sha512-B/4owOI3DNTWgmCV6GFqvtVZzOrEsvGWP99I+IOduCjEYcj711AehwX+kjHg9cFh/CzYh6zVrv4rMjYhicRokg==
   dependencies:
-    "@openfort/ecosystem-js" "^0.0.11"
+    "@openfort/ecosystem-js" "^0.0.13"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
