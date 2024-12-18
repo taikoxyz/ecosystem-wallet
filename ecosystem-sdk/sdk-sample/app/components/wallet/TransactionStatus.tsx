@@ -12,7 +12,7 @@ export function TransactionStatus({ hash, status }: TransactionStatusProps) {
 
   return (
     <div className="mt-4 text-center">
-      <h3 className="text-lg font-medium mb-2">
+      <h3 className="text-sm font-medium mb-2">
         Transaction Status: {status}
       </h3>
       <a

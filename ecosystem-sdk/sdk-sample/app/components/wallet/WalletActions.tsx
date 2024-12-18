@@ -4,14 +4,20 @@ import {
   useWaitForTransactionReceipt,
   useSignMessage,
   useSignTypedData,
+  useAccount,
 } from 'wagmi';
 import { useWriteContracts, useShowCallsStatus } from 'wagmi/experimental'
-import { useCallback } from 'react';
-import { parseAbi } from 'viem';
+import { useCallback, useState } from 'react';
+import { createWalletClient, custom, parseAbi } from 'viem';
 import { abi } from "@/app/utils/abi";
 import { polygonAmoy } from 'wagmi/chains';
+import { erc7715Actions } from "viem/experimental";
+import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 
 export function useWalletActions() {
+  const [sessionKey, setSessionKey] = useState<string | null>(null);
+
+  const { connector } = useAccount();
   // Transaction hooks
   const { data: hash, writeContract, isPending, error } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -19,7 +25,6 @@ export function useWalletActions() {
   // Signature hooks
   const { signTypedData, data: typedSignature, isPending: isSigningTyped, error: typedError } = useSignTypedData();
   const { signMessage, data: personalSignature, isPending: isSigningPersonal, error: personalError } = useSignMessage();
-
   // Batched transaction hooks
   const { data: bundleIdentifier, isPending: callsPending, error: callsError, writeContracts } = useWriteContracts();
   const { showCallsStatus, isPending: bundlePending, error: bundleError } = useShowCallsStatus();
@@ -87,11 +92,44 @@ export function useWalletActions() {
     });
   }, [writeContracts]);
 
-  const handleShowCallsStatus = useCallback(() => {
-    if (bundleIdentifier) {
-      showCallsStatus({ id: bundleIdentifier });
+  const handleGrantPermissions = useCallback(async() => {
+    const provider = await connector?.getProvider()
+
+    const privateKey = generatePrivateKey();
+    const accountSession = privateKeyToAccount(privateKey).address;
+    setSessionKey(accountSession);
+    const walletClient = createWalletClient({
+      chain: polygonAmoy, 
+      transport: custom(provider as any),
+    }).extend(erc7715Actions()) 
+    await walletClient.grantPermissions({
+      signer:{
+        type: "account",
+        data:{
+          id: accountSession
+        }
+      },
+      expiry: 60 * 60 * 24,
+      permissions: [
+        {
+          type: 'contract-call',
+          data: {
+            address: '0x2522f4fc9af2e1954a3d13f7a5b2683a00a4543a',
+            calls: []
+          },
+          policies: []
+        }
+      ],
+    });
+  },[])
+
+
+  const handleShowCallsStatus = useCallback((identifier?:string) => {
+    if (identifier) {
+      showCallsStatus({ id: identifier });
     }
-  }, [bundleIdentifier, showCallsStatus]);
+  }, [showCallsStatus]);
+
 
   const actions = [
     {
@@ -112,7 +150,7 @@ export function useWalletActions() {
       onClick: handleTypedMessage,
       isLoading: isSigningTyped,
       error: typedError,
-      hash: typedSignature,
+      payload: typedSignature,
     },
     {
       icon: Key,
@@ -121,14 +159,15 @@ export function useWalletActions() {
       onClick: handlePersonalSign,
       isLoading: isSigningPersonal,
       error: personalError,
-      hash: personalSignature,
+      payload: personalSignature,
     },
     {
       icon: Shield,
       title: "wallet_grantPermissions",
       buttonText: "Grant Session",
-      onClick: () => {},  // TODO: Implement permission granting
+      onClick: handleGrantPermissions,
       isLoading: false,
+      payload: sessionKey ?? undefined,
     },
     {
       icon: Boxes,
@@ -146,6 +185,7 @@ export function useWalletActions() {
       onClick: handleShowCallsStatus,
       isLoading: bundlePending,
       error: bundleError,
+      input: true
     },
   ];
 

@@ -4,7 +4,7 @@ import { useAccount, useDisconnect } from 'wagmi';
 import { LogOut } from "lucide-react";
 import { Button } from '../ui/button'; 
 import { Card } from '../ui/card';
-import { truncateAddress, getExplorerUrl } from "@/lib/wallet";
+import { getExplorerUrl } from "@/lib/wallet";
 import { WalletActionCard } from "./WalletActionCard";
 import { useWalletActions } from './WalletActions';
 import { useCallback } from 'react';
@@ -27,16 +27,16 @@ export function WalletStatus() {
   return (
     <div className="w-full max-w-4xl mx-auto space-y-6">
       <Card className="p-4 md:p-6 bg-[#1A1A1A]/80 backdrop-blur-md border-gray-800">
-        <div className="text-center space-y-4">
+        <div className="text-center space-2">
           <h2 className="text-lg md:text-xl font-semibold">Connected to Rapid Fire Wallet</h2>
           <p className="font-mono text-sm text-gray-400 break-all px-2">
-            {truncateAddress(address)}
+            {address}
           </p>
           <a 
             href={getExplorerUrl(address)}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-400 hover:text-orange-300 hover:underline cursor-pointer inline-block text-sm md:text-base"
+            className="text-orange-400 hover:text-orange-300 hover:underline cursor-pointer inline-block text-sm md:text-sm"
           >
             View on Explorer
           </a>

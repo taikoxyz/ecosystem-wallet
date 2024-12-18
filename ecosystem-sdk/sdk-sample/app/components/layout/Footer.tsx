@@ -17,7 +17,7 @@ const FOOTER_LINKS = [
   {
     icon: Youtube,
     title: "YouTube Channel",
-    description: "Watch our video tutorials on YouTube.",
+    description: "Watch our tutorials on YouTube.",
     link: "https://www.youtube.com/@openfort"
   },
 ] as const;

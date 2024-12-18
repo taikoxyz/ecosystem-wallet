@@ -12,16 +12,8 @@ export const truncateHash = (hash: string) => {
 };
 
 export const getExplorerUrl = (
-  addressOrHash: string, 
+  addressOrHash: string,
   type: 'address' | 'tx' = 'address'
 ) => {
   return `${EXPLORER_BASE_URL}/${type}/${addressOrHash}`;
-};
-
-export const simulateTransaction = async (): Promise<Transaction> => {
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  return {
-    hash: "0x2f9662...7edcff",
-    status: 'success'
-  };
 };

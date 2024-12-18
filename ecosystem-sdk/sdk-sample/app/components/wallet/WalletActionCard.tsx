@@ -5,6 +5,8 @@ import { Button } from '../ui/button';
 import { Card } from '../ui/card'; 
 import { TransactionStatus } from "./TransactionStatus";
 import { LucideIcon } from 'lucide-react';
+import { Input } from '../ui/input';
+import { useState } from 'react';
 
 interface WalletActionCardProps {
   icon: LucideIcon;
@@ -13,9 +15,11 @@ interface WalletActionCardProps {
   isLoading?: boolean;
   error?: Error | null;
   hash?: `0x${string}`;
+  payload?: string;
+  input?: boolean;
   isConfirming?: boolean;
   isConfirmed?: boolean;
-  onClick: () => void;
+  onClick: (id?: string) => void;
 }
 
 export function WalletActionCard({
@@ -26,9 +30,13 @@ export function WalletActionCard({
   error,
   hash,
   isConfirming,
+  input,
+  payload,
   isConfirmed,
   onClick
 }: WalletActionCardProps) {
+  const [inputValue, setInputValue] = useState('');
+  
   let status: 'pending' | 'success' | 'error' = 'pending';
   if (isConfirmed) status = 'success';
   if (error) status = 'error';
@@ -41,8 +49,14 @@ export function WalletActionCard({
           <h3 className="text-sm font-mono text-gray-300">{title}</h3>
         </div>
         <div className="mt-auto space-y-3">
+          {input && (
+            <Input 
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          )}
           <Button
-            onClick={onClick}
+            onClick={() => onClick(inputValue)}
             disabled={isLoading}
             className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed text-sm"
           >
@@ -60,6 +74,13 @@ export function WalletActionCard({
               hash={hash}
               status={status}
             />
+          )}
+          {payload && (
+            <div className="mt-4 text-center">
+              <div className="text-nowrap overflow-x-auto text-sm text-gray-400">
+                {payload}
+              </div>
+            </div>
           )}
         </div>
       </div>
