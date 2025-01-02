@@ -1,5 +1,4 @@
 import { EXPLORER_BASE_URL } from './constants';
-import type { Transaction } from '@/types/wallet';
 
 export const truncateAddress = (address: string) => {
   if (!address) return '';

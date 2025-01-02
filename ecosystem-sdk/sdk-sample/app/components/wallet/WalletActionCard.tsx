@@ -65,7 +65,7 @@ export function WalletActionCard({
           
           {error && (
             <p className="text-sm text-red-500">
-              {(error as BaseError).shortMessage || error.message}
+              {(error as BaseError).details || error.message}
             </p>
           )}
 

@@ -8,7 +8,7 @@ import {
 } from 'wagmi';
 import { useWriteContracts, useShowCallsStatus } from 'wagmi/experimental'
 import { useCallback, useState } from 'react';
-import { createWalletClient, custom, parseAbi } from 'viem';
+import { BaseError, createWalletClient, custom, parseAbi } from 'viem';
 import { abi } from "@/app/utils/abi";
 import { polygonAmoy } from 'wagmi/chains';
 import { erc7715Actions } from "viem/experimental";
@@ -16,10 +16,10 @@ import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 
 export function useWalletActions() {
   const [sessionKey, setSessionKey] = useState<string | null>(null);
-
+  const [sessionError, setSessionError] = useState<BaseError | null>(null);
   const { connector } = useAccount();
   // Transaction hooks
-  const { data: hash, writeContract, isPending, error } = useWriteContract();
+  const { data: hash, writeContract, isPending, error  } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
 
   // Signature hooks
@@ -102,25 +102,30 @@ export function useWalletActions() {
       chain: polygonAmoy, 
       transport: custom(provider as any),
     }).extend(erc7715Actions()) 
-    await walletClient.grantPermissions({
-      signer:{
-        type: "account",
-        data:{
-          id: accountSession
-        }
-      },
-      expiry: 60 * 60 * 24,
-      permissions: [
-        {
-          type: 'contract-call',
-          data: {
-            address: '0x2522f4fc9af2e1954a3d13f7a5b2683a00a4543a',
-            calls: []
-          },
-          policies: []
-        }
-      ],
-    });
+    try{
+      await walletClient.grantPermissions({
+        signer:{
+          type: "account",
+          data:{
+            id: accountSession
+          }
+        },
+        expiry: 60 * 60 * 24,
+        permissions: [
+          {
+            type: 'contract-call',
+            data: {
+              address: '0x2522f4fc9af2e1954a3d13f7a5b2683a00a4543a',
+              calls: []
+            },
+            policies: []
+          }
+        ],
+      });
+    } catch (e) {
+      const error = e as BaseError
+      setSessionError(error)
+    }
   },[])
 
 
@@ -165,9 +170,10 @@ export function useWalletActions() {
       icon: Shield,
       title: "wallet_grantPermissions",
       buttonText: "Grant Session",
+      error: sessionError,
       onClick: handleGrantPermissions,
       isLoading: false,
-      payload: sessionKey ?? undefined,
+      payload: !sessionError && sessionKey? sessionKey : undefined,
     },
     {
       icon: Boxes,

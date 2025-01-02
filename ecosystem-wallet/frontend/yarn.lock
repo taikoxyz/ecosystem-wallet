@@ -1836,12 +1836,12 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openfort/ecosystem-js@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.14.tgz#921c974f78c4a6e1cfecafc18415f9a842d736c8"
-  integrity sha512-I0DvsJ9r+oRjgN3Wisiov3S3ZcFmV3thfRAkOJw8j9dLAR9Sn0NlsHn5+NLWgQcbA/YcdRFKIJlRLqJ7CDCWIw==
+"@openfort/ecosystem-js@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.15.tgz#7c4d24041ee2654a815003598ba6bbb4ef28b232"
+  integrity sha512-bZxNi7XYNVly198cdFHqGiUi0epeuMQP1U+Lt/b1VFB8oU2Mw6aKINEKffja/E0LIF0kCrM4S624uutE0xeHWA==
   dependencies:
-    "@openfort/openfort-js" "0.8.13"
+    "@openfort/openfort-js" "0.8.16"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     axios "1.6.7"
     clsx "^2.1.1"
@@ -1856,10 +1856,10 @@
     styled-components "^6.1.13"
     viem "^2.21.54"
 
-"@openfort/openfort-js@0.8.13":
-  version "0.8.13"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.13.tgz#fe0ae3526a10c232b9969b1881b79af194733401"
-  integrity sha512-PPNoc8jxvi+GRcdZr4MuwM4RUWFN8FEhj7+uXp5yohcqogC071VzUKbh6gI34LB/lJI+C5aWf9joWqJThGAy9g==
+"@openfort/openfort-js@0.8.16":
+  version "0.8.16"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.16.tgz#980f1b814cc7ec5bc34059e49ade26b2edd41c37"
+  integrity sha512-CTpgCaeL/0ThYEas4rmcfhynH0MSQe6WPazg03FSnGn5GlK6RifUQ31o3ih1gTjBKKWdoZzmWjdE+wQQhlVxnA==
   dependencies:
     "@ethersproject/abstract-signer" "^5.7.0"
     "@ethersproject/bytes" "^5.7.0"
@@ -1875,6 +1875,7 @@
     crypto-js "^4.2.0"
     es6-promise "^4.2.8"
     jose "^5.2.2"
+    jsrsasign "^11.1.0"
     path "^0.12.7"
     stream-browserify "^3.0.0"
     uuid "^8.3.2"
@@ -7494,6 +7495,11 @@ jsonpointer@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-5.0.1.tgz#2110e0af0900fd37467b5907ecd13a7884a1b559"
   integrity sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==
+
+jsrsasign@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-11.1.0.tgz#195e788102731102fbf3e36b33fde28936f4bf57"
+  integrity sha512-Ov74K9GihaK9/9WncTe1mPmvrO7Py665TUfUKvraXBpu+xcTWitrtuOwcjf4KMU9maPaYn0OuaWy0HOzy/GBXg==
 
 "jsx-ast-utils@^2.4.1 || ^3.0.0", jsx-ast-utils@^3.3.5:
   version "3.3.5"
