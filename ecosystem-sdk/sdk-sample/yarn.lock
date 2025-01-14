@@ -805,10 +805,10 @@
   resolved "https://registry.npmjs.org/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@openfort/ecosystem-js@^0.0.15":
-  version "0.0.15"
-  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.0.15.tgz"
-  integrity sha512-bZxNi7XYNVly198cdFHqGiUi0epeuMQP1U+Lt/b1VFB8oU2Mw6aKINEKffja/E0LIF0kCrM4S624uutE0xeHWA==
+"@openfort/ecosystem-js@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.16.tgz#ca78907cb32c6badb98f549541bc7e2e5037ae8f"
+  integrity sha512-aSFrNfIiADU7sLetGIMCuNIEz6w9lw4+sX+eJF9Add0AMem+iCkNAMhKhJgx6Wy85DdH/JsWLJT6iMIcxmFufQ==
   dependencies:
     "@openfort/openfort-js" "0.8.16"
     "@stdlib/number-float64-base-normalize" "0.0.8"
@@ -1449,12 +1449,12 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.37":
-  version "0.0.37"
-  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.37.tgz"
-  integrity sha512-ILb9pZnLz5NUY3skM18MdV4BM/cnJCkYlcI3NdFhjIfst9FyhZNQsZMJPydkckLO77BMmvPEjQGkQk9NYGUAcg==
+"@rapidfire/id@^0.0.43":
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.43.tgz#af79ece0dad28ae4ad44fd349667df8b9e41286e"
+  integrity sha512-ukbin8UAw/ECsofzcAkuoZvUKudHFmYa+3sfNMirjH/iyRXDORaa0P8N16whCB9ICNwKXC59yc6K3J6HTDZiEQ==
   dependencies:
-    "@openfort/ecosystem-js" "^0.0.15"
+    "@openfort/ecosystem-js" "^0.0.16"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"

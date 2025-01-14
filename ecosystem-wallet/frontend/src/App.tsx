@@ -64,7 +64,8 @@ function App() {
   return (
     <FortProvider 
       appName={process.env.REACT_APP_APP_NAME}
-      supportedChains={[80002, 28122024, 11155111]}
+      // You can limit the chains that the wallet can connect to by passing the supportedChains prop
+      // supportedChains={[80002, 28122024, 11155111]}
       appearance={darkFortTheme}
       logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
       onRedirectCallback={(appState?: AppState) => nav((appState && appState.returnTo) || window.location.pathname)} 

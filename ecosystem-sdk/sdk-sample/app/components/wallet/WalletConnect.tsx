@@ -17,7 +17,7 @@ export function WalletConnect() {
   const { connectors, connect, error } = useConnect();
   const connectWallet = useCallback(() => {
     const injectedConnector = connectors.find(
-      (connector) => connector.id === 'com.dos.id'
+      (connector) => connector.id === 'com.rapidfire.id'
     );
     if (injectedConnector) {
       connect({ connector: injectedConnector });
