@@ -14,24 +14,29 @@ export function WalletConnect() {
   });
 }, []);
   const { isConnected } = useAccount();
-  const { connectors, connect } = useConnect();
+  const { connectors, connect, error } = useConnect();
   const connectWallet = useCallback(() => {
     const injectedConnector = connectors.find(
-      (connector) => connector.id === 'com.rapidfire.id'
+      (connector) => connector.id === 'com.dos.id'
     );
     if (injectedConnector) {
       connect({ connector: injectedConnector });
     }
   }, [connectors, connect]);
-
   if (!isConnected) {
     return (
+      <>
       <Button
         onClick={connectWallet}
         className="mx-auto flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
       >
         <RapidFireLogo className="w-4 h-4" /> Sign in with Rapid Fire
       </Button>
+
+      <div className='flex justify-center items-center'>
+      <p className="text-xs m-2 text-red-300">{error?.message}</p>
+      </div>
+      </>
     );
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.42",
+  "version": "0.0.43",
   "dependencies": {
     "@rapidfire/id": "^0.0.37",
     "@tanstack/react-query": "^5.51.11",
@@ -55,7 +55,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 5173",
+    "dev": "next dev -p 5174",
     "lint": "eslint app --ext .js,.jsx,.ts,.tsx",
     "start": "next start",
     "test": "playwright test"

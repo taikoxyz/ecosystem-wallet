@@ -118,7 +118,17 @@ export function useWalletActions() {
               address: '0x2522f4fc9af2e1954a3d13f7a5b2683a00a4543a',
               calls: []
             },
-            policies: []
+            policies: [
+              {
+                type: 
+                {
+                  custom: "usage-limit"
+                },
+                data: {
+                  limit: 10
+                }
+              }
+            ]
           }
         ],
       });
