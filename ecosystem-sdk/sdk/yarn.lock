@@ -446,10 +446,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openfort/ecosystem-js@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.16.tgz#ca78907cb32c6badb98f549541bc7e2e5037ae8f"
-  integrity sha512-aSFrNfIiADU7sLetGIMCuNIEz6w9lw4+sX+eJF9Add0AMem+iCkNAMhKhJgx6Wy85DdH/JsWLJT6iMIcxmFufQ==
+"@openfort/ecosystem-js@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.17.tgz#2c452b7c5cd1dd75d20884897cba518a314a0374"
+  integrity sha512-Rs/QloLc7+QpAIAvy18ghflThGdfIcAqQNJkreQPZKr5pYJ8IrLWeDXUdeSLnNIS51fyU+zAErQWF9tO545jiA==
   dependencies:
     "@openfort/openfort-js" "0.8.16"
     "@stdlib/number-float64-base-normalize" "0.0.8"
