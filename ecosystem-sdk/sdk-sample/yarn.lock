@@ -805,12 +805,12 @@
   resolved "https://registry.npmjs.org/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@openfort/ecosystem-js@^0.0.17":
-  version "0.0.17"
-  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.0.17.tgz"
-  integrity sha512-Rs/QloLc7+QpAIAvy18ghflThGdfIcAqQNJkreQPZKr5pYJ8IrLWeDXUdeSLnNIS51fyU+zAErQWF9tO545jiA==
+"@openfort/ecosystem-js@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.19.tgz#75a4f43eca4c837fe6a74f65809380f47fa7a904"
+  integrity sha512-ZXtS6dOb//RvlDDO60BHTBK2DsoLk4Lsf2NsAMpSyIg0kq9VOg6z3Ah1mVK3LB2FNlqUrWoJyVk1pxfLGbmYSg==
   dependencies:
-    "@openfort/openfort-js" "0.8.16"
+    "@openfort/openfort-js" "0.8.20"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     axios "1.6.7"
     clsx "^2.1.1"
@@ -825,10 +825,10 @@
     styled-components "^6.1.13"
     viem "^2.21.54"
 
-"@openfort/openfort-js@0.8.16":
-  version "0.8.16"
-  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.16.tgz"
-  integrity sha512-CTpgCaeL/0ThYEas4rmcfhynH0MSQe6WPazg03FSnGn5GlK6RifUQ31o3ih1gTjBKKWdoZzmWjdE+wQQhlVxnA==
+"@openfort/openfort-js@0.8.20":
+  version "0.8.20"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.20.tgz#ccef1fa3efbd5d84c1ca789add35128dacadbfc4"
+  integrity sha512-h+g2+Vp1c1x5uVPY3LYs0bGNmuMg7SyKIkVgFEHjtjpZ21kjYMubN7+Mw0qfNr441qbZnfT0Ctrz/qMi2uNdOQ==
   dependencies:
     "@ethersproject/abstract-signer" "^5.7.0"
     "@ethersproject/bytes" "^5.7.0"
@@ -1449,12 +1449,12 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.45":
-  version "0.0.45"
-  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.45.tgz"
-  integrity sha512-hi+ON4mus9LzY9sRB8GixnUMYWTaNcOW9hduI/2ihIqsXgubazQJyUqn27zrFxzEJy5JjGOAvCvfmNsZcX3SUw==
+"@rapidfire/id@^0.0.47":
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.47.tgz#9c03840540c5b57de72060b3274448950b7c876e"
+  integrity sha512-olMSVUdo72pYfIDdkfklq2mvji4xB8VRQ4Jbx1iKWz2ENyPrDbqgrQdeWF+0YDEUp/oRuq8dmHJWBxqzbBbVRQ==
   dependencies:
-    "@openfort/ecosystem-js" "^0.0.17"
+    "@openfort/ecosystem-js" "^0.0.19"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
