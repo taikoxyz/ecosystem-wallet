@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccount, useDisconnect } from 'wagmi';
+import { useAccount, useChainId, useDisconnect, useSwitchChain } from 'wagmi';
 import { LogOut } from "lucide-react";
 import { Button } from '../ui/button'; 
 import { Card } from '../ui/card';
@@ -13,7 +13,8 @@ export function WalletStatus() {
   const { address, connector } = useAccount();
   const { disconnect } = useDisconnect();
   const { actions } = useWalletActions();
-
+  const chainId = useChainId()
+  const { chains, switchChain, error } = useSwitchChain()
 
   const handleDisconnectWallet = useCallback(async() => {
     disconnect();
@@ -40,6 +41,20 @@ export function WalletStatus() {
           >
             View on Explorer
           </a>
+          <div className='flex space-x-2 my-2'>
+            {chains.map((chain) => (
+              <Button
+                disabled={chainId === chain.id}
+                key={chain.id}
+                className="flex items-center justify-center gap-2 w-full md:w-auto border-gray-700 hover:bg-gray-800"
+                onClick={() => switchChain({ chainId: chain.id })}
+                variant="outline"
+              >
+                {chain.name}
+              </Button>
+            ))}
+
+          </div>
           <Button
             variant="outline"
             onClick={() => handleDisconnectWallet()}

@@ -9,15 +9,15 @@ import {
 import { useWriteContracts, useShowCallsStatus } from 'wagmi/experimental'
 import { useCallback, useState } from 'react';
 import { BaseError, createWalletClient, custom, parseAbi } from 'viem';
-import { abi } from "@/app/utils/abi";
-import { polygonAmoy } from 'wagmi/chains';
+import { erc20Abi } from "@/app/utils/abi";
+import { baseSepolia, polygonAmoy } from 'wagmi/chains';
 import { erc7715Actions } from "viem/experimental";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 
 export function useWalletActions() {
   const [sessionKey, setSessionKey] = useState<string | null>(null);
   const [sessionError, setSessionError] = useState<BaseError | null>(null);
-  const { connector } = useAccount();
+  const { connector, address } = useAccount();
   // Transaction hooks
   const { data: hash, writeContract, isPending, error  } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -32,10 +32,10 @@ export function useWalletActions() {
   // Transaction handlers
   const handleExampleTx = useCallback(() => {
     writeContract({
-      abi,
-      address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+      abi: erc20Abi,
+      address: '0xdc2de190a921d846b35eb92d195c9c3d9c08d1c2',
       functionName: 'mint',
-      args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'],
+      args: [1000000000000000000],
     });
   }, [writeContract]);
 
@@ -54,7 +54,7 @@ export function useWalletActions() {
 
     signTypedData({
       domain: {
-        chainId: polygonAmoy.id,
+        chainId: baseSepolia.id,
         name: 'Ether Mail',
         verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
         version: '1',
@@ -77,16 +77,16 @@ export function useWalletActions() {
     writeContracts({
       contracts: [
         {
-          address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-          abi: parseAbi(['function mint(address) returns (bool)']),
+          address: '0xdc2de190a921d846b35eb92d195c9c3d9c08d1c2',
+          abi: parseAbi(['function mint(uint256)']),
           functionName: 'mint',
-          args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'],
+          args: [1000000000000000000],
         },
         {
-          address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-          abi: parseAbi(['function mint(address) returns (bool)']),
-          functionName: 'mint',
-          args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B'],
+          address: '0xdc2de190a921d846b35eb92d195c9c3d9c08d1c2',
+          abi: parseAbi(['function transfer(address,uint256) returns (bool)']),
+          functionName: 'transfer',
+          args: ['0xd2135CfB216b74109775236E36d4b433F1DF507B',10000000000000000],
         },
       ],
     });
@@ -105,7 +105,7 @@ export function useWalletActions() {
     try{
       await walletClient.grantPermissions({
         signer:{
-          type: "account",
+          type: "key",
           data:{
             id: accountSession
           }

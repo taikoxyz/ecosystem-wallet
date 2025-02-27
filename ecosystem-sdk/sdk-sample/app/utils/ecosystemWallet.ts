@@ -1,8 +1,8 @@
-import EcosystemWallet from '@rapidfire/id';
-import { polygonAmoy } from 'wagmi/chains';
+import EcosystemWallet from '@openfort/ecosystem-client-sdk-sample-app';
+import { baseSepolia } from 'wagmi/chains';
 
 export const ecosystemWalletInstance = new EcosystemWallet({
-    appChainIds: [polygonAmoy.id],
+    appChainIds: [baseSepolia.id],
     appLogoUrl: 'https://a.rgbimg.com/users/b/ba/barunpatro/600/mf6B5Gq.jpg',
     appName: 'Example App',
 });

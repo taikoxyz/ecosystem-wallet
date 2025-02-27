@@ -807,7 +807,7 @@
 
 "@openfort/ecosystem-js@^0.0.19":
   version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.0.19.tgz#75a4f43eca4c837fe6a74f65809380f47fa7a904"
+  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.0.19.tgz"
   integrity sha512-ZXtS6dOb//RvlDDO60BHTBK2DsoLk4Lsf2NsAMpSyIg0kq9VOg6z3Ah1mVK3LB2FNlqUrWoJyVk1pxfLGbmYSg==
   dependencies:
     "@openfort/openfort-js" "0.8.20"
@@ -827,7 +827,7 @@
 
 "@openfort/openfort-js@0.8.20":
   version "0.8.20"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.20.tgz#ccef1fa3efbd5d84c1ca789add35128dacadbfc4"
+  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.20.tgz"
   integrity sha512-h+g2+Vp1c1x5uVPY3LYs0bGNmuMg7SyKIkVgFEHjtjpZ21kjYMubN7+Mw0qfNr441qbZnfT0Ctrz/qMi2uNdOQ==
   dependencies:
     "@ethersproject/abstract-signer" "^5.7.0"
@@ -1451,7 +1451,7 @@
 
 "@rapidfire/id@^0.0.47":
   version "0.0.47"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.47.tgz#9c03840540c5b57de72060b3274448950b7c876e"
+  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.47.tgz"
   integrity sha512-olMSVUdo72pYfIDdkfklq2mvji4xB8VRQ4Jbx1iKWz2ENyPrDbqgrQdeWF+0YDEUp/oRuq8dmHJWBxqzbBbVRQ==
   dependencies:
     "@openfort/ecosystem-js" "^0.0.19"
