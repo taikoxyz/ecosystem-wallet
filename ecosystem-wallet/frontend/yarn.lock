@@ -2166,10 +2166,10 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.1.tgz#63bd05c4b5c35d74ec0848bd723f63782203a96a"
-  integrity sha512-a11hF0u3SCPw82OHtaqdQCjaQoFBJtk2FGRhE6z3YMIH5skzT86b36gYWtTzlo0UqeE15QMpNxDwipz/uh8Ftg==
+"@openfort/ecosystem-js@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.2.tgz#87e71065d2ca9321849c7a3e90d81ebf6a180f77"
+  integrity sha512-mtB9h7MxyTltsK+w9dixvGgpvR4MzFkqd0CPq0EYD53FyuxybpEKCgaJf09qI7yTWpQ7i7uMvwTXKR1fgTDFgg==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
     "@openfort/openfort-js" "0.8.28"
@@ -2188,6 +2188,7 @@
     oidc-client-ts "3.1.0"
     styled-components "^6.1.13"
     viem "^2.22.22"
+    zod "3.24.2"
     zustand "^5.0.1"
 
 "@openfort/openfort-js@0.8.28":
@@ -13091,6 +13092,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@3.24.2:
+  version "3.24.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.24.2.tgz#8efa74126287c675e92f46871cfc8d15c34372b3"
+  integrity sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==
 
 zustand@5.0.0:
   version "5.0.0"
