@@ -6,6 +6,7 @@ class EcosystemWallet extends Client {
             baseConfig: {
                 ecosystemWalletDomain: 'https://id.sample.openfort.xyz',
                 ecosystemId: 'test-226353cd-dd0e-4fba-8208-58dfe29d3581',
+                windowStrategy: 'iframe',
             },
             appMetadata,
             appearance: {
