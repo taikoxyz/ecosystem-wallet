@@ -13,12 +13,11 @@ import {
   Recover
 } from '@openfort/ecosystem-js/react';
 import { Route, Routes } from 'react-router-dom';
-import Loading from './Loading';
 
 
 const ProtectedRoute = ({ component, ...args }: any) => {
   const Component = withAuthenticationRequired(component, {
-    onRedirecting: () => <Loading />,
+    onRedirecting: () => <div/>,
   });
   return <Component {...args} />;
 };
@@ -34,7 +33,7 @@ function App() {
       <Route path='/sign/wallet-send-calls' element={<ProtectedRoute component={WalletSendCalls} />} />
       <Route path='/sign/eth-request-accounts' element={<ProtectedRoute component={EthRequestAccounts} />} />
       <Route path='/settings' element={<ProtectedRoute component={Settings} />} />
-      <Route path='/' element={<ProtectedRoute component={Loading} />} />
+      <Route path='/' element={<ProtectedRoute component={<div/>} />} />
       
       <Route path='/authenticate' element={<LoginMethods />} />
       <Route path='/recover' element={<Recover />} />
