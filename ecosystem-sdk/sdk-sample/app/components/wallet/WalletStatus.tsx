@@ -13,8 +13,8 @@ export function WalletStatus() {
   const { address, connector } = useAccount();
   const { disconnect } = useDisconnect();
   const { actions } = useWalletActions();
-  const chainId = useChainId()
-  const { chains, switchChain, error } = useSwitchChain()
+  // const chainId = useChainId()
+  // const { chains, switchChain, error } = useSwitchChain()
 
   const handleDisconnectWallet = useCallback(async() => {
     disconnect();
@@ -41,7 +41,7 @@ export function WalletStatus() {
           >
             View on Explorer
           </a>
-          <div className='flex space-x-2 my-2'>
+          {/* <div className='flex space-x-2 my-2'>
             {chains.map((chain) => (
               <Button
                 disabled={chainId === chain.id}
@@ -54,7 +54,7 @@ export function WalletStatus() {
               </Button>
             ))}
 
-          </div>
+          </div> */}
           <Button
             variant="outline"
             onClick={() => handleDisconnectWallet()}
