@@ -49,7 +49,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
         >
           <OpenfortProvider
             thirdPartyAuthentication={false}
-            debugMode={false}
+            debugMode={true}
             ecosystemId={process.env.REACT_APP_OPENFORT_ECOSYSTEM_ID!}
             onRedirectCallback={(appState) => {
               return nav(appState?.returnTo || window.location.pathname);

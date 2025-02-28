@@ -97,7 +97,6 @@ export function useWalletActions() {
 
     const privateKey = generatePrivateKey();
     const accountSession = privateKeyToAccount(privateKey).address;
-    setSessionKey(accountSession);
     const walletClient = createWalletClient({
       chain: polygonAmoy, 
       transport: custom(provider as any),
@@ -132,6 +131,7 @@ export function useWalletActions() {
           }
         ],
       });
+      setSessionKey(accountSession);
     } catch (e) {
       const error = e as BaseError
       setSessionError(error)
