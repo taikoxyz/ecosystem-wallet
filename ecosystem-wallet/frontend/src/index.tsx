@@ -40,7 +40,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
         })
       }}
       theme='midnight'
-      supportedChains={[80002, 11155111, 84532, 28122024]}
+      supportedChains={[80002, 11155111, 84532, 28122024, 3939, 2358]}
       logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
     >
       <WagmiProvider config={Wagmi.config}>
