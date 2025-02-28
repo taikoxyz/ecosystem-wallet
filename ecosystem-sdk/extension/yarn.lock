@@ -974,10 +974,10 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rapidfire/id@^0.0.58":
-  version "0.0.58"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.58.tgz#ce117d73264e2eb4be187a2a99f78da63e852c76"
-  integrity sha512-fzRQre7fXJMFATpw5eg6I+hJMooQxYl/mn5Us4FuiJH6CeIKAOxcD47PNVyrAEF+WzCdLxo1kMjv93MZ0iHjWg==
+"@rapidfire/id@^0.0.61":
+  version "0.0.61"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.61.tgz#c093724e2158911e71de8acd80a0d49285ec0d3f"
+  integrity sha512-MpvYX5rHRlK68j2tgRoUKtHouEX84oXseLxxdKjUqqIrsXMnojrCqZHoMnrUsB7gnBmjpuw9yyzIMd8zlwlrKA==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.4"
 

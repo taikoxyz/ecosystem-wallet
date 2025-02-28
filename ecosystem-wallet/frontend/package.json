@@ -1,6 +1,6 @@
 {
   "name": "ecosystem-frontend",
-  "version": "0.0.62",
+  "version": "0.0.63",
   "private": true,
   "dependencies": {
     "@openfort/ecosystem-js": "^0.1.5",
