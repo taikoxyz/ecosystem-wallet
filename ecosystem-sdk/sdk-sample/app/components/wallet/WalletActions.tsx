@@ -10,14 +10,14 @@ import { useWriteContracts, useShowCallsStatus } from 'wagmi/experimental'
 import { useCallback, useState } from 'react';
 import { BaseError, createWalletClient, custom, parseAbi } from 'viem';
 import { erc20Abi } from "@/app/utils/abi";
-import { baseSepolia, polygonAmoy } from 'wagmi/chains';
+import { baseSepolia } from 'wagmi/chains';
 import { erc7715Actions } from "viem/experimental";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
 
 export function useWalletActions() {
   const [sessionKey, setSessionKey] = useState<string | null>(null);
   const [sessionError, setSessionError] = useState<BaseError | null>(null);
-  const { connector, address } = useAccount();
+  const { connector } = useAccount();
   // Transaction hooks
   const { data: hash, writeContract, isPending, error  } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -98,7 +98,7 @@ export function useWalletActions() {
     const privateKey = generatePrivateKey();
     const accountSession = privateKeyToAccount(privateKey).address;
     const walletClient = createWalletClient({
-      chain: polygonAmoy, 
+      chain: baseSepolia, 
       transport: custom(provider as any),
     }).extend(erc7715Actions()) 
     try{

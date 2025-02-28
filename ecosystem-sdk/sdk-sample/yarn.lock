@@ -843,7 +843,7 @@
 
 "@openfort/ecosystem-js@^0.1.3":
   version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.3.tgz#101b1ab62f67733c7b237e4554ea7d7aa4771f37"
+  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.3.tgz"
   integrity sha512-d/5xox8YR/iZElLazeMX4k4KaHyiNQcgFV8suKhQXt/EIfkD8elxEaqaxwswKc5lpBeNb0s3DLMq1olojV9+0w==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
@@ -1491,7 +1491,7 @@
 
 "@rapidfire/id@^0.0.56":
   version "0.0.56"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.56.tgz#09d26fba8c0d66922c3098952137c98811bd4a2e"
+  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.56.tgz"
   integrity sha512-6/h+SjEaUcXeyBzAkZMdTMLHJiOxASeTcFn3I52MgWpbpEn1eEVtvOhRUsoQWJMwLyxyn08m4lDuSXnBbG1FsA==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.3"
