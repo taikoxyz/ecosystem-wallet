@@ -1,6 +1,6 @@
 {
     "name": "ecosystem-backend",
-    "version": "0.0.56",
+    "version": "0.0.57",
     "main": "index.js",
     "type": "commonjs",
     "scripts": {
