@@ -7,6 +7,6 @@ export const config = createConfig({
   connectors: [injected()],
   ssr: true,
   transports: {
-    [baseSepolia.id]: http(),
+    [baseSepolia.id]: http("https://newest-radial-gadget.base-sepolia.quiknode.pro/a33177b3c598ebf17b67f1f0f3d4c4f2d7c04913"),
   },
 });
