@@ -1,8 +1,8 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.58",
+  "version": "0.0.59",
   "dependencies": {
-    "@rapidfire/id": "^0.0.57",
+    "@rapidfire/id": "^0.0.58",
     "@tanstack/react-query": "^5.51.11",
     "next": "14.2.10",
     "@radix-ui/react-accordion": "^1.2.0",
