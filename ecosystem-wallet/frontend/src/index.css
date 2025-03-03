@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* allow dark theme */
+:root {
+    color-scheme: light dark;
+}
