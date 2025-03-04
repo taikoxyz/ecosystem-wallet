@@ -30,7 +30,7 @@ export function WalletConnect() {
         onClick={connectWallet}
         className="mx-auto flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white"
       >
-        <RapidFireLogo className="w-4 h-4" /> Sign in with Rapid Fire
+        <RapidFireLogo className="w-4 h-4" /> Sign in with Rapidfire ID
       </Button>
 
       <div className='flex justify-center items-center'>

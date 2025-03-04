@@ -10,7 +10,7 @@ const FOOTER_LINKS = [
   },
   {
     icon: Github,
-    title: "GitHub Examples",
+    title: "GitHub Source Code",
     description: "View our example repos on GitHub.",
     link: "https://github.com/openfort-xyz/ecosystem-sample"
   },

@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Rapid Fire Demo',
-  description: 'A demo of Rapid Fire wallet integration',
+  title: 'Rapidfire Demo',
+  description: 'A demo of Rapidfire wallet integration',
 };
 
 export default function RootLayout({
