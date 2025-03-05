@@ -1,4 +1,4 @@
-import EcosystemWallet from '@rapidfire/id';
+import EcosystemWallet from '@openfort/ecosystem-client-sdk-sample-app';
 import { baseSepolia } from 'wagmi/chains';
 
 export const ecosystemWalletInstance = new EcosystemWallet({
