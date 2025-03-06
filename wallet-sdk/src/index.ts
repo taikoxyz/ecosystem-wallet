@@ -4,7 +4,7 @@ class EcosystemWallet extends Client {
     constructor(appMetadata?: AppMetadata) {
         super({
             baseConfig: {
-                ecosystemWalletDomain: 'http://localhost:3000',
+                ecosystemWalletDomain: 'https://id.sample.openfort.xyz/',
                 ecosystemId: 'test-226353cd-dd0e-4fba-8208-58dfe29d3581',
                 windowStrategy: 'iframe',
             },
