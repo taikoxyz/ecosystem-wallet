@@ -812,10 +812,10 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.11":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.13.tgz#751888566b846d8074b75538f32ea55d10774c5b"
-  integrity sha512-YBi6ZOf2A7jO0YTBmqVzbboOZ67djv9yCVQbLZMFOfBTeeD6fZHDjRZgsZAFt6gW1UYaITK5p4InpMIliS44Uw==
+"@openfort/ecosystem-js@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.14.tgz#5a609f2c479e3c12f18d22b48cdb423ef58e34bd"
+  integrity sha512-d3o+Sx3uxtotFg6uUFOZ/3M5vwfo5aIp6LiLWeNvGVbTySv5XU9dX3xZuu68IJnF/EV5v3LD+YFqB5Nfbk0nhw==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
     "@openfort/openfort-js" "0.8.28"
@@ -1460,12 +1460,12 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.72":
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.72.tgz#409d082f7ddc4d145647fc25e38023932a76c8c8"
-  integrity sha512-7SEE4gWhOtA6kXV/WIflecIppw6hbYPnIGbcLaPVl1bwVlyp8nzPfjFiAAX2copFLfjltVnSQw49UfqPmV+Org==
+"@rapidfire/id@^0.0.74":
+  version "0.0.74"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.74.tgz#29be90b5306c0c0d3e914194bb1e91a74af914fc"
+  integrity sha512-sMO2NOy4gTszSu12pQErFMb1p0kYmg7oy+MFdCW0JbPH6Z4diPmfTliFeiQO4Js/enoC3phrai9WpOG0VwdI3w==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.11"
+    "@openfort/ecosystem-js" "^0.1.14"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
