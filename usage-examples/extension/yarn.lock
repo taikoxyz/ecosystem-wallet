@@ -900,10 +900,10 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.14.tgz#5a609f2c479e3c12f18d22b48cdb423ef58e34bd"
-  integrity sha512-d3o+Sx3uxtotFg6uUFOZ/3M5vwfo5aIp6LiLWeNvGVbTySv5XU9dX3xZuu68IJnF/EV5v3LD+YFqB5Nfbk0nhw==
+"@openfort/ecosystem-js@^0.1.15":
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.15.tgz#81a3e8887ceee91eff0a76ea52ee8210d4053de5"
+  integrity sha512-Czrx1Grz6XV8SQKln1xJMwUGYlrKe7PIy/Wl+BwbHY7je1cmEHc3ec204DXKRb2tbP493P1PO3Nkx3Na0aOrGA==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
     "@openfort/openfort-js" "0.8.28"
@@ -974,12 +974,12 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rapidfire/id@^0.0.74":
-  version "0.0.74"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.74.tgz#29be90b5306c0c0d3e914194bb1e91a74af914fc"
-  integrity sha512-sMO2NOy4gTszSu12pQErFMb1p0kYmg7oy+MFdCW0JbPH6Z4diPmfTliFeiQO4Js/enoC3phrai9WpOG0VwdI3w==
+"@rapidfire/id@^0.0.75":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.75.tgz#044cc58c8878de723dac16fa66c2d09b311df638"
+  integrity sha512-+bjdJ2JVj5u+jUpPxgf5WzVnCPcnnYZNcc24nBuE9XWSovbZNwGoXSYQHZhgPMicRNizgv1nfp7g87dqlIIH/w==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.14"
+    "@openfort/ecosystem-js" "^0.1.15"
 
 "@rollup/pluginutils@^5.1.4":
   version "5.1.4"
