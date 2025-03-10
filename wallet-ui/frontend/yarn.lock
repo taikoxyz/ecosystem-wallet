@@ -2142,13 +2142,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.16.tgz#5da68f00f16ba680435f5f4ff6b09af4a53dd830"
-  integrity sha512-fIWsgI57SVwtONS5fQnHA4EdTQWdrlPJp8YfJ9GK9by3cRJIAjnlit94T15aeIgEfe0cigFpwwJH5kPaLAMzkg==
+"@openfort/ecosystem-js@^0.1.17":
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.17.tgz#2098d8143b757ca22fcc9994416450d3e1639ff0"
+  integrity sha512-xk5cdQr4tR6sswsZZWosYRk7tQL/gAB7OTTBF843QVXfo58dOp/Y16PipSltS5g/6Dx3b5CJCWgerGfofr0skg==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "0.8.28"
+    "@openfort/openfort-js" "0.8.29"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -2167,10 +2167,10 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@0.8.28":
-  version "0.8.28"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.28.tgz#deb78cd7680fcf4cbd4c5e9126a4991330e58ec9"
-  integrity sha512-kGBkVsoft5HswEITR7rq/yWkYVi6epI1H9oLUoKkwkL0NNfPHd5oWFCW1UTvzZanqFHT0Wa5pkJCDeCCjJVNcw==
+"@openfort/openfort-js@0.8.29":
+  version "0.8.29"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.29.tgz#c1980a8478147ae7fa5811d675f476419fd14e00"
+  integrity sha512-D5pn+++7t0JL83j2estm2tMSaAK5cZAiRQJ9p8mLxjouPgyGaJpJTah4lO52r+tFYZxfyyLcqk6zzBEZkie99A==
   dependencies:
     "@ethersproject/bytes" "^5.7.0"
     "@ethersproject/hash" "^5.7.0"
