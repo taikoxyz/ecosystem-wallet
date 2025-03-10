@@ -174,7 +174,7 @@
     "@ethersproject/logger" "^5.8.0"
     bn.js "^5.2.1"
 
-"@ethersproject/bytes@^5.7.0", "@ethersproject/bytes@^5.8.0":
+"@ethersproject/bytes@^5.8.0":
   version "5.8.0"
   resolved "https://registry.npmjs.org/@ethersproject/bytes/-/bytes-5.8.0.tgz"
   integrity sha512-vTkeohgJVCPVHu5c25XWaWQOZ4v+DkGoC42/TS2ond+PARCxTJvgTFUNDZovyQ/uAQ4EcpqqowKydcdmRKjg7A==
@@ -188,7 +188,7 @@
   dependencies:
     "@ethersproject/bignumber" "^5.8.0"
 
-"@ethersproject/hash@^5.7.0", "@ethersproject/hash@^5.8.0":
+"@ethersproject/hash@^5.8.0":
   version "5.8.0"
   resolved "https://registry.npmjs.org/@ethersproject/hash/-/hash-5.8.0.tgz"
   integrity sha512-ac/lBcTbEWW/VGJij0CNSw/wPcw9bSRgCB0AIBz8CvED/jfvDoV9hsIIiWfvWmFEi8RcXtlNwp2jv6ozWOsooA==
@@ -230,9 +230,9 @@
   dependencies:
     "@ethersproject/logger" "^5.8.0"
 
-"@ethersproject/providers@^5.7.0":
+"@ethersproject/providers@^5.8.0":
   version "5.8.0"
-  resolved "https://registry.npmjs.org/@ethersproject/providers/-/providers-5.8.0.tgz"
+  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.8.0.tgz#6c2ae354f7f96ee150439f7de06236928bc04cb4"
   integrity sha512-3Il3oTzEx3o6kzcg9ZzbE+oCZYyY+3Zh83sKkn4s1DZfTUjIegHnN2Cm0kbn9YFy45FDVcuCLLONhU7ny0SsCw==
   dependencies:
     "@ethersproject/abstract-provider" "^5.8.0"
@@ -281,7 +281,7 @@
     "@ethersproject/logger" "^5.8.0"
     hash.js "1.1.7"
 
-"@ethersproject/signing-key@^5.7.0", "@ethersproject/signing-key@^5.8.0":
+"@ethersproject/signing-key@^5.8.0":
   version "5.8.0"
   resolved "https://registry.npmjs.org/@ethersproject/signing-key/-/signing-key-5.8.0.tgz"
   integrity sha512-LrPW2ZxoigFi6U6aVkFN/fa9Yx/+4AtIUe4/HACTvKJdhm0eeb107EVCIQcrLZkxaSIgc/eCrX8Q1GtbH+9n3w==
@@ -302,7 +302,7 @@
     "@ethersproject/constants" "^5.8.0"
     "@ethersproject/logger" "^5.8.0"
 
-"@ethersproject/transactions@^5.7.0", "@ethersproject/transactions@^5.8.0":
+"@ethersproject/transactions@^5.8.0":
   version "5.8.0"
   resolved "https://registry.npmjs.org/@ethersproject/transactions/-/transactions-5.8.0.tgz"
   integrity sha512-UglxSDjByHG0TuU17bDfCemZ3AnKO2vYrL5/2n2oXvKzvb7Cz+W9gOWXKARjp2URVwcWlQlPOEQyAviKwT4AHg==
@@ -807,13 +807,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.16":
-  version "0.1.16"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.16.tgz#5da68f00f16ba680435f5f4ff6b09af4a53dd830"
-  integrity sha512-fIWsgI57SVwtONS5fQnHA4EdTQWdrlPJp8YfJ9GK9by3cRJIAjnlit94T15aeIgEfe0cigFpwwJH5kPaLAMzkg==
+"@openfort/ecosystem-js@^0.1.18":
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.18.tgz#5a35ef734fe2c7d27bee2526b26df07b07351752"
+  integrity sha512-8LG5oI2VLcrQ6ZGJbd0vwRsu+nHH3JNiG1Nj1CnI1BFVyvqLMhEyJxI0StwWOSAv6iiiUoNKkffk2ScXJUHsVg==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "0.8.28"
+    "@openfort/openfort-js" "0.8.30"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -832,19 +832,19 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@0.8.28":
-  version "0.8.28"
-  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.28.tgz"
-  integrity sha512-kGBkVsoft5HswEITR7rq/yWkYVi6epI1H9oLUoKkwkL0NNfPHd5oWFCW1UTvzZanqFHT0Wa5pkJCDeCCjJVNcw==
+"@openfort/openfort-js@0.8.30":
+  version "0.8.30"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.30.tgz#d4654ceeceeeeaf6b1990db4de17ea9170221fd6"
+  integrity sha512-JJ8ySflMnK/NFr3ds8qGI49H/TJGlHoW7ncwyS5kygQuyTy5tHHY4zT3E+Gb1m5ND6FOnO2D+uVHrIxxd3/vTg==
   dependencies:
-    "@ethersproject/bytes" "^5.7.0"
-    "@ethersproject/hash" "^5.7.0"
-    "@ethersproject/providers" "^5.7.0"
-    "@ethersproject/signing-key" "^5.7.0"
-    "@ethersproject/transactions" "^5.7.0"
+    "@ethersproject/bytes" "^5.8.0"
+    "@ethersproject/hash" "^5.8.0"
+    "@ethersproject/providers" "^5.8.0"
+    "@ethersproject/signing-key" "^5.8.0"
+    "@ethersproject/transactions" "^5.8.0"
     "@noble/curves" "^1.1.0"
     "@openfort/shield-js" "^0.1.11"
-    axios "1.6.7"
+    axios "1.7.7"
     buffer "^6.0.3"
     crypto-browserify "^3.12.0"
     crypto-js "^4.2.0"
@@ -1455,12 +1455,12 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.77":
-  version "0.0.77"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.77.tgz#a76ff3cf5ca06d41a7563c1e8a1bb8a9525d6060"
-  integrity sha512-ojW3EFGu601JZeQ227KsngQQAQ38CFT4z2BIp3eWOlGkouLKueylzx4HKS4wsaHNFdxtv6aPFISXBuAtaw0GEQ==
+"@rapidfire/id@^0.0.80":
+  version "0.0.80"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.80.tgz#c42b82721db2011ae08cc402d7fc3c476fc7a5dc"
+  integrity sha512-97dvX4fZWxETPW4H/j/C1S3jVMZJ99z3JKuybreVhMwgKHxHJrohL/pb3dsVFxNQQU7+InO60V+Ku8F0ZMv3ww==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.16"
+    "@openfort/ecosystem-js" "^0.1.18"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -3053,12 +3053,12 @@ axe-core@^4.10.0:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.10.3.tgz"
   integrity sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==
 
-axios@1.6.7:
-  version "1.6.7"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.6.7.tgz"
-  integrity sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==
+axios@1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.7.tgz#2f554296f9892a72ac8d8e4c5b79c14a91d0a47f"
+  integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
   dependencies:
-    follow-redirects "^1.15.4"
+    follow-redirects "^1.15.6"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
@@ -4334,9 +4334,9 @@ flatted@^3.2.9:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.3.3.tgz"
   integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
-follow-redirects@^1.15.4:
+follow-redirects@^1.15.6:
   version "1.15.9"
-  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.9.tgz"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
   integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
 
 for-each@^0.3.3:
