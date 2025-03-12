@@ -232,7 +232,7 @@
 
 "@ethersproject/providers@^5.8.0":
   version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.8.0.tgz#6c2ae354f7f96ee150439f7de06236928bc04cb4"
+  resolved "https://registry.npmjs.org/@ethersproject/providers/-/providers-5.8.0.tgz"
   integrity sha512-3Il3oTzEx3o6kzcg9ZzbE+oCZYyY+3Zh83sKkn4s1DZfTUjIegHnN2Cm0kbn9YFy45FDVcuCLLONhU7ny0SsCw==
   dependencies:
     "@ethersproject/abstract-provider" "^5.8.0"
@@ -809,7 +809,7 @@
 
 "@openfort/ecosystem-js@^0.1.18":
   version "0.1.18"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.18.tgz#5a35ef734fe2c7d27bee2526b26df07b07351752"
+  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.18.tgz"
   integrity sha512-8LG5oI2VLcrQ6ZGJbd0vwRsu+nHH3JNiG1Nj1CnI1BFVyvqLMhEyJxI0StwWOSAv6iiiUoNKkffk2ScXJUHsVg==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
@@ -834,7 +834,7 @@
 
 "@openfort/openfort-js@0.8.30":
   version "0.8.30"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.30.tgz#d4654ceeceeeeaf6b1990db4de17ea9170221fd6"
+  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.30.tgz"
   integrity sha512-JJ8ySflMnK/NFr3ds8qGI49H/TJGlHoW7ncwyS5kygQuyTy5tHHY4zT3E+Gb1m5ND6FOnO2D+uVHrIxxd3/vTg==
   dependencies:
     "@ethersproject/bytes" "^5.8.0"
@@ -1455,10 +1455,10 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.80":
-  version "0.0.80"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.80.tgz#c42b82721db2011ae08cc402d7fc3c476fc7a5dc"
-  integrity sha512-97dvX4fZWxETPW4H/j/C1S3jVMZJ99z3JKuybreVhMwgKHxHJrohL/pb3dsVFxNQQU7+InO60V+Ku8F0ZMv3ww==
+"@rapidfire/id@^0.0.81":
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.81.tgz#63c9afa66b6ad5226d16397f102a2b688413b5c8"
+  integrity sha512-0GlR+zxaa/4AL7r4wQfg0hR7+4gLXH3yoIfogRSaUk0IkuloMwoEF8giDHtzEIz05s1QUch3klGtPxdtce0M5g==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.18"
 
@@ -3055,7 +3055,7 @@ axe-core@^4.10.0:
 
 axios@1.7.7:
   version "1.7.7"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.7.tgz#2f554296f9892a72ac8d8e4c5b79c14a91d0a47f"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.7.7.tgz"
   integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
   dependencies:
     follow-redirects "^1.15.6"
@@ -4336,7 +4336,7 @@ flatted@^3.2.9:
 
 follow-redirects@^1.15.6:
   version "1.15.9"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
+  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.9.tgz"
   integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
 
 for-each@^0.3.3:
@@ -4365,12 +4365,12 @@ form-data@^4.0.0:
     mime-types "^2.1.12"
 
 framer-motion@^12.4.3:
-  version "12.4.11"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-12.4.11.tgz"
-  integrity sha512-MHeZlgzo9DnQ6+TFgRqJiOk4vWwsDcXFtxeXlVawVs1nwgcZW3966foGIgkIiIrBSPHB9RlbqspAxiYWosFT9g==
+  version "12.5.0"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-12.5.0.tgz"
+  integrity sha512-buPlioFbH9/W7rDzYh1C09AuZHAk2D1xTA1BlounJ2Rb9aRg84OXexP0GLd+R83v0khURdMX7b5MKnGTaSg5iA==
   dependencies:
-    motion-dom "^12.4.11"
-    motion-utils "^12.4.10"
+    motion-dom "^12.5.0"
+    motion-utils "^12.5.0"
     tslib "^2.4.0"
 
 fs.realpath@^1.0.0:
@@ -5254,17 +5254,17 @@ mipd@0.0.7, mipd@^0.0.7:
   resolved "https://registry.npmjs.org/mipd/-/mipd-0.0.7.tgz"
   integrity sha512-aAPZPNDQ3uMTdKbuO2YmAw2TxLHO0moa4YKAyETM/DTj5FloZo+a+8tU+iv4GmW+sOxKLSRwcSFuczk+Cpt6fg==
 
-motion-dom@^12.4.11:
-  version "12.4.11"
-  resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.4.11.tgz"
-  integrity sha512-wstlyV3pktgFjqsjbXMo1NX9hQD9XTVqxQNvfc+FREAgxr3GVzgWIEKvbyyNlki3J1jmmh+et9X3aCKeqFPcxA==
+motion-dom@^12.5.0:
+  version "12.5.0"
+  resolved "https://registry.npmjs.org/motion-dom/-/motion-dom-12.5.0.tgz"
+  integrity sha512-uH2PETDh7m+Hjd1UQQ56yHqwn83SAwNjimNPE/kC+Kds0t4Yh7+29rfo5wezVFpPOv57U4IuWved5d1x0kNhbQ==
   dependencies:
-    motion-utils "^12.4.10"
+    motion-utils "^12.5.0"
 
-motion-utils@^12.4.10:
-  version "12.4.10"
-  resolved "https://registry.npmjs.org/motion-utils/-/motion-utils-12.4.10.tgz"
-  integrity sha512-NPwZd94V013SwRf++jMrk2+HEBgPkeIE2RiOzhAuuQlqxMJPkKt/LXVh6Upl+iN8oarSGD2dlY5/bqgsYXDABA==
+motion-utils@^12.5.0:
+  version "12.5.0"
+  resolved "https://registry.npmjs.org/motion-utils/-/motion-utils-12.5.0.tgz"
+  integrity sha512-+hFFzvimn0sBMP9iPxBa9OtRX35ZQ3py0UHnb8U29VD+d8lQ8zH3dTygJWqK7av2v6yhg7scj9iZuvTS0f4+SA==
 
 motion@10.16.2:
   version "10.16.2"
@@ -6865,9 +6865,9 @@ valtio@1.11.2:
     use-sync-external-store "1.2.0"
 
 viem@^2.1.1, viem@^2.23.9:
-  version "2.23.9"
-  resolved "https://registry.npmjs.org/viem/-/viem-2.23.9.tgz"
-  integrity sha512-y8VLPfKukrstZKTerS9bm45ajZ22wUyStF+VquK3I2OovWLOyXSbQmJWei8syMFhp1uwhxh1tb0fAdx0WSRZWg==
+  version "2.23.10"
+  resolved "https://registry.npmjs.org/viem/-/viem-2.23.10.tgz"
+  integrity sha512-va6Wde+v96PdfzdPEspCML1MjAqe+88O8BD+R9Kun/4s5KMUNcqfHbXdZP0ZZ2Zms80styvH2pDRAqCho6TqkA==
   dependencies:
     "@noble/curves" "1.8.1"
     "@noble/hashes" "1.7.1"
