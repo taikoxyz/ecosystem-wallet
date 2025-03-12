@@ -807,13 +807,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.18":
-  version "0.1.18"
-  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.18.tgz"
-  integrity sha512-8LG5oI2VLcrQ6ZGJbd0vwRsu+nHH3JNiG1Nj1CnI1BFVyvqLMhEyJxI0StwWOSAv6iiiUoNKkffk2ScXJUHsVg==
+"@openfort/ecosystem-js@^0.1.19":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.19.tgz#725df9999ef94241fb4e3c9739196497e2e2024e"
+  integrity sha512-vcgfh9hlpJxHhqgqMCJ4x5bisALZFkxT4FxxIA0Om/OR6aRuukXlNpBC7qqT9Qab2QaIfz0ssJGMJVPjE82JnQ==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "0.8.30"
+    "@openfort/openfort-js" "^0.8.31"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -832,10 +832,10 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@0.8.30":
-  version "0.8.30"
-  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.30.tgz"
-  integrity sha512-JJ8ySflMnK/NFr3ds8qGI49H/TJGlHoW7ncwyS5kygQuyTy5tHHY4zT3E+Gb1m5ND6FOnO2D+uVHrIxxd3/vTg==
+"@openfort/openfort-js@^0.8.31":
+  version "0.8.31"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.31.tgz#c77bd4c2cea0f027aef384c8b32a9652e45b4b8a"
+  integrity sha512-dvuan3EMUqgWlZYfcL4uRc54/I4/UFmJZwllzhuznC7E+1vU9jNiQ81iGd0eShXmc5s/AL8FTdMdFZH6PJLqJA==
   dependencies:
     "@ethersproject/bytes" "^5.8.0"
     "@ethersproject/hash" "^5.8.0"
@@ -843,8 +843,8 @@
     "@ethersproject/signing-key" "^5.8.0"
     "@ethersproject/transactions" "^5.8.0"
     "@noble/curves" "^1.1.0"
-    "@openfort/shield-js" "^0.1.11"
-    axios "1.7.7"
+    "@openfort/shield-js" "^0.1.14"
+    axios "1.8.2"
     buffer "^6.0.3"
     crypto-browserify "^3.12.0"
     crypto-js "^4.2.0"
@@ -853,11 +853,10 @@
     jsrsasign "^11.1.0"
     path "^0.12.7"
     stream-browserify "^3.0.0"
-    uuid "^8.3.2"
 
-"@openfort/shield-js@^0.1.11":
+"@openfort/shield-js@^0.1.14":
   version "0.1.14"
-  resolved "https://registry.npmjs.org/@openfort/shield-js/-/shield-js-0.1.14.tgz"
+  resolved "https://registry.yarnpkg.com/@openfort/shield-js/-/shield-js-0.1.14.tgz#1cd1bab196a88501a5616831abe66fc877ef8765"
   integrity sha512-UCJA+K9OzRO9Uli+F+/ot4Cc0H6SzZcZdgtytSOtH33GmLdlnhaq5sRdmCPUu1l25oeZvq8Uxcw52fTygoWwWA==
 
 "@paulmillr/qr@^0.2.1":
@@ -1455,12 +1454,12 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.81":
-  version "0.0.81"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.81.tgz#63c9afa66b6ad5226d16397f102a2b688413b5c8"
-  integrity sha512-0GlR+zxaa/4AL7r4wQfg0hR7+4gLXH3yoIfogRSaUk0IkuloMwoEF8giDHtzEIz05s1QUch3klGtPxdtce0M5g==
+"@rapidfire/id@^0.0.82":
+  version "0.0.82"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.82.tgz#a7f75c094af132dde15a6db4fb118b03c906b66c"
+  integrity sha512-qDgbA4lVfCJIdS5N9/r2hgCL2e33P/y2UGhZtYTy+aNH3gKCsa/TgdatcHCYU9lKmvfubvnRID4pxhtbravAug==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.18"
+    "@openfort/ecosystem-js" "^0.1.19"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -3053,10 +3052,10 @@ axe-core@^4.10.0:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.10.3.tgz"
   integrity sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==
 
-axios@1.7.7:
-  version "1.7.7"
-  resolved "https://registry.npmjs.org/axios/-/axios-1.7.7.tgz"
-  integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
+axios@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.8.2.tgz#fabe06e241dfe83071d4edfbcaa7b1c3a40f7979"
+  integrity sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
