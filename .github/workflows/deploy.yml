@@ -71,11 +71,6 @@ jobs:
             "SSH_PRIVATE_KEY=${{ secrets.SSH_PRIVATE_KEY }}"
             "NEXT_PUBLIC_POLICY_ID=${{ secrets.NEXT_PUBLIC_POLICY_ID }}"
 
-      - name: Set up yq
-        uses: chrisdickinson/setup-yq@69aa9efdf7a9240129b103a65373c05cbc375679 # v1.0.0
-        with:
-          yq-version: 4.30.8
-
       - name: Clone Infra Repository
         run: |
           git clone git@github.com:openfort-xyz/kube.git
