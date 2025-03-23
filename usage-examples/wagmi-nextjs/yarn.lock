@@ -1466,10 +1466,10 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.82":
-  version "0.0.82"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.82.tgz#a7f75c094af132dde15a6db4fb118b03c906b66c"
-  integrity sha512-qDgbA4lVfCJIdS5N9/r2hgCL2e33P/y2UGhZtYTy+aNH3gKCsa/TgdatcHCYU9lKmvfubvnRID4pxhtbravAug==
+"@rapidfire/id@^0.0.83":
+  version "0.0.83"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.83.tgz#1c572667409b122e63e4de5279cb2102f7c3164e"
+  integrity sha512-qSZIjCZ0dPY3aRPKkC/lWQd5G4Rbx1lZ1sBOaz5kKSmDq13UNa5uoxLU1ro3Yii5DKFoAFXEEmEXD/AM2Dt3cA==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.19"
 
