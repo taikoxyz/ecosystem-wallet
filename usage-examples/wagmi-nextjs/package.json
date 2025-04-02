@@ -1,10 +1,10 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.86",
+  "version": "0.0.87",
   "dependencies": {
     "@tanstack/react-query": "^5.51.11",
     "next": "14.2.25",
-    "@rapidfire/id": "^0.0.84",
+    "@rapidfire/id": "^0.0.86",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
@@ -55,7 +55,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev -p 5174",
+    "dev": "next dev -p 5175",
     "lint": "eslint app --ext .js,.jsx,.ts,.tsx",
     "start": "next start",
     "test": "playwright test"
