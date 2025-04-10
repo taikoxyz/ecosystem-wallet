@@ -1,76 +1,46 @@
 "use client";
 
-import { useAccount, useChainId, useDisconnect, useSwitchChain } from 'wagmi';
-import { LogOut } from "lucide-react";
-import { Button } from '../ui/button'; 
-import { Card } from '../ui/card';
-import { getExplorerUrl } from "@/lib/wallet";
+import { useAccount } from 'wagmi';
 import { WalletActionCard } from "./WalletActionCard";
 import { useWalletActions } from './WalletActions';
-import { useCallback } from 'react';
 
 export function WalletStatus() {
-  const { address, connector } = useAccount();
-  const { disconnect } = useDisconnect();
+  const { address } = useAccount();
   const { actions } = useWalletActions();
-  // const chainId = useChainId()
-  // const { chains, switchChain, error } = useSwitchChain()
-
-  const handleDisconnectWallet = useCallback(async() => {
-    disconnect();
-    const provider = await connector?.getProvider();
-    (provider as any).disconnect(); // this is needed because wagmi isn't calling the providers disconnect method
-    location.reload();
-  }, [disconnect]);
 
   if (!address) return null;
 
+  // Define custom titles for each action
+  const customTitles: Record<string, string> = {
+    'eth_sendTransaction': 'Mint',
+    'eth_signTypedData_v4': 'Typed signature',
+    'personal_sign': 'Personal signature',
+    'wallet_grantPermissions': 'Session key',
+    'wallet_sendCalls': 'Batch transaction (Mint + transfer)',
+    'wallet_showCallsStatus': 'Transaction status'
+  };
+
+  // Define descriptions for each action
+  const actionDescriptions: Record<string, string> = {
+    'eth_sendTransaction': 'Send tokens to another address on the blockchain.',
+    'eth_signTypedData_v4': 'Sign structured data with your wallet for secure verification.',
+    'personal_sign': 'Sign a message with your wallet to prove your identity.',
+    'wallet_grantPermissions': 'Grant temporary permissions to a dApp or service.',
+    'wallet_sendCalls': 'Send multiple transactions in a single batch for efficiency.',
+    'wallet_showCallsStatus': 'View the status of your pending transactions.'
+  };
+
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-6">
-      <Card className="p-4 md:p-6 bg-[#1A1A1A]/80 backdrop-blur-md border-gray-800">
-        <div className="text-center space-2">
-          <h2 className="text-lg md:text-xl font-semibold">Connected to Rapid Fire Wallet</h2>
-          <p className="font-mono text-sm text-gray-400 break-all px-2">
-            {address}
-          </p>
-          <a 
-            href={getExplorerUrl(address)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-orange-400 hover:text-orange-300 hover:underline cursor-pointer inline-block text-sm md:text-sm"
-          >
-            View on Explorer
-          </a>
-          {/* <div className='flex space-x-2 my-2'>
-            {chains.map((chain) => (
-              <Button
-                disabled={chainId === chain.id}
-                key={chain.id}
-                className="flex items-center justify-center gap-2 w-full md:w-auto border-gray-700 hover:bg-gray-800"
-                onClick={() => switchChain({ chainId: chain.id })}
-                variant="outline"
-              >
-                {chain.name}
-              </Button>
-            ))}
-
-          </div> */}
-          <Button
-            variant="outline"
-            onClick={() => handleDisconnectWallet()}
-            className="flex items-center justify-center gap-2 w-full md:w-auto border-gray-700 hover:bg-gray-800"
-          >
-            <LogOut className="w-4 h-4" /> Disconnect
-          </Button>
-        </div>
-      </Card>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="w-full p-6">
+      <div className="grid grid-cols-3 gap-4">
         {actions.map((action) => (
-          <WalletActionCard
-            key={action.title}
-            {...action}
-          />
+          <div key={action.title}>
+            <WalletActionCard
+              {...action}
+              customTitle={customTitles[action.title]}
+              description={actionDescriptions[action.title] || "Interact with the blockchain."}
+            />
+          </div>
         ))}
       </div>
     </div>
