@@ -8,9 +8,11 @@ import { ecosystemWalletInstance } from "@/app/utils/ecosystemWallet";
 import { LogOut, Copy, Check } from "lucide-react";
 import { Card } from "../ui/card";
 import { getExplorerUrl } from "@/lib/wallet";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function WalletConnect() {
   const [copied, setCopied] = useState(false);
+  const [selectedWallet, setSelectedWallet] = useState<'wagmi' | 'rainbowkit'>('wagmi');
   
   useEffect(() => {
     ecosystemWalletInstance.getEthereumProvider({
@@ -49,18 +51,43 @@ export function WalletConnect() {
   if (!isConnected) {
     return (
       <div className="flex flex-col items-start">
-        <Button
-          onClick={connectWallet}
-          className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg shadow-sm px-6 py-5"
-        >
-          <RapidFireLogo className="w-5 h-5" /> Sign in
-        </Button>
+        <div className="flex flex-col gap-4 w-full">
+        <h3 className="text-sm font-medium">Select your provider</h3>
 
-        {error && (
-          <div className="mt-3">
-            <p className="text-xs text-destructive bg-destructive/10 px-3 py-2 rounded-lg">{error.message}</p>
+          <div className="flex gap-2">
+            
+            <Button
+              variant="outline"
+              className={`flex-1 justify-start rounded-full ${selectedWallet === 'wagmi' ? 'bg-muted/50 border-border' : ''}`}
+              onClick={() => setSelectedWallet('wagmi')}
+            >
+              {selectedWallet === 'wagmi' && <Check className="w-4 h-4 mr-2 text-foreground" />}
+              Wagmi
+            </Button>
+            
+            <Button 
+              variant="outline"
+              className={`flex-1 justify-start rounded-full ${selectedWallet === 'rainbowkit' ? 'bg-muted/50 border-border' : ''}`}
+              onClick={() => setSelectedWallet('rainbowkit')}
+            >
+              {selectedWallet === 'rainbowkit' && <Check className="w-4 h-4 mr-2 text-foreground" />}
+              RainbowKit
+            </Button>
           </div>
-        )}
+          
+          {selectedWallet === 'wagmi' ? (
+            <Button
+              onClick={connectWallet}
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg shadow-sm px-6 py-5"
+            >
+              Sign in
+            </Button>
+          ) : (
+            <div className="w-full">
+              <ConnectButton />
+            </div>
+          )}
+        </div>
       </div>
     );
   }
@@ -82,7 +109,7 @@ export function WalletConnect() {
         </Button>
         <div className="flex flex-wrap gap-3 items-center">
           {address && (
-            <a 
+            <a
               href={getExplorerUrl(address)}
               target="_blank"
               rel="noopener noreferrer"

@@ -16,7 +16,7 @@ export function WalletStatus() {
     'eth_signTypedData_v4': 'Typed signature',
     'personal_sign': 'Personal signature',
     'wallet_grantPermissions': 'Session key',
-    'wallet_sendCalls': 'Batch transaction (Mint + transfer)',
+    'wallet_sendCalls': 'Batched transaction (Mint + transfer)',
     'wallet_showCallsStatus': 'Transaction status'
   };
 

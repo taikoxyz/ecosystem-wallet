@@ -14,7 +14,7 @@ export function Header() {
           className="group"
         >
             <span className="text-primary group-hover:underline relative">
-            <span className="group-hover:hidden">Rapidfire ID example</span>
+            <span className="group-hover:hidden">Rapidfire demo</span>
             <span className="hidden group-hover:inline">@rapidfire/id on NPM</span>
             </span>
         </a>

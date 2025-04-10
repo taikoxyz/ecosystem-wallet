@@ -6,7 +6,6 @@ import { Button } from '../ui/button';
 import { Check } from 'lucide-react';
 
 export function InstallInstructions() {
-  const [selectedProvider, setSelectedProvider] = useState<'wagmi' | 'rainbowkit'>('wagmi');
 
   return (
     <div className="space-y-4">
@@ -36,33 +35,7 @@ export function InstallInstructions() {
           </div>
         </div>
       </Card>
-      
-      {/* Provider selection */}
-      <div className="space-y-2">
-        <div className="flex justify-between items-center">
-          <h3 className="text-sm font-medium">Select your provider</h3>
-          <a href="#" className="text-primary text-sm hover:underline">Request →</a>
-        </div>
-        
-        <div className="flex gap-2">
-          <Button 
-            variant={selectedProvider === 'wagmi' ? 'outline' : 'outline'}
-            className={`flex-1 justify-start rounded-full ${selectedProvider === 'wagmi' ? 'bg-muted/50 border-border' : ''}`}
-            onClick={() => setSelectedProvider('wagmi')}
-          >
-            {selectedProvider === 'wagmi' && <Check className="w-4 h-4 mr-2 text-foreground" />}
-            Wagmi
-          </Button>
-          
-          <Button 
-            variant="outline"
-            className="flex-1 justify-start opacity-50 cursor-not-allowed rounded-full"
-            disabled
-          >
-            RainbowKit
-          </Button>
-        </div>
-      </div>
+
     </div>
   );
 }

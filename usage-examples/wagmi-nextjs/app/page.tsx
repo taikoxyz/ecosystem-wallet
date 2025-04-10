@@ -9,6 +9,8 @@ import { config } from "./utils/config";
 import { useAccount } from "wagmi";
 import { InstallInstructions } from "./components/layout/InstallInstructions";
 import { WalletStatus } from "./components/wallet/WalletStatus";
+import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
+import '@rainbow-me/rainbowkit/styles.css';
 
 const queryClient = new QueryClient();
 
@@ -33,31 +35,33 @@ export default function Home() {
     <main className="relative min-h-screen bg-background text-foreground p-6 pt-12">
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-start">
-            {/* Left column: Title, subtitle, sign-in button, installation instructions (1/3 width) */}
-            <div className="col-span-4 flex flex-col">
-              <div className="mb-8">
-                <Header />
-                
-                <div className="mt-8">
-                  <InstallInstructions />
+          <RainbowKitProvider modalSize="compact">
+            <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-start">
+              {/* Left column: Title, subtitle, sign-in button, installation instructions (1/3 width) */}
+              <div className="col-span-4 flex flex-col">
+                <div className="mb-8">
+                  <Header />
+                  
+                  <div className="mt-8">
+                    <InstallInstructions />
+                  </div>
+                  <div className="mt-8">
+                    <WalletConnect />
+                  </div>
                 </div>
-                <div className="mt-8">
-                  <WalletConnect />
+                
+                {/* Smaller footer */}
+                <div className="mt-auto">
+                  <Footer />
                 </div>
               </div>
               
-              {/* Smaller footer */}
-              <div className="mt-auto">
-                <Footer />
+              {/* Right column: Wallet functionality box (2/3 width) */}
+              <div className="col-span-8">
+                <WalletContainer />
               </div>
             </div>
-            
-            {/* Right column: Wallet functionality box (2/3 width) */}
-            <div className="col-span-8">
-              <WalletContainer />
-            </div>
-          </div>
+          </RainbowKitProvider>
         </QueryClientProvider>
       </WagmiProvider>
     </main>
