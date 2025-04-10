@@ -26,11 +26,11 @@ export function InstallInstructions() {
           <div className="flex flex-col gap-1">
             <div className="flex items-center gap-2">
               <span className="text-muted-foreground">1</span>
-              <span>import &#123; RapidFireID &#125; from '@rapidfire/id'</span>
+              <span>import &#123; EcosystemWallet &#125; from '@rapidfire/id'</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-muted-foreground">2</span>
-              <span>RapidFireID.<span className="text-primary">create</span>()</span>
+              <span>EcosystemWallet.<span className="text-primary">create</span>()</span>
             </div>
           </div>
         </div>

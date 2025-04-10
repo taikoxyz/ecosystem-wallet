@@ -36,7 +36,7 @@ export function Footer() {
         ))}
       </div>
       <p className="text-xs text-muted-foreground mt-2">
-        {new Date().getFullYear()} Rapidfire Demo
+        {new Date().getFullYear()} Openfort
       </p>
     </div>
   );
