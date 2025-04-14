@@ -13,11 +13,12 @@ import { erc20Abi } from "@/app/utils/abi";
 import { baseSepolia } from 'wagmi/chains';
 import { erc7715Actions } from "viem/experimental";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
+import { createSiweMessage } from 'viem/siwe';
 
 export function useWalletActions() {
   const [sessionKey, setSessionKey] = useState<string | null>(null);
   const [sessionError, setSessionError] = useState<BaseError | null>(null);
-  const { connector } = useAccount();
+  const { connector, chainId, address } = useAccount();
   // Transaction hooks
   const { data: hash, writeContract, isPending, error  } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -68,6 +69,19 @@ export function useWalletActions() {
       primaryType: 'Mail',
     });
   }, [signTypedData]);
+
+  const handleSIWE = useCallback(() => {
+    const message = createSiweMessage({
+      domain: window.location.host,
+      address: address!,
+      statement: 'Sign in with Ethereum to the app.',
+      uri: window.location.origin,
+      version: '1',
+      chainId: chainId!,
+      nonce: 'deadbeef',
+    })
+    signMessage({ message: message });
+  },[signMessage])
 
   const handlePersonalSign = useCallback(() => {
     signMessage({ message: 'Hello World' });
@@ -172,6 +186,15 @@ export function useWalletActions() {
       title: "personal_sign",
       buttonText: "Sign Message",
       onClick: handlePersonalSign,
+      isLoading: isSigningPersonal,
+      error: personalError,
+      payload: personalSignature,
+    },
+    {
+      icon: Key,
+      title: "siwe",
+      buttonText: "SIWE",
+      onClick: handleSIWE,
       isLoading: isSigningPersonal,
       error: personalError,
       payload: personalSignature,

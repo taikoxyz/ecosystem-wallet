@@ -13,7 +13,8 @@ import {
   Recover
 } from '@openfort/ecosystem-js/react';
 import { Route, Routes } from 'react-router-dom';
-import Loading from './Loading';
+import Loading from './routes/components/Loading';
+import { Home } from './routes/sign/Home';
 
 
 const ProtectedRoute = ({ component, ...args }: any) => {
@@ -33,12 +34,12 @@ function App() {
       <Route path='/sign/wallet-show-calls' element={<ProtectedRoute component={WalletShowCalls} />} />
       <Route path='/sign/wallet-send-calls' element={<ProtectedRoute component={WalletSendCalls} />} />
       <Route path='/sign/eth-request-accounts' element={<ProtectedRoute component={EthRequestAccounts} />} />
-      <Route path='/settings' element={<ProtectedRoute component={Settings} />} />
-      <Route path='/' element={<ProtectedRoute component={Loading} />} />
+      <Route path='/sign/settings' element={<ProtectedRoute component={Settings} />} />
       
-      <Route path='/authenticate' element={<LoginMethods />} />
-      <Route path='/recover' element={<Recover />} />
-      <Route path='*' element={<UnsupportedMethod />} />
+      <Route path='/sign/authenticate' element={<LoginMethods />} />
+      <Route path='/sign/recover' element={<Recover />} />
+      <Route path='/sign/*' element={<UnsupportedMethod />} />
+      <Route path='/' element={<Home/>} />
     </Routes>
   );
 }

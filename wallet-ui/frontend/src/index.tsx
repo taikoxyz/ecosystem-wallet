@@ -5,10 +5,10 @@ import App from './App';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider } from '@tanstack/react-query';
+import { EcosystemProvider, OpenfortProvider, RecoveryMethod } from '@openfort/ecosystem-js/react';
 
 import * as Wagmi from './lib/Wagmi';
 import * as Query from './lib/Query'
-import { EcosystemProvider, OpenfortProvider, RecoveryMethod } from '@openfort/ecosystem-js/react';
 
 async function getShieldSession(accessToken:string):Promise<string> {
   const response = await fetch(`${process.env.REACT_APP_BACKEND_URL!}/api/protected-create-encryption-session`, {
@@ -31,21 +31,20 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
   const nav = useNavigate();
   
   return (
-    <EcosystemProvider
-      appName='Rapidfire ID'
-      navigateTo={(appState) => {
-        nav({
-          pathname: appState?.to,
-          search: appState?.search
-        })
-      }}
-      theme='midnight'
-      supportedChains={[80002, 11155111, 84532, 28122024, 3939, 2358]}
-      logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
-    >
       <WagmiProvider config={Wagmi.config}>
         <QueryClientProvider 
           client={Query.client}
+        >
+        <EcosystemProvider
+          appName='Rapidfire ID'
+          navigateTo={(appState) => {
+            nav({
+              pathname: appState?.to,
+              search: appState?.search
+            })
+          }}
+          theme='midnight'
+          logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
         >
           <OpenfortProvider
             thirdPartyAuthentication={false}
@@ -67,9 +66,9 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
           >
             {children}
           </OpenfortProvider>
+          </EcosystemProvider>
         </QueryClientProvider>
       </WagmiProvider>
-    </EcosystemProvider>
   );
 };
 
