@@ -27,10 +27,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@openfort/openfort-node@^0.6.46":
-  version "0.6.66"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-node/-/openfort-node-0.6.66.tgz#e14825606025e70a9df3ade0405a58bb39d12c87"
-  integrity sha512-djI/R1vENZT16xAy9IpsxX30FiflDCxUBx3pJm8qAH8+6CqECc2tMBqo14qp8+Ht+nO4CkI6MonM+K5ZA3s2zQ==
+"@openfort/openfort-node@^0.6.71":
+  version "0.6.71"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-node/-/openfort-node-0.6.71.tgz#d493616945e96785fda73721976eac2a52224188"
+  integrity sha512-YUjqqz/hRstCxogvFQcGIpvNG7NpvThfU9IEagyIrKDduBUQACSNVgz2i8al1GCaZfoBT9e17y6BJaK8sogNRA==
   dependencies:
     "@openfort/shield-js" "^0.1.7"
     "@types/node" "*"

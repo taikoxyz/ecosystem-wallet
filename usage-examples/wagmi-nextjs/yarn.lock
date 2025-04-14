@@ -40,17 +40,17 @@
   integrity sha512-tapn6XhOueMwht3E2UzY0ZZjYokdaw9XtL9kEyjhQ/Fb9vL9xTFbOaI+fV0AWvTpYu4BNloC6getKW6NtSg4mA==
 
 "@emnapi/core@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.4.0.tgz#8844b02d799198158ac1fea21ae2bc81b881da9a"
-  integrity sha512-H+N/FqT07NmLmt6OFFtDfwe8PNygprzBikrEMyQfgqSmT0vzE515Pz7R8izwB9q/zsH/MA64AKoul3sA6/CzVg==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.4.1.tgz#1841d87508c70d9f3008da52a4a50579e03e5728"
+  integrity sha512-4JFstCTaToCFrPqrGzgkF8N2NHjtsaY4uRh6brZQ5L9e4wbMieX8oDT8N7qfVFTQecHFEtkj4ve49VIZ3mKVqw==
   dependencies:
     "@emnapi/wasi-threads" "1.0.1"
     tslib "^2.4.0"
 
 "@emnapi/runtime@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.4.0.tgz#8f509bf1059a5551c8fe829a1c4e91db35fdfbee"
-  integrity sha512-64WYIf4UYcdLnbKn/umDlNjQDSS8AgZrI/R9+x5ilkUVFxXcA1Ebl+gQLc/6mERA4407Xof0R7wEyEuj091CVw==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.4.1.tgz#79e54e3cc7f1955b3080f6e1e0e111e06114e114"
+  integrity sha512-LMshMVP0ZhACNjQNYXiU1iZJ6QCcv0lUdPDPugqGvCGXt5xtRVBPdtA0qU12pEXZzpWAhWlZYptfdAFq10DOVQ==
   dependencies:
     tslib "^2.4.0"
 
@@ -857,7 +857,7 @@
 
 "@openfort/ecosystem-js@^0.1.24":
   version "0.1.24"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.24.tgz#1999831562ac88edce2da445404c03296855e4d2"
+  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.24.tgz"
   integrity sha512-73o+04w+6nIzSLm8S+Iq5ZKLwtRku1B/gS1UQt/IxqiqVuy0qpc7jCNmvcl7DwPkiCS2ndWKJCrHwVMmwoTT2A==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
@@ -882,7 +882,7 @@
 
 "@openfort/openfort-js@^0.8.36":
   version "0.8.36"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.36.tgz#7ea5b1a88f0ebeafdb0c34fccd190236457cb965"
+  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.36.tgz"
   integrity sha512-OT7Rr+cQjSxEAR8klS4ZONmlFN8kce+QAbnLkAru3tbhl7wcmS4t/tc9B3NJGg5FZFKUvEukXRNxqvhwb7nzqw==
   dependencies:
     "@ethersproject/hash" "^5.8.0"
@@ -1496,10 +1496,10 @@
   resolved "https://registry.npmjs.org/@radix-ui/rect/-/rect-1.1.0.tgz"
   integrity sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==
 
-"@rapidfire/id@^0.0.87":
-  version "0.0.87"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.87.tgz#8e77bb42dad554a48bc2ee40218d5b3da739dcb8"
-  integrity sha512-wjDHA65A61cc8ksRVnCLhm2YJj7eyeu70b1hbGlHxZnzIK2zQ6cKxM0eOdWcuAciy3Zl5qNhoPqNaVLbrwZQQw==
+"@rapidfire/id@^0.0.88":
+  version "0.0.88"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.88.tgz#c75760c78d51028a140d54bffb1880b8b88bc1b7"
+  integrity sha512-AMe/YRcs/YKrtSXzckGKyXMWCLED8rJd7nmpOdicT1HI3t2sxFyDkLq5fqJCVGrPZvPePOTJL8qI21ZNd5ETcg==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.24"
 
