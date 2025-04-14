@@ -6,7 +6,6 @@ import { WalletConnect } from "./components/wallet/WalletConnect";
 import { WagmiProvider } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { config } from "./utils/config";
-import { useAccount } from "wagmi";
 import { InstallInstructions } from "./components/layout/InstallInstructions";
 import { WalletStatus } from "./components/wallet/WalletStatus";
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
@@ -14,21 +13,6 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 const queryClient = new QueryClient();
 
-function WalletContainer() {
-  const { isConnected } = useAccount();
-  
-  return (
-    <div className="bg-blue-100 rounded-xl shadow-sm w-full h-full min-h-[600px] relative overflow-hidden">
-      <div className="w-full h-full overflow-auto">
-        <WalletStatus />
-      </div>
-      
-      {!isConnected && (
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px] z-10" />
-      )}
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -37,7 +21,6 @@ export default function Home() {
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider modalSize="compact">
             <div className="max-w-7xl mx-auto grid grid-cols-12 gap-12 items-start">
-              {/* Left column: Title, subtitle, sign-in button, installation instructions (1/3 width) */}
               <div className="col-span-4 flex flex-col">
                 <div className="mb-8">
                   <Header />
@@ -50,15 +33,18 @@ export default function Home() {
                   </div>
                 </div>
                 
-                {/* Smaller footer */}
                 <div className="mt-auto">
                   <Footer />
                 </div>
               </div>
               
-              {/* Right column: Wallet functionality box (2/3 width) */}
-              <div className="col-span-8">
-                <WalletContainer />
+              <div className="col-span-8 bg-slate-600 rounded-md">
+                <div className='bg-slate-500 p-1 m-5 rounded-full inline-block'>
+                  <p className='text-xs font-medium rounded-full'>
+                    Your application
+                  </p>
+                </div>
+                <WalletStatus />
               </div>
             </div>
           </RainbowKitProvider>

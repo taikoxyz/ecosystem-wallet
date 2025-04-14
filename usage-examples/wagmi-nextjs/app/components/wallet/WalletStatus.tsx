@@ -17,7 +17,6 @@ export function WalletStatus() {
     'personal_sign': 'Personal signature',
     'wallet_grantPermissions': 'Session key',
     'wallet_sendCalls': 'Batched transaction (Mint + transfer)',
-    'wallet_showCallsStatus': 'Transaction status'
   };
 
   // Define descriptions for each action
@@ -27,12 +26,12 @@ export function WalletStatus() {
     'personal_sign': 'Sign a message with your wallet to prove your identity.',
     'wallet_grantPermissions': 'Grant temporary permissions to a dApp or service.',
     'wallet_sendCalls': 'Send multiple transactions in a single batch for efficiency.',
-    'wallet_showCallsStatus': 'View the status of your pending transactions.'
+
   };
 
   return (
     <div className="w-full p-6">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {actions.map((action) => (
           <div key={action.title}>
             <WalletActionCard

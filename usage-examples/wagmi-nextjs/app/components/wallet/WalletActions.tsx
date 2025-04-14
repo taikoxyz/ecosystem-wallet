@@ -28,7 +28,6 @@ export function useWalletActions() {
   const { signMessage, data: personalSignature, isPending: isSigningPersonal, error: personalError } = useSignMessage();
   // Batched transaction hooks
   const { data: bundleIdentifier, isPending: callsPending, error: callsError, writeContracts } = useWriteContracts();
-  const { showCallsStatus, isPending: bundlePending, error: bundleError } = useShowCallsStatus();
 
   // Transaction handlers
   const handleExampleTx = useCallback(() => {
@@ -77,7 +76,7 @@ export function useWalletActions() {
       statement: 'Sign in with Ethereum to the app.',
       uri: window.location.origin,
       version: '1',
-      chainId: chainId!,
+      chainId: chainId ?? baseSepolia.id,
       nonce: 'deadbeef',
     })
     signMessage({ message: message });
@@ -153,13 +152,6 @@ export function useWalletActions() {
   },[])
 
 
-  const handleShowCallsStatus = useCallback((identifier?:string) => {
-    if (identifier) {
-      showCallsStatus({ id: identifier });
-    }
-  }, [showCallsStatus]);
-
-
   const actions = [
     {
       icon: Send,
@@ -216,15 +208,6 @@ export function useWalletActions() {
       isLoading: callsPending,
       error: callsError,
       hash: bundleIdentifier as `0x${string}` | undefined,
-    },
-    {
-      icon: Activity,
-      title: "wallet_showCallsStatus",
-      buttonText: "Show Status",
-      onClick: handleShowCallsStatus,
-      isLoading: bundlePending,
-      error: bundleError,
-      input: true
     },
   ];
 

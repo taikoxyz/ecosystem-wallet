@@ -865,7 +865,7 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.24":
+"@openfort/ecosystem-js@^0.1.26":
   version "0.1.26"
   resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.26.tgz#c303f25cf1a80de051624db7c5fad7c4aa835c44"
   integrity sha512-4KfpJkn7b8YajBuMmUgngZ9YqM58jc711tVN134xXjVYPhov6HusjvD22unDttN2TSZDYZ2DJ6cd3dFdspe0Fg==
@@ -1519,12 +1519,12 @@
     react-remove-scroll "2.6.2"
     ua-parser-js "^1.0.37"
 
-"@rapidfire/id@^0.0.87":
-  version "0.0.87"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.87.tgz#8e77bb42dad554a48bc2ee40218d5b3da739dcb8"
-  integrity sha512-wjDHA65A61cc8ksRVnCLhm2YJj7eyeu70b1hbGlHxZnzIK2zQ6cKxM0eOdWcuAciy3Zl5qNhoPqNaVLbrwZQQw==
+"@rapidfire/id@^0.0.89":
+  version "0.0.89"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.89.tgz#fd259812b89b3f95392b7c5df3d03cd42f1faa6e"
+  integrity sha512-yYa1LLdJEnIs153ZVlYV5BQ1XR59HiDkSk1t9OGKsf7nL2N3aG7GjM5oGJBaLtz4/Y2TuSuK+qoGwKFRmFp24A==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.24"
+    "@openfort/ecosystem-js" "^0.1.26"
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
