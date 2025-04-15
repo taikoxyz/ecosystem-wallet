@@ -6,8 +6,8 @@ import { useCallback, useEffect, useState } from "react";
 import { ecosystemWalletInstance } from "@/app/utils/ecosystemWallet";
 import { LogOut, Copy, Check } from "lucide-react";
 import { Card } from "../ui/card";
-import { getExplorerUrl } from "@/lib/wallet";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { truncateAddress } from "@/lib/wallet";
 
 export function WalletConnect() {
   const [copied, setCopied] = useState(false);
@@ -19,7 +19,7 @@ export function WalletConnect() {
     });
   }, []);
   
-  const { address, isConnected, connector } = useAccount();
+  const { address, isConnected, connector, chain } = useAccount();
   const { connectors, connect, error } = useConnect();
   const { disconnect } = useDisconnect();
   
@@ -49,10 +49,12 @@ export function WalletConnect() {
 
   if (!isConnected) {
     return (
-      <div className="flex flex-col items-start">
+      <div className="flex flex-col items-start space-y-2">
+        <h3 className="inline-block text-muted-foreground text-xs font-medium bg-transparent/50 rounded-full p-2">Select your provider</h3>
+        <p className="text-muted-foreground font-medium text-sm md:text-base">
+        {`Preview how it integrates with your existing wallet providers.`}
+        </p>
         <div className="flex flex-col gap-4 w-full">
-        <h3 className="text-sm font-medium">Select your provider</h3>
-
           <div className="flex gap-2">
             
             <Button
@@ -94,41 +96,38 @@ export function WalletConnect() {
   }
 
   return (
-    <Card className="p-5 bg-card border border-border rounded-xl shadow-sm">
-      <div className="space-y-3">
-        <Button
-          variant="outline"
-          onClick={copyToClipboard}
-          className="w-full font-mono text-sm text-muted-foreground break-all px-3 py-2 rounded-lg flex justify-between items-center bg-muted/20 hover:bg-muted/30 h-auto"
-        >
-          <span className="truncate">{address}</span>
-          {copied ? (
-            <Check className="w-4 h-4 text-green-500 flex-shrink-0 ml-2" />
-          ) : (
-            <Copy className="w-4 h-4 text-muted-foreground flex-shrink-0 ml-2" />
-          )}
-        </Button>
-        <div className="flex flex-wrap gap-3 items-center">
-          {address && (
+    <Card className="border-0">
+      {address && (
+        <div className="flex gap-3 items-center">
+          <Button
+            variant="outline"
+            onClick={copyToClipboard}
+            className="w-full font-mono text-sm text-muted-foreground break-all px-3 py-2 rounded-lg flex justify-between items-center bg-muted/20 hover:bg-muted/30 h-auto"
+          >
             <a
-              href={getExplorerUrl(address)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 hover:underline cursor-pointer text-sm"
+            href={chain?.blockExplorers?.default.url + '/address/' + address}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" truncate text-primary hover:text-primary/80 hover:underline cursor-pointer text-sm"
             >
-              View on Explorer
+              {truncateAddress(address)}
             </a>
-          )}
+            {copied ? (
+              <Check className="w-4 h-4 text-green-500 flex-shrink-0 ml-2" />
+            ) : (
+              <Copy className="w-4 h-4 text-muted-foreground flex-shrink-0 ml-2" />
+            )}
+          </Button>
           <Button
             variant="outline"
             onClick={handleDisconnectWallet}
-            className="flex items-center justify-center gap-2 border-input hover:bg-secondary/80 border-red-300 text-red-700 hover:text-red-800 bg-red-100 hover:bg-red-200 rounded-lg"
+            className="flex items-center justify-center gap-2 rounded-lg"
             size="sm"
           >
             <LogOut className="w-3 h-3" /> Log out
           </Button>
         </div>
-      </div>
+      )}
     </Card>
   );
 }

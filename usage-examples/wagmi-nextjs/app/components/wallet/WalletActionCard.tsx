@@ -13,6 +13,7 @@ interface WalletActionCardProps {
   icon: LucideIcon;
   title: string;
   buttonText: string;
+  blockExplorerUrl: string;
   isLoading?: boolean;
   error?: Error | null;
   hash?: `0x${string}`;
@@ -30,6 +31,7 @@ export function WalletActionCard({
   title,
   buttonText,
   isLoading,
+  blockExplorerUrl,
   error,
   hash,
   isConfirming,
@@ -105,10 +107,10 @@ export function WalletActionCard({
               {(error as BaseError).details || error.message}
             </p>
           )}
-
           {hash && (
             <TransactionStatus 
               hash={hash}
+              blockExplorerUrl={blockExplorerUrl}
               status={status}
             />
           )}

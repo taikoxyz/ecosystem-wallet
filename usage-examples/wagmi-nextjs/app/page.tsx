@@ -40,7 +40,7 @@ export default function Home() {
               
               <div className="col-span-8 bg-slate-600 rounded-md">
                 <div className='bg-slate-500 p-1 m-5 rounded-full inline-block'>
-                  <p className='text-xs font-medium rounded-full'>
+                  <p className='text-xs text-foreground font-medium rounded-full'>
                     Your application
                   </p>
                 </div>

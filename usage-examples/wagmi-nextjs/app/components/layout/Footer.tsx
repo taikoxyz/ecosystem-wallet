@@ -35,9 +35,6 @@ export function Footer() {
           </a>
         ))}
       </div>
-      <p className="text-xs text-muted-foreground mt-2">
-        {new Date().getFullYear()} Openfort
-      </p>
     </div>
   );
 }

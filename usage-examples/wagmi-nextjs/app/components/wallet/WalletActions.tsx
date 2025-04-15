@@ -1,4 +1,4 @@
-import { Send, MessageSquare, Key, Shield, Boxes, Activity } from "lucide-react";
+import { Send, MessageSquare, Key, Shield, Boxes } from "lucide-react";
 import {
   useWriteContract,
   useWaitForTransactionReceipt,
@@ -6,7 +6,7 @@ import {
   useSignTypedData,
   useAccount,
 } from 'wagmi';
-import { useWriteContracts, useShowCallsStatus } from 'wagmi/experimental'
+import { useWriteContracts } from 'wagmi/experimental'
 import { useCallback, useState } from 'react';
 import { BaseError, createWalletClient, custom, parseAbi } from 'viem';
 import { erc20Abi } from "@/app/utils/abi";
@@ -18,7 +18,7 @@ import { createSiweMessage } from 'viem/siwe';
 export function useWalletActions() {
   const [sessionKey, setSessionKey] = useState<string | null>(null);
   const [sessionError, setSessionError] = useState<BaseError | null>(null);
-  const { connector, chainId, address } = useAccount();
+  const { connector, chainId, address, chain } = useAccount();
   // Transaction hooks
   const { data: hash, writeContract, isPending, error  } = useWriteContract();
   const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash });
@@ -54,7 +54,7 @@ export function useWalletActions() {
 
     signTypedData({
       domain: {
-        chainId: baseSepolia.id,
+        chainId: chain?.id,
         name: 'Ether Mail',
         verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
         version: '1',
@@ -67,7 +67,7 @@ export function useWalletActions() {
       },
       primaryType: 'Mail',
     });
-  }, [signTypedData]);
+  }, [signTypedData, chain]);
 
   const handleSIWE = useCallback(() => {
     const message = createSiweMessage({
@@ -80,7 +80,7 @@ export function useWalletActions() {
       nonce: 'deadbeef',
     })
     signMessage({ message: message });
-  },[signMessage])
+  },[signMessage, chainId, chainId])
 
   const handlePersonalSign = useCallback(() => {
     signMessage({ message: 'Hello World' });
@@ -111,7 +111,7 @@ export function useWalletActions() {
     const privateKey = generatePrivateKey();
     const accountSession = privateKeyToAccount(privateKey).address;
     const walletClient = createWalletClient({
-      chain: baseSepolia, 
+      chain: chain, 
       transport: custom(provider as any),
     }).extend(erc7715Actions()) 
     try{
@@ -149,7 +149,7 @@ export function useWalletActions() {
       const error = e as BaseError
       setSessionError(error)
     }
-  },[])
+  },[connector, chain])
 
 
   const actions = [
@@ -159,6 +159,7 @@ export function useWalletActions() {
       buttonText: "Send Transaction",
       onClick: handleExampleTx,
       isLoading: isPending,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       error,
       hash,
       isConfirming,
@@ -170,6 +171,7 @@ export function useWalletActions() {
       buttonText: "Sign Typed Data",
       onClick: handleTypedMessage,
       isLoading: isSigningTyped,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       error: typedError,
       payload: typedSignature,
     },
@@ -179,15 +181,17 @@ export function useWalletActions() {
       buttonText: "Sign Message",
       onClick: handlePersonalSign,
       isLoading: isSigningPersonal,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       error: personalError,
       payload: personalSignature,
     },
     {
       icon: Key,
-      title: "siwe",
-      buttonText: "SIWE",
+      title: "Authentication",
+      buttonText: "Sign in with Ethereum",
       onClick: handleSIWE,
       isLoading: isSigningPersonal,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       error: personalError,
       payload: personalSignature,
     },
@@ -197,6 +201,7 @@ export function useWalletActions() {
       buttonText: "Grant Session",
       error: sessionError,
       onClick: handleGrantPermissions,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       isLoading: false,
       payload: !sessionError && sessionKey? sessionKey : undefined,
     },
@@ -205,9 +210,10 @@ export function useWalletActions() {
       title: "wallet_sendCalls",
       buttonText: "Send Batch",
       onClick: handleSendCalls,
+      blockExplorerUrl: chain?.blockExplorers?.default.url!,
       isLoading: callsPending,
       error: callsError,
-      hash: bundleIdentifier as `0x${string}` | undefined,
+      hash: bundleIdentifier?.id as `0x${string}` | undefined,
     },
   ];
 
