@@ -1,8 +1,10 @@
-import { Button, useOpenfort } from '@openfort/ecosystem-js/react';
+import * as React from "react";
+import { Button, RecoveryMethod, useOpenfort } from '@openfort/ecosystem-js/react';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
-import { GlobeIcon } from 'lucide-react';
+import { GlobeIcon, Lock } from 'lucide-react';
 import { LogoMark } from './LogoMark';
+import { useChainId } from "wagmi";
 
 type ProviderResponse = {
   provider: ProviderType;
@@ -16,8 +18,55 @@ const availableProviders = [
 type ProviderType = typeof availableProviders[number];
 
 export function Landing() {
-  const { login, configuration } = useOpenfort();
+  const { login, configuration, isAuthenticated, isReady, handleWalletRecovery } = useOpenfort();
+  const [showPasswordInput, setShowPasswordInput] = React.useState(false);
+  const [password, setPassword] = React.useState("");
+  const [recoveryError, setRecoveryError] = React.useState("");
+  const [isRecovering, setIsRecovering] = React.useState(false);
+  const chainId = useChainId();
 
+  React.useEffect(() => {
+
+    const attemptWalletRecovery = async () => {
+      if (isAuthenticated && !isReady && !showPasswordInput && !isRecovering) {
+        setIsRecovering(true);
+        try {
+          await handleWalletRecovery({method: RecoveryMethod.AUTOMATIC, chainId});
+          // If we get here, recovery was successful without password
+          setIsRecovering(false);
+        } catch (error) {
+          // If we get here, we need a password
+          setShowPasswordInput(true);
+          setRecoveryError("Password required to recover your wallet");
+          setIsRecovering(false);
+        }
+      }
+    };
+    console.log("Attempting wallet recovery");
+    attemptWalletRecovery();
+  }, [isAuthenticated, isReady, showPasswordInput, isRecovering, chainId]);
+
+  // Handle password recovery
+  const handlePasswordRecovery = async () => {
+    if (!password) {
+      setRecoveryError("Password is required");
+      return;
+    }
+
+    setIsRecovering(true);
+    setRecoveryError("");
+    
+    try {
+      await handleWalletRecovery({password, method: RecoveryMethod.PASSWORD, chainId});
+      setShowPasswordInput(false);
+    } catch (error) {
+      setRecoveryError(
+        error instanceof Error ? error.message : "Failed to recover wallet. Please try again."
+      );
+    } finally {
+      setIsRecovering(false);
+    }
+  };
   const { data, isLoading } = useQuery<{ data: ProviderResponse[] }>({
     queryKey: ['myData'],
     queryFn: async () => {
@@ -61,7 +110,7 @@ export function Landing() {
           icon={<Icon />}
           iconPosition="right"
         >
-          {label}
+          {`Continue with ${label}`}
         </Button>
       </div>
     );
@@ -71,6 +120,54 @@ export function Landing() {
     data?.data?.filter((p) => p.type === 'oauth').filter((p) => availableProviders.includes(p.provider))
     || []
   ), [data]);
+
+  if (showPasswordInput) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
+        <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-md">
+          <div className="mb-6 flex items-center justify-center">
+            <LogoMark />
+          </div>
+          <h1 className="mb-6 text-center text-2xl font-bold">Wallet Recovery</h1>
+          <p className="mb-4 text-center text-gray-600">
+            Please enter your password to recover your wallet
+          </p>
+          
+          {recoveryError && (
+            <div className="mb-4 rounded-md bg-red-50 p-3 text-sm text-red-500">
+              {recoveryError}
+            </div>
+          )}
+          
+          <div className="mb-4">
+            <label className="mb-2 block text-sm font-medium text-gray-700" htmlFor="password">
+              Password
+            </label>
+            <div className="relative">
+              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <input
+                className="w-full rounded-md border border-gray-300 px-10 py-2 focus:border-blue-500 focus:outline-none"
+                id="password"
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                type="password"
+                value={password}
+              />
+            </div>
+          </div>
+          
+          <Button
+            className="w-full"
+            disabled={isRecovering}
+            onClick={handlePasswordRecovery}
+            variant="primary"
+          >
+            {isRecovering ? "Recovering..." : "Recover Wallet"}
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between">
@@ -114,9 +211,17 @@ export function Landing() {
         </div>
         <div className="h-6" />
         <div className='flex items-center'>
-          <p className="text-sm text-gray-400 text-center">
-            Want to integrate Rapidfire with your application?
-          </p>
+            <p className="text-sm text-gray-400 text-center">
+            Want to integrate Rapidfire with your application?{' '}
+            <a 
+              href="https://rapidfire.sample.openfort.xyz" 
+              className="text-blue-500 hover:text-blue-700"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Learn more
+            </a>
+            </p>
         </div>
       </div>
       

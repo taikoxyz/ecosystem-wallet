@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useAccount, useBlockNumber, useChainId, useDisconnect } from "wagmi";
 import { ExternalLink, PersonStanding } from "lucide-react";
-import { Button } from "@openfort/ecosystem-js/react";
+import { Button, useOpenfort } from "@openfort/ecosystem-js/react";
 import { cx } from "class-variance-authority";
 import { Address, Value } from 'ox'
 
@@ -15,9 +15,9 @@ import { TruncatedAddress } from "./TruncatedAddress";
 import { LogoMark } from "./LogoMark";
 
 export function Dashboard() {
+  const { logout } = useOpenfort();
   const account = useAccount();
   const chainId = useChainId();
-  const { disconnect } = useDisconnect();
   const { data: transfers } = useAddressTransfers({
     chainIds: [chainId],
   });
@@ -27,9 +27,11 @@ export function Dashboard() {
   const { data: blockNumber } = useBlockNumber({
     watch: { enabled: account.status === "connected", pollingInterval: 800 },
   });
+
   React.useEffect(() => {
     refetchSwapAssets();
   }, [blockNumber]);
+
   const [selectedChains, _setSelectedChains] = React.useState(
     config.chains.map((c) => c.id.toString())
   );
@@ -56,11 +58,11 @@ export function Dashboard() {
       )
     );
   }, [assets]);
+  
   return (
     <div className="flex min-h-screen flex-col justify-between">
       <div className="flex flex-1 flex-col w-full px-6 py-12">
         <div className="mx-auto w-full max-w-sm">
-          {/* <div className="h-3" /> */}
           <div className="flex justify-between items-center">
             <div className="min-lg:opacity-0">
               <LogoMark />
@@ -197,8 +199,9 @@ export function Dashboard() {
             </Button>
             <Button 
               onClick={async() => {
-                disconnect();
-                  const provider = await account.connector?.getProvider();
+                await logout()
+                window.location.reload()
+
               }} 
               variant="primary">
               Sign out
@@ -262,7 +265,6 @@ function PaginatedTable<T>({
         <tbody className="border-transparent border-t-400">
           {itemsToShow && itemsToShow?.length > 0 ? (
             itemsToShow?.map((item, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               <React.Fragment key={index}>{renderRow(item)}</React.Fragment>
             ))
           ) : (
@@ -304,54 +306,52 @@ function TokenSymbol({
     return display === 'name' ? tokenInfo.name : tokenInfo.symbol
   }
 
+function AssetRow({
+  address,
+  decimals,
+  logo,
+  name,
+  symbol,
+  value,
+  price,
+}: {
+  address: Address.Address
+  decimals: number
+  logo: string
+  name: string
+  symbol: string
+  value: bigint
+  price: number
+}) {
+  const formattedBalance = React.useMemo(
+    () => ValueFormatter.format(value, decimals),
+    [value, decimals],
+  )
 
+  return (
+    <tr className="font-normal sm:text-sm">
+        <>
+          <td className="w-[80%]">
+            <div className="flex items-center gap-x-2 py-2">
+              <img alt="asset icon" className="size-5 sm:size-6" src={logo} />
+              <span className="font-medium text-sm sm:text-md">{name}</span>
+            </div>
+          </td>
+          <td className="w-[20%] text-right text-md">{formattedBalance}</td>
+          <td className="w-[20%] pl-3.5 text-right text-md">
+            ${ValueFormatter.formatToPrice(price)}
+          </td>
+          <td className="w-[20%] pr-1.5 pl-3 text-left text-sm">
+            <span className="rounded-2xl bg-gray-100 px-2 py-1 font-[500] text-gray-400 text-xs">
+              {symbol}
+            </span>
+          </td>
+          <td className="text-right text-sm">
+            <div className="flex">
 
-  function AssetRow({
-    address,
-    decimals,
-    logo,
-    name,
-    symbol,
-    value,
-    price,
-  }: {
-    address: Address.Address
-    decimals: number
-    logo: string
-    name: string
-    symbol: string
-    value: bigint
-    price: number
-  }) {
-    const formattedBalance = React.useMemo(
-      () => ValueFormatter.format(value, decimals),
-      [value, decimals],
-    )
-  
-    return (
-      <tr className="font-normal sm:text-sm">
-          <>
-            <td className="w-[80%]">
-              <div className="flex items-center gap-x-2 py-2">
-                <img alt="asset icon" className="size-5 sm:size-6" src={logo} />
-                <span className="font-medium text-sm sm:text-md">{name}</span>
-              </div>
-            </td>
-            <td className="w-[20%] text-right text-md">{formattedBalance}</td>
-            <td className="w-[20%] pl-3.5 text-right text-md">
-              ${ValueFormatter.formatToPrice(price)}
-            </td>
-            <td className="w-[20%] pr-1.5 pl-3 text-left text-sm">
-              <span className="rounded-2xl bg-gray-100 px-2 py-1 font-[500] text-gray-400 text-xs">
-                {symbol}
-              </span>
-            </td>
-            <td className="text-right text-sm">
-              <div className="flex">
-
-              </div>
-            </td>
-          </>
-      </tr>
-    )
-  }
+            </div>
+          </td>
+        </>
+    </tr>
+  )
+}

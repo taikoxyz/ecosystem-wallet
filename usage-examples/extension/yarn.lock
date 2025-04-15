@@ -900,13 +900,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.24":
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.24.tgz#1999831562ac88edce2da445404c03296855e4d2"
-  integrity sha512-73o+04w+6nIzSLm8S+Iq5ZKLwtRku1B/gS1UQt/IxqiqVuy0qpc7jCNmvcl7DwPkiCS2ndWKJCrHwVMmwoTT2A==
+"@openfort/ecosystem-js@^0.1.26":
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.26.tgz#c303f25cf1a80de051624db7c5fad7c4aa835c44"
+  integrity sha512-4KfpJkn7b8YajBuMmUgngZ9YqM58jc711tVN134xXjVYPhov6HusjvD22unDttN2TSZDYZ2DJ6cd3dFdspe0Fg==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "^0.8.36"
+    "@openfort/openfort-js" "^0.8.37"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -925,10 +925,10 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@^0.8.36":
-  version "0.8.36"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.36.tgz#7ea5b1a88f0ebeafdb0c34fccd190236457cb965"
-  integrity sha512-OT7Rr+cQjSxEAR8klS4ZONmlFN8kce+QAbnLkAru3tbhl7wcmS4t/tc9B3NJGg5FZFKUvEukXRNxqvhwb7nzqw==
+"@openfort/openfort-js@^0.8.37":
+  version "0.8.37"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.37.tgz#a8f0a6a8c0a15b317eceeefd075787eedc555b42"
+  integrity sha512-Jgv2Nic28hFIm3/AiHJn6Ub584JDDrGMdGcqUn44XQadCqwVDE9lmdNkQDyhNDhSPyMdbjBnVaBl6OexSCmVEw==
   dependencies:
     "@ethersproject/hash" "^5.8.0"
     "@ethersproject/providers" "^5.8.0"
@@ -967,12 +967,12 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rapidfire/id@^0.0.87":
-  version "0.0.87"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.87.tgz#8e77bb42dad554a48bc2ee40218d5b3da739dcb8"
-  integrity sha512-wjDHA65A61cc8ksRVnCLhm2YJj7eyeu70b1hbGlHxZnzIK2zQ6cKxM0eOdWcuAciy3Zl5qNhoPqNaVLbrwZQQw==
+"@rapidfire/id@^0.0.91":
+  version "0.0.91"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.91.tgz#4637a470da9007230a1dea9f6f7be55932462887"
+  integrity sha512-KFSMvns8JeM+HU23dbC7Xx0hDUNgjKX4X8R5oNr+r5QIj1G1hLZ0GujIK5aQBuVbRz2RPFqAxPeNAsnEzlfVwQ==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.24"
+    "@openfort/ecosystem-js" "^0.1.26"
 
 "@rollup/pluginutils@^5.1.4":
   version "5.1.4"
