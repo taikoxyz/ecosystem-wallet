@@ -52,18 +52,16 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
             ecosystemId={process.env.REACT_APP_OPENFORT_ECOSYSTEM_ID!}
             onRedirectCallback={(appState) => {
               return nav(appState?.returnTo || window.location.pathname);
-            }}
+            } }
             publishableKey={process.env.REACT_APP_OPENFORT_PUBLIC_KEY!}
-            embeddedSignerConfiguration={
-              {
-                shieldPublishableKey: process.env.REACT_APP_SHIELD_PUBLIC_KEY!,
-                recoveryMethod: RecoveryMethod.AUTOMATIC,
-                getEncryptionSessionFn(getAccessToken) {
-                  return getShieldSession(getAccessToken);
-                }
+            embeddedSignerConfiguration={{
+              shieldPublishableKey: process.env.REACT_APP_SHIELD_PUBLIC_KEY!,
+              recoveryMethod: RecoveryMethod.AUTOMATIC,
+              getEncryptionSessionFn(getAccessToken) {
+                return getShieldSession(getAccessToken);
               }
-            }
-          >
+            }} 
+            overrides={{}}          >
             {children}
           </OpenfortProvider>
           </EcosystemProvider>
