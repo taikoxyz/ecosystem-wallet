@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useAccount, useBlockNumber, useChainId, useDisconnect } from "wagmi";
+import { useAccount, useBlockNumber, useChainId, useConfig } from "wagmi";
 import { ExternalLink, PersonStanding } from "lucide-react";
 import { Button, useOpenfort } from "@openfort/ecosystem-js/react";
 import { cx } from "class-variance-authority";
@@ -18,6 +18,12 @@ export function Dashboard() {
   const { logout } = useOpenfort();
   const account = useAccount();
   const chainId = useChainId();
+  const { chains } = useConfig();
+  const getExplorer = (chainId?: number) => {
+    const chain = chains.find((c) => c.id === chainId);
+    if (!chain) return undefined;
+    return chain.blockExplorers?.default?.url;
+  };
   const { data: transfers } = useAddressTransfers({
     chainIds: [chainId],
   });
@@ -116,7 +122,7 @@ export function Dashboard() {
                     <td className="py-1 text-left">
                     <a
                         className="flex flex-row items-center"
-                        href={`tx/${transfer?.transaction_hash}`}
+                        href={`${getExplorer(transfer?.chainId)}/tx/${transfer?.transaction_hash}`}
                         rel="noreferrer"
                         target="_blank"
                     >

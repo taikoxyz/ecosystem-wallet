@@ -1,6 +1,6 @@
 {
   "name": "@examples/wallets-connect-with-nextjs",
-  "version": "0.0.93",
+  "version": "0.0.94",
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-alert-dialog": "^1.1.1",
@@ -40,7 +40,7 @@
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "wagmi": "^2.14.15"
+    "wagmi": "^2.15.2"
   },
   "devDependencies": {
     "@types/node": "^20",
