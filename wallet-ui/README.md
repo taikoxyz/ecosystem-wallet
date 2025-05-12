@@ -28,7 +28,7 @@ and more ...
 
 ### Backend (optional)
 
-When using [Openfort](https://www.openfort.xyz/) as embedded signer provider with [**AUTOMATIC recovery**](https://www.openfort.xyz/docs/guides/react/wallets/embedded-signer#automatic-recovery), a backend is required to manage encryption sessions.
+When using [Openfort](https://www.openfort.xyz/) as embedded signer provider with [**AUTOMATIC recovery**](https://www.openfort.io/docs/products/embedded-wallet/javascript/signer/recovery#automatic-recovery), a backend is required to manage encryption sessions.
 
 ## Getting Started
 
