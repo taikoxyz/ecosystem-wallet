@@ -803,13 +803,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.26":
-  version "0.1.26"
-  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.26.tgz"
-  integrity sha512-4KfpJkn7b8YajBuMmUgngZ9YqM58jc711tVN134xXjVYPhov6HusjvD22unDttN2TSZDYZ2DJ6cd3dFdspe0Fg==
+"@openfort/ecosystem-js@^0.1.28":
+  version "0.1.28"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.28.tgz#8abbc1571ec462267ec411659ec8d43f048e6da7"
+  integrity sha512-hZKKTsLT9/FfgoEQQhPn1Ho1vhZYNwgZTPAaz0Gu8xTVh++pqDhgrTjl9sR3YfZvbX2FIa4OB6yV0EoT7FqFxw==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "^0.8.37"
+    "@openfort/openfort-js" "^0.8.40"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -824,14 +824,14 @@
     mipd "^0.0.7"
     oidc-client-ts "3.1.0"
     styled-components "^6.1.13"
-    viem "^2.23.9"
+    viem "^2.29.0"
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@^0.8.37":
-  version "0.8.37"
-  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.37.tgz"
-  integrity sha512-Jgv2Nic28hFIm3/AiHJn6Ub584JDDrGMdGcqUn44XQadCqwVDE9lmdNkQDyhNDhSPyMdbjBnVaBl6OexSCmVEw==
+"@openfort/openfort-js@^0.8.40":
+  version "0.8.40"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.40.tgz#dbe1dbbb2ee8e68cd39fe805ebb4c183618bd93d"
+  integrity sha512-3qe+Ux4wPkIpmB/E8Kehs1M6eGzmHp6nwgnGFkHkFYcev/pPOTMo6vkgbTGVmGCA27vIUHE7heGLzTM7mjhmtA==
   dependencies:
     "@ethersproject/hash" "^5.8.0"
     "@ethersproject/providers" "^5.8.0"
@@ -1457,12 +1457,12 @@
     react-remove-scroll "2.6.2"
     ua-parser-js "^1.0.37"
 
-"@rapidfire/id@^0.0.91":
-  version "0.0.91"
-  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.91.tgz"
-  integrity sha512-KFSMvns8JeM+HU23dbC7Xx0hDUNgjKX4X8R5oNr+r5QIj1G1hLZ0GujIK5aQBuVbRz2RPFqAxPeNAsnEzlfVwQ==
+"@rapidfire/id@^0.0.94":
+  version "0.0.94"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.94.tgz#244c5ff513fb58f2b08227d33870dea81ce9901f"
+  integrity sha512-TaANpU+fFeRI7gYXbYyKpXRObt+GtsizfvQmzaiEzb4KHvMhj1emCOMamsHarzgajqXccPkWxhARpLC/HfHApg==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.26"
+    "@openfort/ecosystem-js" "^0.1.28"
 
 "@reown/appkit-common@1.7.3":
   version "1.7.3"
@@ -6905,10 +6905,24 @@ viem@2.23.2:
     ox "0.6.7"
     ws "8.18.0"
 
-viem@>=2.23.11, viem@^2.1.1, viem@^2.23.9:
+viem@>=2.23.11, viem@^2.1.1:
   version "2.29.0"
   resolved "https://registry.npmjs.org/viem/-/viem-2.29.0.tgz"
   integrity sha512-N6GeIuuay/spDyw+5FbSuNIkVN0da+jGOjdlC0bdatIN+N0jtOf9Zfj0pbXgpIJGwnM9ocxzTRt0HZVbHBdL2Q==
+  dependencies:
+    "@noble/curves" "1.8.2"
+    "@noble/hashes" "1.7.2"
+    "@scure/bip32" "1.6.2"
+    "@scure/bip39" "1.5.4"
+    abitype "1.0.8"
+    isows "1.0.6"
+    ox "0.6.9"
+    ws "8.18.1"
+
+viem@^2.29.0:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-2.29.2.tgz#e3033f68d6baf95c412593b213865e91634ac35e"
+  integrity sha512-cukRxab90jvQ+TDD84sU3qB3UmejYqgCw4cX8SfWzvh7JPfZXI3kAMUaT5OSR2As1Mgvx1EJawccwPjGqkSSwA==
   dependencies:
     "@noble/curves" "1.8.2"
     "@noble/hashes" "1.7.2"
