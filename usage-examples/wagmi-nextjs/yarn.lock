@@ -39,7 +39,7 @@
   resolved "https://registry.npmjs.org/@ecies/ciphers/-/ciphers-0.2.3.tgz"
   integrity sha512-tapn6XhOueMwht3E2UzY0ZZjYokdaw9XtL9kEyjhQ/Fb9vL9xTFbOaI+fV0AWvTpYu4BNloC6getKW6NtSg4mA==
 
-"@emnapi/core@^1.4.0":
+"@emnapi/core@^1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@emnapi/core/-/core-1.4.3.tgz#9ac52d2d5aea958f67e52c40a065f51de59b77d6"
   integrity sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==
@@ -47,7 +47,7 @@
     "@emnapi/wasi-threads" "1.0.2"
     tslib "^2.4.0"
 
-"@emnapi/runtime@^1.4.0":
+"@emnapi/runtime@^1.4.3":
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/@emnapi/runtime/-/runtime-1.4.3.tgz#c0564665c80dc81c448adac23f9dfbed6c838f7d"
   integrity sha512-pBPWdu6MLKROBX05wSNKcNb++m5Er+KQ9QkB+WVM+pW2Kx9hoSrVTnu3BdkI5eBLZoKu/J6mW/B6i6bJB2ytXQ==
@@ -640,12 +640,12 @@
     uuid "^9.0.1"
 
 "@napi-rs/wasm-runtime@^0.2.8":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.9.tgz#7278122cf94f3b36d8170a8eee7d85356dfa6a96"
-  integrity sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@napi-rs/wasm-runtime/-/wasm-runtime-0.2.10.tgz#f3b7109419c6670000b2401e0c778b98afc25f84"
+  integrity sha512-bCsCyeZEwVErsGmyPNSzwfwFn4OdxBj0mmv6hOFucB/k81Ojdu68RbZdxYsRQUPc9l6SU5F/cG+bXgWs3oUgsQ==
   dependencies:
-    "@emnapi/core" "^1.4.0"
-    "@emnapi/runtime" "^1.4.0"
+    "@emnapi/core" "^1.4.3"
+    "@emnapi/runtime" "^1.4.3"
     "@tybys/wasm-util" "^0.9.0"
 
 "@next/env@14.2.25":
@@ -805,7 +805,7 @@
 
 "@openfort/ecosystem-js@^0.1.28":
   version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.28.tgz#8abbc1571ec462267ec411659ec8d43f048e6da7"
+  resolved "https://registry.npmjs.org/@openfort/ecosystem-js/-/ecosystem-js-0.1.28.tgz"
   integrity sha512-hZKKTsLT9/FfgoEQQhPn1Ho1vhZYNwgZTPAaz0Gu8xTVh++pqDhgrTjl9sR3YfZvbX2FIa4OB6yV0EoT7FqFxw==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
@@ -830,7 +830,7 @@
 
 "@openfort/openfort-js@^0.8.40":
   version "0.8.40"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.40.tgz#dbe1dbbb2ee8e68cd39fe805ebb4c183618bd93d"
+  resolved "https://registry.npmjs.org/@openfort/openfort-js/-/openfort-js-0.8.40.tgz"
   integrity sha512-3qe+Ux4wPkIpmB/E8Kehs1M6eGzmHp6nwgnGFkHkFYcev/pPOTMo6vkgbTGVmGCA27vIUHE7heGLzTM7mjhmtA==
   dependencies:
     "@ethersproject/hash" "^5.8.0"
@@ -1459,7 +1459,7 @@
 
 "@rapidfire/id@^0.0.94":
   version "0.0.94"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.94.tgz#244c5ff513fb58f2b08227d33870dea81ce9901f"
+  resolved "https://registry.npmjs.org/@rapidfire/id/-/id-0.0.94.tgz"
   integrity sha512-TaANpU+fFeRI7gYXbYyKpXRObt+GtsizfvQmzaiEzb4KHvMhj1emCOMamsHarzgajqXccPkWxhARpLC/HfHApg==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.28"
@@ -6921,7 +6921,7 @@ viem@>=2.23.11, viem@^2.1.1:
 
 viem@^2.29.0:
   version "2.29.2"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.29.2.tgz#e3033f68d6baf95c412593b213865e91634ac35e"
+  resolved "https://registry.npmjs.org/viem/-/viem-2.29.2.tgz"
   integrity sha512-cukRxab90jvQ+TDD84sU3qB3UmejYqgCw4cX8SfWzvh7JPfZXI3kAMUaT5OSR2As1Mgvx1EJawccwPjGqkSSwA==
   dependencies:
     "@noble/curves" "1.8.2"
