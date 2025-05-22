@@ -912,13 +912,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.28.tgz#8abbc1571ec462267ec411659ec8d43f048e6da7"
-  integrity sha512-hZKKTsLT9/FfgoEQQhPn1Ho1vhZYNwgZTPAaz0Gu8xTVh++pqDhgrTjl9sR3YfZvbX2FIa4OB6yV0EoT7FqFxw==
+"@openfort/ecosystem-js@^0.1.29":
+  version "0.1.29"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.29.tgz#593d4cfca3d912ed48e5fd42c2e10e8bcaec270c"
+  integrity sha512-uOXqxNKZ+t3g023mpoNz0QOEAjmqrK87tdNYOUPav9npDzqqD0EPwmUku5Pr3MedFaK0D87DooPsRyFx550OXw==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "^0.8.40"
+    "@openfort/openfort-js" "^0.8.44"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -937,15 +937,17 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@^0.8.40":
-  version "0.8.40"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.40.tgz#dbe1dbbb2ee8e68cd39fe805ebb4c183618bd93d"
-  integrity sha512-3qe+Ux4wPkIpmB/E8Kehs1M6eGzmHp6nwgnGFkHkFYcev/pPOTMo6vkgbTGVmGCA27vIUHE7heGLzTM7mjhmtA==
+"@openfort/openfort-js@^0.8.44":
+  version "0.8.44"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.8.44.tgz#0e6ba97c175d95ab3644ec302a7e3549f3d7f5e9"
+  integrity sha512-4vPDAho6dLlsVhmEOH+ZN/UkuN+HtmgYtE8PBqMcbl766saBQwqKbRBkSEe9YX88Y+Pkff+Z+RVD7d08wtfKvQ==
   dependencies:
     "@ethersproject/hash" "^5.8.0"
     "@ethersproject/providers" "^5.8.0"
     "@noble/curves" "^1.1.0"
     "@openfort/shield-js" "^0.1.14"
+    "@sentry/browser" "^9.15.0"
+    "@sentry/core" "^9.15.0"
     axios "^1.8.2"
     buffer "^6.0.3"
     crypto-js "^4.2.0"
@@ -979,12 +981,12 @@
     "@pnpm/network.ca-file" "^1.0.1"
     config-chain "^1.1.11"
 
-"@rapidfire/id@^0.0.94":
-  version "0.0.94"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.94.tgz#244c5ff513fb58f2b08227d33870dea81ce9901f"
-  integrity sha512-TaANpU+fFeRI7gYXbYyKpXRObt+GtsizfvQmzaiEzb4KHvMhj1emCOMamsHarzgajqXccPkWxhARpLC/HfHApg==
+"@rapidfire/id@^0.0.96":
+  version "0.0.96"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.96.tgz#25d48472f2b8f9e050b812fc1414d94aef0a2593"
+  integrity sha512-nzO0Dib56OParLEUgyRC3Me7x4ao6q7SUr9ed5LTVE4+J8JV/dnI6A/BDV+NQjt/3xeKrete/c7VDP8N9/AGZg==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.28"
+    "@openfort/ecosystem-js" "^0.1.29"
 
 "@rollup/pluginutils@^5.1.4":
   version "5.1.4"
@@ -1111,6 +1113,52 @@
   dependencies:
     "@noble/hashes" "~1.7.1"
     "@scure/base" "~1.2.4"
+
+"@sentry-internal/browser-utils@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/browser-utils/-/browser-utils-9.22.0.tgz#dd05ac2ed925b70a0ca9bdec472f2566761dad91"
+  integrity sha512-Ou1tBnVxFAIn8i9gvrWzRotNJQYiu3awNXpsFCw6qFwmiKAVPa6b13vCdolhXnrIiuR77jY1LQnKh9hXpoRzsg==
+  dependencies:
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/feedback@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/feedback/-/feedback-9.22.0.tgz#760f86903fde91a840bc77fc104b39a873301983"
+  integrity sha512-zgMVkoC61fgi41zLcSZA59vOtKxcLrKBo1ECYhPD1hxEaneNqY5fhXDwlQBw96P5l2yqkgfX6YZtSdU4ejI9yA==
+  dependencies:
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/replay-canvas@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay-canvas/-/replay-canvas-9.22.0.tgz#431e289a5db247265e640a1e7aecf9ff2dba6a70"
+  integrity sha512-EcG9IMSEalFe49kowBTJObWjof/iHteDwpyuAszsFDdQUYATrVUtwpwN7o52vDYWJud4arhjrQnMamIGxa79eQ==
+  dependencies:
+    "@sentry-internal/replay" "9.22.0"
+    "@sentry/core" "9.22.0"
+
+"@sentry-internal/replay@9.22.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/replay/-/replay-9.22.0.tgz#e67ed6cee4cf481d428986e4419ee099669df9ef"
+  integrity sha512-9GOycoKbrclcRXfcbNV8svbmAsOS5R4wXBQmKF4pFLkmFA/lJv9kdZSNYkRvkrxdNfbMIJXP+DV9EqTZcryXig==
+  dependencies:
+    "@sentry-internal/browser-utils" "9.22.0"
+    "@sentry/core" "9.22.0"
+
+"@sentry/browser@^9.15.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-9.22.0.tgz#6eee0c047612b35e7ab4960350a57ffcc51f76f4"
+  integrity sha512-3TeRm74dvX0JdjX0AgkQa+22iUHwHnY+Q6M05NZ+tDeCNHGK/mEBTeqquS1oQX67jWyuvYmG3VV6RJUxtG9Paw==
+  dependencies:
+    "@sentry-internal/browser-utils" "9.22.0"
+    "@sentry-internal/feedback" "9.22.0"
+    "@sentry-internal/replay" "9.22.0"
+    "@sentry-internal/replay-canvas" "9.22.0"
+    "@sentry/core" "9.22.0"
+
+"@sentry/core@9.22.0", "@sentry/core@^9.15.0":
+  version "9.22.0"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-9.22.0.tgz#b35113bcba24a6ae437c548c2cbac941302a60ef"
+  integrity sha512-ixvtKmPF42Y6ckGUbFlB54OWI75H2gO5UYHojO6eXFpS7xO3ZGgV/QH6wb40mWK+0w5XZ0233FuU9VpsuE6mKA==
 
 "@sindresorhus/is@^5.2.0":
   version "5.6.0"

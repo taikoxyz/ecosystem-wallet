@@ -15,7 +15,7 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@rapidfire/id": "^0.0.94",
+    "@rapidfire/id": "^0.0.96",
     "react": ">=18",
     "react-dom": ">=18"
   },
