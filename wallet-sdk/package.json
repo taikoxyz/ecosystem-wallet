@@ -1,6 +1,6 @@
 {
   "name": "@rapidfire/id",
-  "version": "0.0.100",
+  "version": "0.0.101",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
