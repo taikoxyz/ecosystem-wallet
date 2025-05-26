@@ -8,10 +8,11 @@ import { LogOut, Copy, Check } from "lucide-react";
 import { Card } from "../ui/card";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { truncateAddress } from "@/lib/wallet";
+import { ConnectKitButton } from "connectkit";
 
 export function WalletConnect() {
   const [copied, setCopied] = useState(false);
-  const [selectedWallet, setSelectedWallet] = useState<'wagmi' | 'rainbowkit'>('wagmi');
+  const [selectedWallet, setSelectedWallet] = useState<'wagmi' | 'connectkit' | 'rainbowkit'>('wagmi');
   
   useEffect(() => {
     ecosystemWalletInstance.getEthereumProvider({
@@ -68,6 +69,15 @@ export function WalletConnect() {
             
             <Button 
               variant="outline"
+              className={`flex-1 justify-start rounded-full ${selectedWallet === 'connectkit ' ? 'bg-muted/50 border-border' : ''}`}
+              onClick={() => setSelectedWallet('connectkit')}
+            >
+              <ConnectKitLogo />
+              ConnectKit
+            </Button>
+
+            <Button 
+              variant="outline"
               className={`flex-1 justify-start rounded-full ${selectedWallet === 'rainbowkit' ? 'bg-muted/50 border-border' : ''}`}
               onClick={() => setSelectedWallet('rainbowkit')}
             >
@@ -87,7 +97,11 @@ export function WalletConnect() {
             </div>
           ) : (
             <div className="w-full">
-              <ConnectButton />
+              {selectedWallet === 'connectkit' ? (
+                <ConnectKitButton />
+              ) : (
+                <ConnectButton />
+              )}
             </div>
           )}
         </div>
@@ -150,6 +164,32 @@ function WagmiLogo() {
         fill="currentColor"
         fillRule="evenodd"
       />
+    </svg>
+  )
+}
+
+function ConnectKitLogo() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="text-[#1B1B1B] dark:text-white w-6 mr-2"
+      fill="none"
+      height="auto"
+      viewBox="0 0 400 400"
+      width="100%"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_2453_12901)">
+        <path
+          d="M400 67.2214C399.995 49.482 392.946 32.4706 380.402 19.9269C367.859 7.38321 350.847 0.334041 333.108 0.329055C300.663 -9.31323e-05 273.861 23.1814 267.212 53.6417H265.557C262.472 38.5604 254.283 25.0035 242.369 15.2553C230.456 5.50702 215.546 0.163361 200.153 0.124706C184.759 0.0860515 169.823 5.35476 157.861 15.0431C145.898 24.7314 137.641 38.247 134.481 53.3125H132.826C130.364 41.4247 124.722 30.4276 116.503 21.4935C108.283 12.5593 97.7934 6.02281 86.1515 2.58075C74.5096 -0.861307 62.1519 -1.07995 50.3955 1.94812C38.6392 4.97619 27.9247 11.1375 19.3942 19.7753C10.8637 28.4131 4.83689 39.2038 1.95605 50.9971C-0.924786 62.7904 -0.551646 75.1444 3.0357 86.7423C6.62305 98.3403 13.2902 108.747 22.3264 116.855C31.3627 124.962 42.4294 130.465 54.3471 132.778V134.104C39.0594 137.086 25.284 145.29 15.3803 157.311C5.4766 169.333 0.0609582 184.424 0.0609582 200C0.0609582 215.576 5.4766 230.667 15.3803 242.688C25.284 254.71 39.0594 262.914 54.3471 265.895V267.212C42.4173 269.479 31.328 274.946 22.2654 283.028C13.2027 291.111 6.50753 301.505 2.89594 313.098C-0.71565 324.692 -1.1078 337.049 1.76143 348.849C4.63066 360.648 10.6533 371.446 19.1853 380.087C27.7173 388.727 38.4376 394.886 50.1997 397.905C61.9618 400.923 74.3231 400.688 85.9617 397.224C97.6003 393.759 108.078 387.196 116.275 378.237C124.472 369.277 130.079 358.258 132.496 346.358H134.152C140.443 376.818 167.593 399.962 199.718 399.962C215.171 400.033 230.166 394.722 242.129 384.94C254.091 375.159 262.275 361.517 265.275 346.358H266.93C273.221 376.818 300.371 399.962 332.496 399.962C349.146 399.923 365.184 393.687 377.487 382.469C389.789 371.25 397.475 355.853 399.045 339.278C400.616 322.703 395.959 306.137 385.983 292.807C376.007 279.478 361.425 270.34 345.079 267.174V265.858C360.367 262.876 374.142 254.672 384.046 242.651C393.95 230.629 399.365 215.538 399.365 199.962C399.365 184.387 393.95 169.295 384.046 157.274C374.142 145.252 360.367 137.048 345.079 134.067V132.741C360.479 130.026 374.428 121.968 384.473 109.984C394.518 98.0004 400.016 82.8584 400 67.2214Z"
+          fill="currentColor"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2453_12901">
+          <rect width="400" height="400" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   )
 }

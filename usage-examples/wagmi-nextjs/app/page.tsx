@@ -10,6 +10,8 @@ import { InstallInstructions } from "./components/layout/InstallInstructions";
 import { WalletStatus } from "./components/wallet/WalletStatus";
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
+import { ConnectKitProvider, getDefaultConfig } from "connectkit";
+
 
 const queryClient = new QueryClient();
 
@@ -19,6 +21,7 @@ export default function Home() {
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <RainbowKitProvider modalSize="compact">
+            <ConnectKitProvider theme="auto" mode="light">
             <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-8">
               <div className="w-full md:col-span-4 flex flex-col space-y-6">
                 <Header />
@@ -44,6 +47,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </ConnectKitProvider>
           </RainbowKitProvider>
         </QueryClientProvider>
       </WagmiProvider>
