@@ -97,7 +97,7 @@ export function WalletActionCard({
           <Button
             onClick={() => onClick(inputValue)}
             disabled={isLoading}
-            className="w-full bg-black hover:bg-gray-800 text-white rounded-lg shadow-sm disabled:opacity-50 disabled:cursor-not-allowed text-xs font-medium py-5"
+            className="w-full bg-blue-500 hover:bg-blue-800 text-white rounded-lg shadow-sm disabled:opacity-50 disabled:cursor-not-allowed text-xs font-medium py-5"
           >
             {isLoading ? 'Processing...' : buttonText}
           </Button>
