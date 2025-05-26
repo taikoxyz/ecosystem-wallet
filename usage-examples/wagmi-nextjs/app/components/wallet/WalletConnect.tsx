@@ -69,7 +69,7 @@ export function WalletConnect() {
             
             <Button 
               variant="outline"
-              className={`flex-1 justify-start rounded-full ${selectedWallet === 'connectkit ' ? 'bg-muted/50 border-border' : ''}`}
+              className={`flex-1 justify-start rounded-full ${selectedWallet === 'connectkit' ? 'bg-muted/50 border-border' : ''}`}
               onClick={() => setSelectedWallet('connectkit')}
             >
               <ConnectKitLogo />
@@ -78,7 +78,7 @@ export function WalletConnect() {
 
             <Button 
               variant="outline"
-              className={`flex-1 justify-start rounded-full ${selectedWallet === 'rainbowkit' ? 'bg-muted/50 border-border' : ''}`}
+              className={`flex-1 justify-start rounded-full hidden md:flex ${selectedWallet === 'rainbowkit' ? 'bg-muted/50 border-border' : ''}`}
               onClick={() => setSelectedWallet('rainbowkit')}
             >
               <RainbowLogo />
@@ -100,7 +100,9 @@ export function WalletConnect() {
               {selectedWallet === 'connectkit' ? (
                 <ConnectKitButton />
               ) : (
-                <ConnectButton />
+                <div className="hidden md:block">
+                  <ConnectButton />
+                </div>
               )}
             </div>
           )}
@@ -172,7 +174,7 @@ function ConnectKitLogo() {
   return (
     <svg
       aria-hidden="true"
-      className="text-[#1B1B1B] dark:text-white w-6 mr-2"
+      className="dark:text-white w-6 mr-2"
       fill="none"
       height="auto"
       viewBox="0 0 400 400"
@@ -187,7 +189,7 @@ function ConnectKitLogo() {
       </g>
       <defs>
         <clipPath id="clip0_2453_12901">
-          <rect width="400" height="400" fill="white"/>
+          <rect width="400" height="400" fill="black"/>
         </clipPath>
       </defs>
     </svg>

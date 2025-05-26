@@ -6,7 +6,7 @@ import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 export const config = createConfig({
   ...getDefaultConfig({
     appName: 'Rapidfire Demo',
-    projectId: 'YOUR_PROJECT_ID', // Get one from https://cloud.walletconnect.com
+    projectId: 'YOUR_PROJECT_ID', 
     chains: [baseSepolia, polygonAmoy],
   }),
   connectors: [injected()],
