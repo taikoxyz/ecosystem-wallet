@@ -55,6 +55,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
             } }
             publishableKey={process.env.REACT_APP_OPENFORT_PUBLIC_KEY!}
             embeddedSignerConfiguration={{
+              debug: true,
               shieldPublishableKey: process.env.REACT_APP_SHIELD_PUBLIC_KEY!,
               recoveryMethod: RecoveryMethod.AUTOMATIC,
               getEncryptionSessionFn(getAccessToken) {
