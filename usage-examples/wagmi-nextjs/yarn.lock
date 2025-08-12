@@ -261,6 +261,21 @@
     ethereum-cryptography "^2.0.0"
     micro-ftch "^0.3.1"
 
+"@ethersproject/abi@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.8.0.tgz#e79bb51940ac35fe6f3262d7fe2cdb25ad5f07d9"
+  integrity sha512-b9YS/43ObplgyV6SlyQsG53/vkSal0MNA1fskSC4mbnCMi8R+NkcH8K9FPYNESf6jUefBUniE4SOKms0E/KK1Q==
+  dependencies:
+    "@ethersproject/address" "^5.8.0"
+    "@ethersproject/bignumber" "^5.8.0"
+    "@ethersproject/bytes" "^5.8.0"
+    "@ethersproject/constants" "^5.8.0"
+    "@ethersproject/hash" "^5.8.0"
+    "@ethersproject/keccak256" "^5.8.0"
+    "@ethersproject/logger" "^5.8.0"
+    "@ethersproject/properties" "^5.8.0"
+    "@ethersproject/strings" "^5.8.0"
+
 "@ethersproject/abstract-provider@^5.8.0":
   version "5.8.0"
   resolved "https://registry.npmjs.org/@ethersproject/abstract-provider/-/abstract-provider-5.8.0.tgz"
@@ -982,13 +997,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.32":
-  version "0.1.32"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.32.tgz#fd0c8f430a8adfe907b1e85e6e17100c3b3a8688"
-  integrity sha512-mYrV2B1B3c3Onn/yT+kTyEZzR/d+zI9sZSM6IogbWswwAjZY6rzb5BlOZH//Gx5rO9udP4zOLfUxEGdF0ULtYg==
+"@openfort/ecosystem-js@^0.1.39":
+  version "0.1.39"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.39.tgz#5768a41a4a3e3de8a3fa20cfdc1faa2aabf907c9"
+  integrity sha512-/BYGzxlzzlZ+Gg+FvsWamX3XG/Gy1nE4n3oFVHEMpJ7kX0r5KwSdVBBFIsq/eq4J3p621EjoNVUYMDmZhgvqfQ==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "^0.9.0"
+    "@openfort/openfort-js" "^0.9.7"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -997,7 +1012,7 @@
     es-cookie "~1.3.2"
     eventemitter3 "^5.0.1"
     fflate "^0.8.2"
-    framer-motion "12.4.3"
+    framer-motion "12.12.2"
     jwt-decode "^3.1.2"
     lucide-react "^0.414.0"
     mipd "^0.0.7"
@@ -1007,11 +1022,13 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.9.0.tgz#6c3345be7648762b80d0928caf85953ddf464ae7"
-  integrity sha512-3iyJv0kA3CFADijVzChFKP+/ednx2U/jZytJx4T0rx914ndIXy7dPz+Jc6mg3rS9FWskjJ/RyoBtsbu7SaUivg==
+"@openfort/openfort-js@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.9.7.tgz#c97ec1ea40565657cde9b8990c1b1fd82cbac2cd"
+  integrity sha512-tnnNY04hEcNsaAoKho6wVoIn8iqbIg9f++w7W04VhdyYVclR0B7Esh8FqkxGLHQ31EQnsxNVbV1LD/dAiF2ZLQ==
   dependencies:
+    "@ethersproject/abi" "^5.8.0"
+    "@ethersproject/bytes" "^5.8.0"
     "@ethersproject/hash" "^5.8.0"
     "@ethersproject/providers" "^5.8.0"
     "@openfort/shield-js" "^0.1.14"
@@ -1021,7 +1038,6 @@
     axios-retry "^4.5.0"
     eventemitter3 "5.0.1"
     jose "^5.2.2"
-    penpal "^7.0.4"
 
 "@openfort/shield-js@^0.1.14":
   version "0.1.16"
@@ -1652,12 +1668,12 @@
     react-remove-scroll "2.6.2"
     ua-parser-js "^1.0.37"
 
-"@rapidfire/id@^0.0.104":
-  version "0.0.104"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.104.tgz#5179625af9c7c200a05b37812e0790465d0f7724"
-  integrity sha512-avF0D/03ViLmgVLAUf9xbL0+dU0KAYhP0t1XN4khon+XRS1mqPW0MdhhLu5SmLnUmm5J5/VXt4BawUTJp6v9AA==
+"@rapidfire/id@^0.0.112":
+  version "0.0.112"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.112.tgz#d1667b207fbe5c1c63621c0c0f624f19f3c42ce4"
+  integrity sha512-i1XQDnKWC5X58QZhmsCf7sMB9Msrr4LwqqrDoyCe9oPkxHIOKXQL066o3etGHe0HkYUks9zZ3JZBKvE7kuaUwQ==
   dependencies:
-    "@openfort/ecosystem-js" "^0.1.32"
+    "@openfort/ecosystem-js" "^0.1.39"
 
 "@reown/appkit-common@1.7.8":
   version "1.7.8"
@@ -4711,13 +4727,13 @@ form-data@^4.0.0:
     es-set-tostringtag "^2.1.0"
     mime-types "^2.1.12"
 
-framer-motion@12.4.3:
-  version "12.4.3"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.4.3.tgz#e6a751b772421d849eea6228dbc6f160e098b869"
-  integrity sha512-rsMeO7w3dKyNG09o3cGwSH49iHU+VgDmfSSfsX+wfkO3zDA6WWkh4sUsMXd155YROjZP+7FTIhDrBYfgZeHjKQ==
+framer-motion@12.12.2:
+  version "12.12.2"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.12.2.tgz#7aa7925ea828f768453248686a970dee3424ee11"
+  integrity sha512-qCszZCiGWkilL40E3VuhIJJC/CS3SIBl2IHyGK8FU30nOUhTmhBNWPrNFyozAWH/bXxwzi19vJHIGVdALF0LCg==
   dependencies:
-    motion-dom "^12.0.0"
-    motion-utils "^12.0.0"
+    motion-dom "^12.12.1"
+    motion-utils "^12.12.1"
     tslib "^2.4.0"
 
 framer-motion@^6.3.11:
@@ -5631,17 +5647,17 @@ modern-ahocorasick@^1.0.0:
   resolved "https://registry.npmjs.org/modern-ahocorasick/-/modern-ahocorasick-1.1.0.tgz"
   integrity sha512-sEKPVl2rM+MNVkGQt3ChdmD8YsigmXdn5NifZn6jiwn9LRJpWm8F3guhaqrJT/JOat6pwpbXEk6kv+b9DMIjsQ==
 
-motion-dom@^12.0.0:
-  version "12.22.0"
-  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.22.0.tgz#aeb06948fa306590ece081af5a73a79476ce85e2"
-  integrity sha512-ooH7+/BPw9gOsL9VtPhEJHE2m4ltnhMlcGMhEqA0YGNhKof7jdaszvsyThXI6LVIKshJUZ9/CP6HNqQhJfV7kw==
+motion-dom@^12.12.1:
+  version "12.23.12"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.23.12.tgz#87974046e7e61bc4932f36d35e8eab6bb6f3e434"
+  integrity sha512-RcR4fvMCTESQBD/uKQe49D5RUeDOokkGRmz4ceaJKDBgHYtZtntC/s2vLvY38gqGaytinij/yi3hMcWVcEF5Kw==
   dependencies:
-    motion-utils "^12.19.0"
+    motion-utils "^12.23.6"
 
-motion-utils@^12.0.0, motion-utils@^12.19.0:
-  version "12.19.0"
-  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.19.0.tgz#a7cc102f756e97093793cac7c218533d3b27f509"
-  integrity sha512-BuFTHINYmV07pdWs6lj6aI63vr2N4dg0vR+td0rtrdpWOhBzIkEklZyLcvKBoEtwSqx8Jg06vUB5RS0xDiUybw==
+motion-utils@^12.12.1, motion-utils@^12.23.6:
+  version "12.23.6"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.23.6.tgz#fafef80b4ea85122dd0d6c599a0c63d72881f312"
+  integrity sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==
 
 ms@2.0.0:
   version "2.0.0"
@@ -5984,11 +6000,6 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-
-penpal@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/penpal/-/penpal-7.0.4.tgz#8bc5f3e14eeb38d20cdab90c68baa63c7d63db2b"
-  integrity sha512-O+M2V83oSaWQRDHghxYsq23TQgjAEzlrwemS0a1md16wZWqgOgmB35u4zluMwyqF6GnF/XT4v0N4QrrRgWAgSQ==
 
 picocolors@^1.0.0, picocolors@^1.1.1:
   version "1.1.1"
