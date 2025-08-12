@@ -144,6 +144,21 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.12.tgz#c57c8afbb4054a3ab8317591a0b7320360b444ae"
   integrity sha512-T1QyPSDCyMXaO3pzBkF96E8xMkiRYbUEZADd29SyPGabqxMViNoii+NcK7eWJAEoU6RZyEm5lVSIjTmcdoB9HA==
 
+"@ethersproject/abi@^5.8.0":
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.8.0.tgz#e79bb51940ac35fe6f3262d7fe2cdb25ad5f07d9"
+  integrity sha512-b9YS/43ObplgyV6SlyQsG53/vkSal0MNA1fskSC4mbnCMi8R+NkcH8K9FPYNESf6jUefBUniE4SOKms0E/KK1Q==
+  dependencies:
+    "@ethersproject/address" "^5.8.0"
+    "@ethersproject/bignumber" "^5.8.0"
+    "@ethersproject/bytes" "^5.8.0"
+    "@ethersproject/constants" "^5.8.0"
+    "@ethersproject/hash" "^5.8.0"
+    "@ethersproject/keccak256" "^5.8.0"
+    "@ethersproject/logger" "^5.8.0"
+    "@ethersproject/properties" "^5.8.0"
+    "@ethersproject/strings" "^5.8.0"
+
 "@ethersproject/abstract-provider@^5.8.0":
   version "5.8.0"
   resolved "https://registry.yarnpkg.com/@ethersproject/abstract-provider/-/abstract-provider-5.8.0.tgz#7581f9be601afa1d02b95d26b9d9840926a35b0c"
@@ -458,13 +473,13 @@
   dependencies:
     ethers "^6.0.2"
 
-"@openfort/ecosystem-js@^0.1.37":
-  version "0.1.37"
-  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.37.tgz#334528423986dd9d31c0846341d6053f7ac5e0fd"
-  integrity sha512-WoUCNx2ukBs8efy6Rdy4OWIhZdBN/IFCdBAfKVM3kU/Tv6WN6dUlk/DH2CVQ7wrg50mihuOb9mjk03aTZjpdzg==
+"@openfort/ecosystem-js@^0.1.39":
+  version "0.1.39"
+  resolved "https://registry.yarnpkg.com/@openfort/ecosystem-js/-/ecosystem-js-0.1.39.tgz#5768a41a4a3e3de8a3fa20cfdc1faa2aabf907c9"
+  integrity sha512-/BYGzxlzzlZ+Gg+FvsWamX3XG/Gy1nE4n3oFVHEMpJ7kX0r5KwSdVBBFIsq/eq4J3p621EjoNVUYMDmZhgvqfQ==
   dependencies:
     "@openchainxyz/abi-guesser" "1.0.2"
-    "@openfort/openfort-js" "^0.9.2"
+    "@openfort/openfort-js" "^0.9.7"
     "@stdlib/number-float64-base-normalize" "0.0.8"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
@@ -483,11 +498,13 @@
     zod "3.24.2"
     zustand "^5.0.1"
 
-"@openfort/openfort-js@^0.9.2":
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.9.2.tgz#ca8125cdec488c4986a3ad5f0f783ff64449c874"
-  integrity sha512-1bnFxGkK2wxIODj+NygruB2JmeMjp8GZ/aQQHK1C9fdNgsNyMeOaIE0HE6J4rARwge8cKOGVpHCAPFmts89FPQ==
+"@openfort/openfort-js@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@openfort/openfort-js/-/openfort-js-0.9.7.tgz#c97ec1ea40565657cde9b8990c1b1fd82cbac2cd"
+  integrity sha512-tnnNY04hEcNsaAoKho6wVoIn8iqbIg9f++w7W04VhdyYVclR0B7Esh8FqkxGLHQ31EQnsxNVbV1LD/dAiF2ZLQ==
   dependencies:
+    "@ethersproject/abi" "^5.8.0"
+    "@ethersproject/bytes" "^5.8.0"
     "@ethersproject/hash" "^5.8.0"
     "@ethersproject/providers" "^5.8.0"
     "@openfort/shield-js" "^0.1.14"
@@ -497,7 +514,6 @@
     axios-retry "^4.5.0"
     eventemitter3 "5.0.1"
     jose "^5.2.2"
-    penpal "^7.0.4"
 
 "@openfort/shield-js@^0.1.14":
   version "0.1.14"
@@ -2188,11 +2204,6 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-
-penpal@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/penpal/-/penpal-7.0.4.tgz#8bc5f3e14eeb38d20cdab90c68baa63c7d63db2b"
-  integrity sha512-O+M2V83oSaWQRDHghxYsq23TQgjAEzlrwemS0a1md16wZWqgOgmB35u4zluMwyqF6GnF/XT4v0N4QrrRgWAgSQ==
 
 picocolors@^1.0.0:
   version "1.1.1"
