@@ -1668,10 +1668,10 @@
     react-remove-scroll "2.6.2"
     ua-parser-js "^1.0.37"
 
-"@rapidfire/id@^0.0.112":
-  version "0.0.112"
-  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.112.tgz#d1667b207fbe5c1c63621c0c0f624f19f3c42ce4"
-  integrity sha512-i1XQDnKWC5X58QZhmsCf7sMB9Msrr4LwqqrDoyCe9oPkxHIOKXQL066o3etGHe0HkYUks9zZ3JZBKvE7kuaUwQ==
+"@rapidfire/id@^0.0.115":
+  version "0.0.115"
+  resolved "https://registry.yarnpkg.com/@rapidfire/id/-/id-0.0.115.tgz#f7376fc570cd5398b4e6217323b42a5167c14b8b"
+  integrity sha512-uJPWCk3imrc3VHTYHX4qA1S3WFuDHte7ubP989CF3to4/lmOLeExQoZXbyrqusTTL1lvnzF4C+evjzz3FXzBRQ==
   dependencies:
     "@openfort/ecosystem-js" "^0.1.39"
 
