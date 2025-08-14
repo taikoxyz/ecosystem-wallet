@@ -11,12 +11,17 @@ import * as Wagmi from './lib/Wagmi';
 import * as Query from './lib/Query'
 
 async function getShieldSession(accessToken:string):Promise<string> {
+  const isProd = process.env.REACT_APP_OPENFORT_PUBLIC_KEY!.includes('live');
+  
   const response = await fetch(`${process.env.REACT_APP_BACKEND_URL!}/api/protected-create-encryption-session`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${accessToken}`
-    }
+    },
+    body: JSON.stringify({
+      isProd
+    })
   });
 
   if (!response.ok) {
