@@ -235,12 +235,12 @@ export function Landing() {
               </a>
             </li>
             <li>
-              <a href={`${window.location.hostname}/privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+              <a href={`https://${window.location.hostname}/privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
                 Privacy
               </a>
             </li>
             <li>
-              <a href={`${window.location.hostname}/terms`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+              <a href={`https://${window.location.hostname}/terms`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
                 Terms
               </a>
             </li>
