@@ -70,7 +70,7 @@ export function Landing() {
   const { data, isLoading } = useQuery<{ data: ProviderResponse[] }>({
     queryKey: ['myData'],
     queryFn: async () => {
-      const response = await fetch('https://api.openfort.xyz/iam/v1/providers', {
+      const response = await fetch('https://api.openfort.io/iam/v1/providers', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -214,7 +214,7 @@ export function Landing() {
             <p className="text-sm text-gray-400 text-center">
             Want to integrate Rapidfire with your application?{' '}
             <a 
-              href="https://rapidfire.sample.openfort.xyz" 
+              href="https://rapidfire.sample.openfort.io" 
               className="text-blue-500 hover:text-blue-700"
               target="_blank" 
               rel="noopener noreferrer"
@@ -230,17 +230,17 @@ export function Landing() {
         <nav>
           <ul className="flex justify-center space-x-6 text-sm text-gray-400">
             <li>
-              <a href="https://www.openfort.io/docs/guides/ecosystem" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+              <a href="https://www.openfort.io/docs/products/cross-app-wallet" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
                 Developers
               </a>
             </li>
             <li>
-              <a href="https://id.sample.openfort.xyz" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+              <a href={`${window.location.hostname}/privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
                 Privacy
               </a>
             </li>
             <li>
-              <a href="https://id.sample.openfort.xyz/terms" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+              <a href={`${window.location.hostname}/terms`} target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
                 Terms
               </a>
             </li>
