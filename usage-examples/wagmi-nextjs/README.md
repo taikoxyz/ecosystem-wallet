@@ -2,7 +2,7 @@
 
 This example showcases how to use the Rapidfire ID Wallet react SDK inside a [Next.js](https://nextjs.org/) application.
 
-Visit the [live demo](https://rapidfire.sample.openfort.xyz/).
+Visit the [live demo](https://rapidfire.sample.openfort.io/).
 
 ## Local Development
 1. Install dependencies

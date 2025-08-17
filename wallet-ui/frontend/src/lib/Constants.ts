@@ -1,5 +1,5 @@
 import type { Address } from 'ox'
-import { ancient8Sepolia, baseSepolia, dosChainTestnet, kromaSepolia, polygonAmoy, sepolia } from 'viem/chains'
+import { ancient8Sepolia, base, baseSepolia, dosChainTestnet, kromaSepolia, polygonAmoy, sepolia } from 'viem/chains'
 import { ChainId } from './Wagmi'
 
 
@@ -81,13 +81,27 @@ export const defaultAssets: Record<
       symbol: 'DOS',
     },
   ],
-  [kromaSepolia.id]: [
+  [base.id]: [
     {
       address: '0x0000000000000000000000000000000000000000',
       decimals: 18,
       logo: '/icons/eth.svg',
       name: 'Ethereum',
       symbol: 'ETH',
+    },
+    {
+      address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',
+      decimals: 6,
+      logo: '/icons/usdc.svg',
+      name: 'USD Coin',
+      symbol: 'USDC',
+    },
+    {
+      address: '0x4200000000000000000000000000000000000006',
+      decimals: 18,
+      logo: '/icons/weth.png',
+      name: 'Wrapped Ether',
+      symbol: 'WETH',
     },
   ]
 }
