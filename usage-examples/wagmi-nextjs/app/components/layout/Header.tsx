@@ -8,7 +8,7 @@ export function Header() {
     <div className="space-y-4">
       <h1 className="text-3xl md:text-3xl font-mono flex items-center gap-2">
         <a 
-          href="https://www.npmjs.com/package/@rapidfire/id" 
+          href="https://www.npmjs.com/package/@taiko/wallet" 
           target="_blank"
           rel="noopener noreferrer"
           className="group"
@@ -17,7 +17,7 @@ export function Header() {
         </a>
       </h1>
       <p className="text-muted-foreground font-medium text-sm md:text-base">
-        {`Rapidfire ID is a demo wallet created with `}
+        {` is a demo wallet created with `}
         <span className="flex items-center">
           <Logo className="inline-block h-6 mr-2" />
           <span className="flex items-center font-bold hover:underline">

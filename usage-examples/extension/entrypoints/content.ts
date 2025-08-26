@@ -1,4 +1,4 @@
-import EcosystemWallet from '@rapidfire/id';
+import EcosystemWallet from '@taiko/wallet';
 
 export default defineContentScript({
   matches: ['https://*/*', 'http://localhost/*'],

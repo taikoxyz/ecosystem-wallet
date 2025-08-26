@@ -1,6 +1,6 @@
-# Ecosystem Wallet Example - Rapidfire ID
+# Ecosystem Wallet Example - Taiko Wallet
 
-This is repository contains all code for the wallet Rapidfire ID. Its a demo using [`@openfort/ecosystem-js`](https://www.openfort.io/docs/products/cross-app-wallet).
+This is repository contains all code for the wallet Taiko Wallet. Its a demo using [`@openfort/ecosystem-js`](https://www.openfort.io/docs/products/cross-app-wallet).
 
 <div align="center">
     <video width="100%" autoplay loop muted playsinline>
