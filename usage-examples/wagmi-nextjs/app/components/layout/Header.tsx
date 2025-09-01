@@ -17,7 +17,7 @@ export function Header() {
         </a>
       </h1>
       <p className="text-muted-foreground font-medium text-sm md:text-base">
-        {` is a demo wallet created with `}
+        {`Taiko Wallet is a demo wallet created with `}
         <span className="flex items-center">
           <Logo className="inline-block h-6 mr-2" />
           <span className="flex items-center font-bold hover:underline">
