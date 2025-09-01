@@ -1,8 +1,6 @@
-# Rapidfire ID Wallet with Next.js
+# Taiko Wallet Wallet with Next.js
 
-This example showcases how to use the Rapidfire ID Wallet react SDK inside a [Next.js](https://nextjs.org/) application.
-
-Visit the [live demo](https://rapidfire.sample.openfort.io/).
+This example showcases how to use the Taiko Wallet react SDK inside a [Next.js](https://nextjs.org/) application.
 
 ## Local Development
 1. Install dependencies

@@ -41,7 +41,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
           client={Query.client}
         >
         <EcosystemProvider
-          appName='Rapidfire ID'
+          appName='Taiko Wallet'
           navigateTo={(appState) => {
             nav({
               pathname: appState?.to,
@@ -49,7 +49,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
             })
           }}
           theme='midnight'
-          logoUrl='https://purple-magnificent-bat-958.mypinata.cloud/ipfs/QmfQrh2BiCzugFauYF9Weu9SFddsVh9qV82uw43cxH8UDV'
+          logoUrl='https://storage.googleapis.com/trailblazer-cdn/brand/Taiko%20Logos/TKO_Icon/Pngs/Tko_512x512.png'
         >
           <OpenfortProvider
             thirdPartyAuthentication={false}
