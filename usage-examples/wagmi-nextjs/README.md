@@ -1,6 +1,6 @@
 # Taiko Wallet Wallet with Next.js
 
-This example showcases how to use the Taiko Wallet Wallet react SDK inside a [Next.js](https://nextjs.org/) application.
+This example showcases how to use the Taiko Wallet react SDK inside a [Next.js](https://nextjs.org/) application.
 
 ## Local Development
 1. Install dependencies
