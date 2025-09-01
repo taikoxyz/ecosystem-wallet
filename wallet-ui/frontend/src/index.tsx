@@ -49,7 +49,7 @@ const ProvidersWrapper = ({ children }: { children: React.ReactNode }) => {
             })
           }}
           theme='midnight'
-          logoUrl='https://blog-cms.openfort.io/uploads/Tko_512x512_2fd5ca74cd.png?updated_at=2025-08-26T18:50:35.460Z'
+          logoUrl='https://storage.googleapis.com/trailblazer-cdn/brand/Taiko%20Logos/TKO_Icon/Pngs/Tko_512x512.png'
         >
           <OpenfortProvider
             thirdPartyAuthentication={false}
