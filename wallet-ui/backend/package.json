@@ -1,32 +1,31 @@
 {
     "name": "ecosystem-backend",
-    "version": "0.0.1",
-    "main": "index.js",
+    "version": "0.1.0",
     "type": "commonjs",
     "scripts": {
-        "clean": "shx rm -rf dist",
-        "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+        "clean": "rm -rf dist",
+        "dev": "vercel dev",
         "build": "tsc",
-        "start": "node dist/index.js"
+        "deploy": "vercel --prod"
     },
     "keywords": [],
     "author": "openfort",
     "license": "ISC",
     "description": "",
     "devDependencies": {
-        "@openfort/openfort-node": "^0.6.71",
-        "@types/cors": "^2.8.17",
-        "@types/express": "^4.17.21",
-        "@types/node": "^20.10.5",
-        "express": "^4.18.2",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.3.0",
+        "@vercel/node": "^5.3.17",
+        "express": "^5.1.0",
         "ts-node": "^10.9.2",
         "ts-node-dev": "^2.0.0",
-        "typescript": "^5.3.3"
+        "typescript": "^5.9.2",
+        "vercel": "^46.1.1"
     },
     "dependencies": {
+        "@openfort/openfort-node": "^0.6.71",
         "cors": "^2.8.5",
-        "dotenv": "^16.4.5",
-        "path": "^0.12.7"
-    },
-    "packageManager": "yarn@1.22.17"
+        "dotenv": "^17.2.1"
+    }
 }
