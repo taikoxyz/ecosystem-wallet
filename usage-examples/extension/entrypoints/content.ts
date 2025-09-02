@@ -1,4 +1,4 @@
-import EcosystemWallet from '@taiko/wallet';
+import EcosystemWallet from '@taikoxyz/wallet';
 
 export default defineContentScript({
   matches: ['https://*/*', 'http://localhost/*'],
