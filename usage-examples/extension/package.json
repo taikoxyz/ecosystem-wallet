@@ -15,7 +15,7 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@taiko/wallet": "^0.0.1",
+    "@taikoxyz/wallet": "^0.0.1",
     "react": ">=18",
     "react-dom": ">=18"
   },

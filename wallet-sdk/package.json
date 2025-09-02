@@ -1,5 +1,5 @@
 {
-  "name": "@taiko/wallet",
+  "name": "@taikoxyz/wallet",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

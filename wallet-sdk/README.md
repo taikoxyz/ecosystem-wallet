@@ -30,9 +30,9 @@ yarn build
 yarn link
 ```
 
-From the SDK Sample directory, remove **@taiko/wallet** from [package.json](../usage-examples/wagmi-nextjs/package.json), run the following commands to link the SDK to the SDK Sample.
+From the SDK Sample directory, remove **@taikoxyz/wallet** from [package.json](../usage-examples/wagmi-nextjs/package.json), run the following commands to link the SDK to the SDK Sample.
 
 ```bash
-yarn link @taiko/wallet
+yarn link @taikoxyz/wallet
 yarn dev
 ```

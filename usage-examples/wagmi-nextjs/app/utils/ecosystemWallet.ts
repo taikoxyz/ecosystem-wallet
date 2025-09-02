@@ -1,4 +1,4 @@
-import TaikoWallet from '@taiko/wallet';
+import TaikoWallet from '@taikoxyz/wallet';
 import { baseSepolia, polygonAmoy } from 'wagmi/chains';
 
 export const ecosystemWalletInstance = new TaikoWallet({
