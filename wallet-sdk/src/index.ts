@@ -1,10 +1,10 @@
 import { AppMetadata, Client, ThirdPartyAuthProvider } from "@openfort/ecosystem-js/client";
 
 class EcosystemWallet extends Client {
-    constructor(appMetadata?: AppMetadata, preview = true) {
+    constructor(appMetadata?: AppMetadata) {
         super({
             baseConfig: {
-                ecosystemWalletDomain: preview ? 'https://wallet.taiko.xyz/' : 'https://wallet.sample.openfort.io/',
+                ecosystemWalletDomain: 'https://wallet-rust-gamma.vercel.app/',
                 windowStrategy: 'iframe',
             },
             appMetadata,
